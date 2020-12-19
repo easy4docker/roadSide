@@ -1,0 +1,5 @@
+{
+  "type"        : "databaseCloud",
+  "ports"       : [3306],
+  "cloudPort"   : [80]
+}
