@@ -16,8 +16,7 @@ var pkg = {
         }
         return require(fileName);
     },
-    crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
-    mysql : require(__dirname + '/vendor/mysql/node_modules/mysql')
+    crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js')
 }
 
 app.use(bodyParser.json() );       // to support JSON-encoded bodies
