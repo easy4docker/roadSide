@@ -16,7 +16,8 @@ var pkg = {
         }
         return require(fileName);
     },
-    crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js')
+    crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
+    mysql : require(__dirname + '/vendor/mysql/node_modules/mysql')
 }
 
 app.use(bodyParser.json() );       // to support JSON-encoded bodies
@@ -34,7 +35,7 @@ app.all('*', function(req, res, next) {
 var RESTS = 'get|put|post|delete'.split('|');
 
 for (var i=0 ; i < RESTS.length; i++) {
-    (function() {
+    (function(i) {
         app[RESTS[i]](/(.+)$/i, (req, res) => {
             var ENGINE= pkg.require(__dirname + '/modules/appEngine.js');
             var appEng  = new ENGINE(env, pkg, req, res);
@@ -46,4 +47,5 @@ for (var i=0 ; i < RESTS.length; i++) {
         });
     })(i)
 }
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
