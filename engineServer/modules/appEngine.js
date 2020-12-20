@@ -19,7 +19,8 @@
 
 		this.runGet = ()=> {
 			var _masterInfo = pkg.require('/var/_masterInfo.json');
-			res.send(_masterInfo);
+			var token=req.query.token;
+			res.send({token:token, master:_masterInfo});
 			return true;
 			let fn = (/\/$/.test(p)) ? (env.root + '/www' + p + 'index.html') : (env.root + '/www' + p);
 			let m = fn.match(/\.(html|js|css|jsx|vue|txt)$/ig);
