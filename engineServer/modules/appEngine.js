@@ -20,24 +20,26 @@
 		this.runGet = ()=> {
 			var _masterInfo = pkg.require('/var/_masterInfo.json');
 			var token=req.query.token;
-			res.send({token:token, master:_masterInfo});
-			return true;
-			let fn = (/\/$/.test(p)) ? (env.root + '/www' + p + 'index.html') : (env.root + '/www' + p);
-			let m = fn.match(/\.(html|js|css|jsx|vue|txt)$/ig);
-
-			fs.stat(fn, function(err, stat) {
-				if(err == null) {
-					if (!m || !m[1]) {
-						res.sendFile(fn);
-					} else {
-						fs.readFile(fn, 'utf-8', (err, data)=> {
-							res.send((err) ? err.message : data);
-						});
+			if (token !== _masterInfo.INIT_UI_TOKEN) {
+				res.sendFile(env.root  + '/www/page401.html');
+			} else {
+				let fn = (/\/$/.test(p)) ? (env.root + '/www' + p + 'index.html') : (env.root + '/www' + p);
+				let m = fn.match(/\.(html|js|css|jsx|vue|txt)$/ig);
+	
+				fs.stat(fn, function(err, stat) {
+					if(err == null) {
+						if (!m || !m[1]) {
+							res.sendFile(fn);
+						} else {
+							fs.readFile(fn, 'utf-8', (err, data)=> {
+								res.send((err) ? err.message : data);
+							});
+						}
+					} else  {
+						res.sendFile(env.root  + '/www/page404.html');
 					}
-				} else  {
-					res.sendFile(env.root  + '/www/page404.html');
-				}
-			});
+				});
+			}
 		}
 	};
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
