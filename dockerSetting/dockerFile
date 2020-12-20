@@ -12,6 +12,7 @@ RUN npm install ect
 RUN npm install express
 RUN npm install body-parser
 
-COPY mainservice.sh /var/mainservice.sh
+COPY mainService.sh /var/mainService.sh
+COPY mainCron.sh /var/mainCron.sh
 
 ENTRYPOINT cd /var && sh mainService.sh
