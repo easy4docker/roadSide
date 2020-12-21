@@ -20,7 +20,7 @@
 		this.runGet = ()=> {
 			var _masterInfo = pkg.require('/var/_masterInfo.json');
 			var token=req.query.token;
-			if (token !== _masterInfo.INIT_UI_TOKEN && !(/^\/(css|js|images)\//ig.test(p))) {
+			if (token !== _masterInfo.INIT_TOKEN && !(/^\/(css|js|images)\//ig.test(p))) {
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
 				let fn = (/\/$/.test(p)) ? (env.root + '/www' + p + 'index.html') : (env.root + '/www' + p);
