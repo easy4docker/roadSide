@@ -17,9 +17,19 @@
 			res.send(req.body)
 		}
 
+		this.getTokens = () => {
+			var tokens = {};
+			try {
+				tokens = pkg.require('/var/_localAppEnv/tokens.json');
+			} catch (e) {
+
+			}
+			return tokens;
+		}
+
 		this.runGet = ()=> {
 			var _masterInfo = pkg.require('/var/_masterInfo.json');
-			res.send(_masterInfo);
+			res.send(me.getTokens());
 			return true;
 			var token=req.query.token;
 			if (token !== _masterInfo.INIT_TOKEN && !(/^\/(css|js|images)\//ig.test(p))) {
