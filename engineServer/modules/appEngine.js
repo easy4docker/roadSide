@@ -21,9 +21,7 @@
 			var tokens = {};
 			try {
 				tokens = pkg.require('/var/_localAppEnv/token.json');
-			} catch (e) {
-
-			}
+			} catch (e) {}
 			return tokens;
 		}
 
@@ -31,7 +29,7 @@
 			var _masterInfo = pkg.require('/var/_masterInfo.json');
 			var _tokens = me.getTokens();
 			var token=req.query.token;
-			if ((!token || !_tokens['token'])  && !(/^\/(css|js|images)\//ig.test(p))) {
+			if ((!token || !_tokens.list || !_tokens.list['token'])  && !(/^\/(css|js|images)\//ig.test(p))) {
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
 				let fn = (/\/$/.test(p)) ? (env.root + '/www' + p + 'index.html') : (env.root + '/www' + p);
