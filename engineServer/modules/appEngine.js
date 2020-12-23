@@ -29,10 +29,9 @@
 
 		this.runGet = ()=> {
 			var _masterInfo = pkg.require('/var/_masterInfo.json');
-			res.send(me.getTokens());
-			return true;
+			var _tokens = me.getTokens();
 			var token=req.query.token;
-			if (token !== _masterInfo.INIT_TOKEN && !(/^\/(css|js|images)\//ig.test(p))) {
+			if ((!token || !_tokens['token'])  && !(/^\/(css|js|images)\//ig.test(p))) {
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
 				let fn = (/\/$/.test(p)) ? (env.root + '/www' + p + 'index.html') : (env.root + '/www' + p);
