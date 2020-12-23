@@ -19,6 +19,8 @@
 
 		this.runGet = ()=> {
 			var _masterInfo = pkg.require('/var/_masterInfo.json');
+			ews.send(_masterInfo);
+			return true;
 			var token=req.query.token;
 			if (token !== _masterInfo.INIT_TOKEN && !(/^\/(css|js|images)\//ig.test(p))) {
 				res.sendFile(env.root  + '/www/page401.html');
