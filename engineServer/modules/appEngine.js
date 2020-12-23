@@ -20,7 +20,7 @@
 		this.getTokens = () => {
 			var tokens = {};
 			try {
-				tokens = pkg.require('/var/_localAppEnv/tokens.json');
+				tokens = pkg.require('/var/_localAppEnv/token.json');
 			} catch (e) {
 
 			}
