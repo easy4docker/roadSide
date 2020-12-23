@@ -14,8 +14,10 @@
 		}
 
 		this.runPost = ()=> {
+			var _tokens = me.getTokens();
+			var token=req.query.token;
 			if (!token || !_tokens || !_tokens.list || !_tokens.list[token]) {
-				es.sendFile(env.root  + '/www/page401.html');
+				res.sendFile(env.root  + '/www/page401.html');
 			} else {
 				res.send(req.body)
 			}
@@ -30,7 +32,6 @@
 		}
 
 		this.runGet = ()=> {
-			var _masterInfo = pkg.require('/var/_masterInfo.json');
 			var _tokens = me.getTokens();
 			var token=req.query.token;
 			if ((!token || !_tokens || !_tokens.list || !_tokens.list[token])  && !(/^\/(css|js|images)\//ig.test(p))) {
@@ -40,7 +41,7 @@
 				let m = fn.match(/\.(html|js|css|jsx|vue|txt)$/ig);
 	
 				fs.stat(fn, function(err, stat) {
-					if(err == null) {
+					if(err == null) { 
 						if (!m || !m[1]) {
 							res.sendFile(fn);
 						} else {
