@@ -14,7 +14,11 @@
 		}
 
 		this.runPost = ()=> {
-			res.send(req.body)
+			if ((!token || !_tokens || !_tokens.list || !_tokens.list[token]) {
+				es.sendFile(env.root  + '/www/page401.html');
+			} else {
+				res.send(req.body)
+			}
 		}
 
 		this.getTokens = () => {
