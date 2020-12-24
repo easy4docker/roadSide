@@ -40,7 +40,7 @@ module.exports = {
     background-repeat: no-repeat, repeat;
     background-size: cover;
     background-position: center;
-    min-height: 16rem; 
+    min-height: 12rem; 
     }
 
     .header-title {
