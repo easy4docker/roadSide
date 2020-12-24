@@ -4,10 +4,9 @@
             <div class="container-fluid mt-1 text-left">
                 <div class="form-group">
                     <label>Backend Cloud Task:
-                        <!--button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="submit();">Run</button>
-                        <button class="btn btn-fluid btn-secondary btn-sm m-2" v-on:click="close();">Cancel</button-->
+                        <button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="submit();">Run</button>
                     </label>
-                    <textarea class="form-control" rows="2" id="query" v-model="form.sql" v-on:keyup.enter="submit" placeholder="Input SQL sentences"></textarea>
+                    <textarea class="form-control" rows="2" id="query" v-model="form.sql" v-on:keyup.enter="submit" placeholder="Input command"></textarea>
                 </div>
                 <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
             </div>
