@@ -3,7 +3,7 @@
         <div class="card-body card-list-section pt-0">
             <div class="container-fluid mt-1 text-left">
                 <div class="form-group">
-                    <label>Cloud Query Tool:
+                    <label>Backend Cloud Task:
                         <!--button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="submit();">Run</button>
                         <button class="btn btn-fluid btn-secondary btn-sm m-2" v-on:click="close();">Cancel</button-->
                     </label>
