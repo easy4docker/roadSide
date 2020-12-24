@@ -17,7 +17,6 @@ var pkg = {
         return require(fileName);
     },
     crowdProcess : require(__dirname + '/vendor/crowdProcess/crowdProcess.js'),
-    mysql : require(__dirname + '/vendor/mysql/node_modules/mysql'),
     ECT : require('ect')
 }
 app.engine('ect', pkg.ECT({ watch: true, cache: false, root: __dirname + '/views', ext : '.ect' }).render);
