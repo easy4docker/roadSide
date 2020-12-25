@@ -6,21 +6,21 @@
                     <label>Backend Cloud Task:
                         <button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="submit();">Run</button>
                     </label>
-                    <textarea class="form-control" rows="2" id="query" v-model="form.sql" v-on:keyup.enter="submit" placeholder="Input command"></textarea>
+                    <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
+                    placeholder="Input command"></textarea>
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-4 p-0 card text-center shadow border rounded">
+                        <div class="col-4 m-1 card text-center shadow border rounded">
                             <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
                         </div>
-                        <div class="col-4 p-0 card text-center shadow border rounded">
+                        <div class="col-4 m-1 card text-center shadow border rounded">
                             <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
                         </div>
-                        <div class="col-4 p-0 card text-center shadow border rounded">
+                        <div class="col-4 m-1 card text-center shadow border rounded">
                             <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
                         </div>
                     </div>
-                        
                 </div>
             </div>
         </div> 
@@ -33,7 +33,7 @@ module.exports = {
         return {
             root     :  this.$parent.root,
             form     : {
-                sql : ''
+                command: ''
             },
             result : ''
         }
