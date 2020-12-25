@@ -24,15 +24,17 @@
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
 				switch (req.body.cmd) {
-					case 'askLocalScripts':
-						// var ENGINE= pkg.require(__dirname + '/modules/appEngine.js');
-            			// var appEng  = new ENGINE(env, pkg, req, res);
-						const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
-						const tree = dirTree(env.appFolder + '/mainServer');
-						res.send(tree);
+					case 'askBackendStatus':
+						var CloudBackend= pkg.require(__dirname + '/modules/moduleCloudBackend.js');
+						var cb  = new CloudBackend(env, pkg, req, res);
+						if (cb[req.body.cmd]) {
+							cb[req.body.cmd](req.body);
+						} else {
+							res.send({status: 'error', message: 'Missing function ' + req.body.cmd + '!'});
+						}
 						break;
 					default:
-						res.send('Missing posted cmd');
+						res.send({status: 'error', message: 'Missing posted cmd'});
 				}
 
 			}

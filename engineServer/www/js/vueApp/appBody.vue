@@ -49,7 +49,7 @@ module.exports = {
         submit() {
             var me = this;
             const data = me.form; 
-            data.cmd = "askLocalScripts"
+            data.cmd = "askBackendStatus"
             me.root.dataEngine(me).sendQuery(data, function(result) {
                 me.localScripts =  result;
                 me.scheduledTasks =  result;
