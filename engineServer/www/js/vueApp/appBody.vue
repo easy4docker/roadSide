@@ -22,7 +22,7 @@
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="w-100 card p-1 text-center alert-info">
+                            <div class="w-100 p-1 text-center alert-info">
                                 Running Log
                              </div>
                         </div>
