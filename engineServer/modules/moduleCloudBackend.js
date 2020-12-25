@@ -9,12 +9,12 @@
 			_f['localScripts'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 				const tree = dirTree(env.appFolder + '/mainServer');
-				cbk(tree);
+				cbk((!tree) ? null : tree.children);
 			}
 			_f['scheduledTasks'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 				const tree = dirTree(env.dataFolder + '/scheduledTasks');
-				cbk(tree);
+				cbk((!tree) ? null : tree.children);
 			}
 			
 			cp.serial(_f, (data) => {
