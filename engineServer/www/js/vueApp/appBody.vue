@@ -10,7 +10,7 @@
                     placeholder="Input shell command"></textarea>
                 </div>
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row p-1">
                         <div class="col-4 card p-1 text-center alert-success">
                             Local Script
                         </div>
