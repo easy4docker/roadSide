@@ -33,7 +33,8 @@ module.exports = {
         submit() {
             var me = this;
             me.root.dataEngine(me).sendQuery(me.form, function(data) {
-                me.result =  JSON.stringify(data);
+                me.result =  data;
+                // me.result =  JSON.stringify(data);
             });
         }
     },
