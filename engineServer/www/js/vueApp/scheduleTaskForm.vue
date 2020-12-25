@@ -1,11 +1,11 @@
 <template>
     <span class="form-group card p-1">
         <span v-if="module!=='addTaskFrom'" >
-            <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Add a task</button>
+            <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Schedule a task</button>
         </span>
         <span v-if="module==='addTaskFrom'">
             <label>Add Your Task:
-                <button class="btn btn-success btn-sm m-1" v-on:click="$parent.submit();">Run</button>
+                <button class="btn btn-success btn-sm m-1" v-on:click="$parent.submit();">Schedule</button>
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="switchModule('');">Cancel</button>
             </label>
             <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
