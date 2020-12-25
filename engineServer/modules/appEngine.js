@@ -77,7 +77,7 @@
 			} else {
 				let fn = (/\/$/.test(p)) ? (env.root + '/views' + p + 'index.ect') : (env.root + '/www' + p);
 				if (!/\.ect$/.test(fn)) {
-					let m = fn.matchAll(/\.(html|js|css|jsx|vue|txt|vue)$/ig);
+					let m = fn.match(/\.(html|js|css|jsx|vue|txt|vue)$/ig);
 					res.send(m);
 									// res.send(me.sendHeader(m[1]));
 									return true;
