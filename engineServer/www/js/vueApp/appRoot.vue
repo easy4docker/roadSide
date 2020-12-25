@@ -3,6 +3,7 @@
         <div class="row">
             <div class="col-1 p-0"></div>
             <div class="col-10 p-0 card text-center shadow border rounded">
+                <scheduleTaskForm></scheduleTaskForm>---
                 <app-header></app-header>
                 <app-body></app-body>
             </div>
