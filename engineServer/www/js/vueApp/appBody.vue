@@ -10,18 +10,17 @@
                     </div>
                 </div>
                 <div class="col-6 p-1">
-                    
-                       <schedule-task-form></schedule-task-form>
+                    <schedule-task-form></schedule-task-form>
                    
                     <div class="card p-1 text-left alert-warning">
                         <textarea class="form-control" rows="16" readonly>{{scheduledCommands}}</textarea>
                     </div>
                 </div>
                 <div class="col-3 p-1">
-                    <div class="form-control card text-center  mb-1  alert-info">
+                    <div class="form-control card text-center  mb-1  alert-success">
                         Running Log
                     </div>
-                    <div class="card p-1 text-center alert-info">
+                    <div class="card p-1 text-center alert-success">
                         <textarea class="form-control" rows="16" readonly>{{logs}}</textarea>
                     </div>
                 </div>
