@@ -1,7 +1,8 @@
 <template>
     <span class="form-group card p-1">
-        <button class="btn btn-success btn-sm m-2" v-if="module!=='addTaskFrom'" v-on:click="switchModule('addTaskFrom');">Add a task</button>
-        {{module}}
+        <span v-if="module!=='addTaskFrom'" >
+            <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Add a task</button>
+        </span>
         <span v-if="module==='addTaskFrom'">
             <label>Add Your Task:
                 <button class="btn btn-success btn-sm m-1" v-on:click="$parent.submit();">Run</button>
