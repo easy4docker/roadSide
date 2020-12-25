@@ -12,17 +12,17 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-4 p-1">
-                            <div class="form-control alert-success text-center">
+                            <div class="form-control card alert-success text-center">
                                 Local Script
                             </div>
                         </div>
                         <div class="col-4 p-1">
-                            <div class="form-control text-center alert-warning">
+                            <div class="form-control card text-center alert-warning">
                                 Scheduled command
                             </div>
                         </div>
                         <div class="col-4 p-1">
-                            <div class="form-control text-center alert-info">
+                            <div class="form-control card text-center alert-info">
                                 Running Log
                             </div>
                         </div>
