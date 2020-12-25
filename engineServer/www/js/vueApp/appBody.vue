@@ -13,21 +13,39 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="alert-success">Local Scripts</th>
-                                <th>Scheduled command</th>
-                                <th>Running Log</th>
+                                <th>
+                                    <div class="form-control card alert-success text-center">
+                                        Local Scripts
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-control card text-center alert-warning">
+                                        Scheduled command
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="form-control card text-center alert-info">
+                                        Running Log
+                                    </div>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="alert-success">
-                                    <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                <td>
+                                    <div class="card p-1 text-center alert-warning">
+                                        <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    </div>
                                 </td>
                                  <td>
-                                    <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    <div class="card p-1 text-center alert-warning">
+                                        <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    </div>
                                 </td>
                                 <td>
-                                    <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    <div class="card p-1 text-center alert-warning">
+                                        <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
