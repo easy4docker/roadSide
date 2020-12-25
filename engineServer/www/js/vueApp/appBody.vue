@@ -11,14 +11,14 @@
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-4 p-0 text-center">
-                            <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1 text-center">
+                            <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
-                        <div class="col-4 p-0 text-center">
-                            <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1 text-center">
+                            <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
-                        <div class="col-4 p-0 text-center">
-                            <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1 text-center">
+                            <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
                     </div>
                 </div>
