@@ -11,8 +11,8 @@
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="form-control col-4 card p-1 text-center ">
-                            <div class="form-control">
+                        <div class="col-4 card p-1 text-center">
+                            <div class="form-control alert-success">
                                 <label class="alert-success">Local Script</label>
                             </div>
                         </div>
