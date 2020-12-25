@@ -29,18 +29,18 @@
                     </div>
                     <div class="row">
                         <div class="col-4 p-1">
-                            <div class="card p-0 text-center">
+                            <div class="card p-1 text-center alert-warning">
                                 <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                         <div class="col-4 p-1">
-                            <div class="card p-0 text-center">
+                            <div class="card p-1 text-center alert-warning">
                                 <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                         <div class="col-4 p-1">
-                            <div class="card p-0 text-center">
-                                <textarea class="form-control alert-info" rows="16" readonly>{{result}}</textarea>
+                            <div class="card p-1 text-center alert-info">
+                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                     </div>
