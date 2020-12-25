@@ -67,8 +67,14 @@ module.exports = {
             });
         }
     },
-    components: {}
+    components: VUEApp.loadComponents({
+        LOAD    : {
+            'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
+        }
+    })
     /*
+    components: {}
+    
     components: VUEApp.loadComponents({
         LOAD    : {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
