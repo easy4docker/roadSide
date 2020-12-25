@@ -25,6 +25,8 @@
 			} else {
 				switch (req.body.cmd) {
 					case 'askLocalScripts':
+						// var ENGINE= pkg.require(__dirname + '/modules/appEngine.js');
+            			// var appEng  = new ENGINE(env, pkg, req, res);
 						const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 						const tree = dirTree(env.appFolder + '/mainServer');
 						res.send(tree);

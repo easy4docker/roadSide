@@ -16,7 +16,7 @@
                                 Local Scripts
                             </div>
                             <div class="card p-1 text-center alert-success">
-                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                <textarea class="form-control" rows="16" readonly>{{localScripts}}</textarea>
                             </div>
                         </div>
                         <div class="col-6 p-1">
@@ -24,7 +24,7 @@
                                 Scheduled command
                             </div>
                             <div class="card p-1 text-center alert-warning">
-                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                <textarea class="form-control" rows="16" readonly>{{scheduledCommands}}</textarea>
                             </div>
                         </div>
                         <div class="col-3 p-1">
@@ -32,7 +32,7 @@
                                 Running Log
                             </div>
                             <div class="card p-1 text-center alert-info">
-                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                <textarea class="form-control" rows="16" readonly>{{logs}}</textarea>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,9 @@ module.exports = {
             form     : {
                 command: ''
             },
-            result : ''
+            localScripts : {},
+            scheduledCommands :{},
+            logs : {}
         }
     },
     mounted () {
@@ -64,9 +66,10 @@ module.exports = {
     methods :{
         submit() {
             var me = this;
-            me.root.dataEngine(me).sendQuery(me.form, function(data) {
-                me.result =  data;
-                // me.result =  JSON.stringify(data);
+            const data = me.form; 
+            data.cmd = "askLocalScripts"
+            me.root.dataEngine(me).sendQuery(data, function(result) {
+                me.localScripts =  result;
             });
         }
     },
