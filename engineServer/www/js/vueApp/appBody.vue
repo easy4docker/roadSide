@@ -40,7 +40,8 @@ module.exports = {
             },
             localScripts : {},
             scheduledCommands :{},
-            logs : {}
+            logs    : {},
+            module  : ''
         }
     },
     mounted () {
