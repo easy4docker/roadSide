@@ -23,7 +23,7 @@
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
 				const dirTree = require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
-				const tree = dirTree("/");
+				const tree = dirTree(env.root);
 				// res.send(req.body);
 				res.send(tree);
 			}
