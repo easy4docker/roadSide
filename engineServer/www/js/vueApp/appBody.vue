@@ -11,36 +11,36 @@
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-4 p-0">
+                        <div class="col-4 p-1">
                             <div class="form-control card alert-success text-center">
                                 Local Script
                             </div>
                         </div>
-                        <div class="col-4 p-0">
+                        <div class="col-4 p-1">
                             <div class="form-control card text-center alert-warning">
                                 Scheduled command
                             </div>
                         </div>
-                        <div class="col-4 p-0">
+                        <div class="col-4 p-1">
                             <div class="form-control card text-center alert-info">
                                 Running Log
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-4 p-0">
-                            <div class="card m-1 text-center alert-warning">
-                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1">
+                            <div class="card text-center alert-warning">
+                                <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
-                        <div class="col-4 p-0">
-                            <div class="card m-1 text-center alert-warning">
-                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1">
+                            <div class="card text-center alert-warning">
+                                <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
-                        <div class="col-4 p-0">
-                            <div class="card m-1 text-center alert-info">
-                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1">
+                            <div class="card text-center alert-info">
+                                <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                     </div>
