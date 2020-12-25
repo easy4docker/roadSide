@@ -77,7 +77,7 @@
 			} else {
 				let fn = (/\/$/.test(p)) ? (env.root + '/views' + p + 'index.ect') : (env.root + '/www' + p);
 				if (!/\.ect$/.test(fn)) {
-					let m = fn.match(/\.(html|js|css|jsx|vue|txt)$/ig);
+					let m = fn.match(/\.(html|js|css|jsx|vue|txt|vue)$/ig);
 	
 					fs.stat(fn, function(err, stat) {
 						if(err == null) {
