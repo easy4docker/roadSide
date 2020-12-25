@@ -83,9 +83,9 @@
 							} else {
 								fs.readFile(fn, 'utf-8', (err, data)=> {
 									me.sendHeader(m[0].replace(/\./,''));
-									// res.send((err) ? err.message : data);
-									res.send(m[0].replace(/\./,''));
-									return true;
+									res.send((err) ? err.message : data);
+									// res.send(m[0].replace(/\./,''));
+									// return true;
 									/*
 									
 									res.send((err) ? err.message : data);*/
