@@ -36,7 +36,8 @@ module.exports = {
             'appHeader'     : '/js/vueApp/appHeader.vue',
             'appBody'       : '/js/vueApp/appBody.vue',
             'dataEngine'    : '/js/vueApp/dataEngine.vue',
-            'spinner'       : '/js/vueApp/spinner.vue'
+            'spinner'       : '/js/vueApp/spinner.vue',
+            'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
         }
     })
 }
