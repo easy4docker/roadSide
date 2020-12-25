@@ -16,7 +16,9 @@
 				const tree = dirTree(env.dataFolder + '/scheduledTasks');
 				cbk((!tree) ? null : tree.children);
 			}
-			
+			_f['logs'] = (cbk) => {
+				cbk(null);
+			}
 			cp.serial(_f, (data) => {
 				res.send({localScripts : cp.data.localScripts, scheduledTasks : cp.scheduledTasks});
 			}, 6000);
