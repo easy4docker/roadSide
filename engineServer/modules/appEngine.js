@@ -23,7 +23,7 @@
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
-				const tree = dirTree(env.appMainFolder);
+				const tree = dirTree(env.appFolder);
 				res.send(tree);
 			}
 		}
