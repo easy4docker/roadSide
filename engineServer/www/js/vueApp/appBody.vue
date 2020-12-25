@@ -39,7 +39,8 @@ module.exports = {
         }
     },
     mounted () {
-        
+        var me = this;
+        this.submit();
     },
     methods :{
         submit() {
