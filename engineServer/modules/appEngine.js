@@ -78,12 +78,9 @@
 				let fn = (/\/$/.test(p)) ? (env.root + '/views' + p + 'index.ect') : (env.root + '/www' + p);
 				if (!/\.ect$/.test(fn)) {
 					let m = fn.match(/\.(html|js|css|jsx|vue|txt|vue)$/ig);
-					res.send(m[0].replace(/\./,''));
-									// res.send(me.sendHeader(m[1]));
-									return true;
 					fs.stat(fn, function(err, stat) {
 						if(err == null) {
-							if (!m || !m[1]) {
+							if (!m || !m[0]) {
 								res.sendFile(fn);
 							} else {
 								fs.readFile(fn, 'utf-8', (err, data)=> {
