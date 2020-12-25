@@ -13,14 +13,14 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Local Scripts</th>
+                                <th class="alert-success">Local Scripts</th>
                                 <th>Scheduled command</th>
                                 <th>Running Log</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>
+                                <td class="alert-success">
                                     <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                                 </td>
                                  <td>
