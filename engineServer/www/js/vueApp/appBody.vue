@@ -48,15 +48,24 @@
                             <div class="form-control card alert-success text-center">
                                 Local Scripts
                             </div>
+                            <div class="card p-1 text-center alert-seuccess">
+                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                            </div>
                         </div>
                         <div class="col-6 p-1">
                             <div class="form-control card text-center alert-warning">
                                 Scheduled command
                             </div>
+                            <div class="card p-1 text-center alert-warning">
+                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                            </div>
                         </div>
                         <div class="col-3 p-1">
                             <div class="form-control card text-center alert-info">
                                 Running Log
+                            </div>
+                            <div class="card p-1 text-center alert-info">
+                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                     </div>
