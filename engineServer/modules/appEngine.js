@@ -25,7 +25,7 @@
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 				const tree = dirTree(env.root);
 				// res.send(req.body);
-				res.send(tree);
+				res.send(env);
 			}
 		}
 
