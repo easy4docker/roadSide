@@ -10,9 +10,9 @@
                     placeholder="Input shell command"></textarea>
                 </div>
                 <div class="container-fluid">
-                    <div class="row p-1">
+                    <div class="row">
                         <div class="col-4 card p-1 text-center alert-success">
-                            Local Script
+                            <label>Local Script</label>
                         </div>
                         <div class="col-4 card p-1 text-center alert-warning">
                             Scheduled command
