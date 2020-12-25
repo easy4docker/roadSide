@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="col-6 p-1">
-                    <div class="form-control card text-center mb-1">
+                    <div class="form-control card text-center mb-1 alert-warning">
                         Scheduled command
                     </div>
                     <div class="card p-1 text-left">
