@@ -56,14 +56,12 @@
 			return tokens;
 		}
 		this.sendHeader = (filetype) => {
-			var me = this;
 			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "X-Requested-With");
 			res.header('Access-Control-Allow-Headers', 'Content-Type'); 
 			if (filetype == 'js' || filetype == 'jsx' || filetype == 'vue') {
 				res.setHeader('Content-Type', "text/javascrip");
 			} else if (filetype == 'css') {
-				me.is_css = true;
 				res.setHeader('Content-Type', "text/css");
 			} else {
 				res.setHeader('Content-Type', "text/plain");
