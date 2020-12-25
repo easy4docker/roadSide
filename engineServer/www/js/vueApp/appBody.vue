@@ -7,9 +7,20 @@
                         <button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="submit();">Run</button>
                     </label>
                     <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
-                    placeholder="Input command"></textarea>
+                    placeholder="Input shell command"></textarea>
                 </div>
                 <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4 card p-1 text-center">
+                            Local Script
+                        </div>
+                        <div class="col-4 card p-1 text-center">
+                            Scheduled command
+                        </div>
+                        <div class="col-4 card p-1 text-center">
+                           Running Log
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-4 card p-1 text-center">
                             <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
