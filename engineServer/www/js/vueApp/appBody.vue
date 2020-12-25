@@ -51,8 +51,9 @@ module.exports = {
             const data = me.form; 
             data.cmd = "askBackendStatus"
             me.root.dataEngine(me).sendQuery(data, function(result) {
-                me.localScripts =  result;
-                me.scheduledTasks =  result;
+                me.localScripts =  result.localScripts ;
+                me.scheduledTasks =  result.scheduledTasks;
+                me.logs =  result.logs;
             });
         }
     },
