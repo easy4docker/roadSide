@@ -13,10 +13,10 @@
                             </div>
                         </div>
                         <div class="col-6 p-1">
-                            <div class="form-control card text-center alert-warning">
+                            <div class="form-control card text-center">
                                 Scheduled command
                             </div>
-                            <div class="card p-1 text-center alert-warning">
+                            <div class="card p-1 text-left">
                                 <schedule-task-form></schedule-task-form>
                                 <textarea class="form-control" rows="16" readonly>{{scheduledCommands}}</textarea>
                             </div>
