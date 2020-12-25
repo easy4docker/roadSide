@@ -13,7 +13,7 @@
                     <schedule-task-form></schedule-task-form>
                    
                     <div class="card p-1 text-left alert-warning">
-                        <textarea class="form-control" rows="16" readonly>{{scheduledCommands}}</textarea>
+                        <textarea class="form-control" rows="16" readonly>{{scheduledTasks}}</textarea>
                     </div>
                 </div>
                 <div class="col-3 p-1">
@@ -37,7 +37,7 @@ module.exports = {
                 command: ''
             },
             localScripts : {},
-            scheduledCommands :{},
+            scheduledTasks :{},
             logs    : {},
             module  : ''
         }
@@ -52,6 +52,7 @@ module.exports = {
             data.cmd = "askLocalScripts"
             me.root.dataEngine(me).sendQuery(data, function(result) {
                 me.localScripts =  result;
+                me.scheduledTasks =  result;
             });
         }
     },
