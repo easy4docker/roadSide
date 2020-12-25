@@ -8,6 +8,7 @@
                     </label>
                     <textarea class="form-control" rows="2" id="query" v-model="form.sql" v-on:keyup.enter="submit" placeholder="Input command"></textarea>
                 </div>
+                {{result}}
                 <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
             </div>
         </div> 
