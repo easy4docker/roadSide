@@ -1,5 +1,5 @@
 <template>
-    <span class="form-group card p-0">
+    <span class="form-group card p-1">
         <label>Add Your Task:
             <button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="$parent.submit();">Run</button>
         </label>
