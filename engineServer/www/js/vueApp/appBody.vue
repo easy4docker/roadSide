@@ -11,14 +11,14 @@
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-4 p-1 card text-center shadow border rounded">
-                            <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1 card text-center">
+                            <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
-                        <div class="col-4 p-1 card text-center shadow border rounded">
-                            <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1 card text-center">
+                            <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
-                        <div class="col-4 p-1 card text-center shadow border rounded">
-                            <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
+                        <div class="col-4 p-1 card text-center">
+                            <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
                     </div>
                 </div>
