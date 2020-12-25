@@ -4,7 +4,6 @@
             <div class="col-1 p-0"></div>
             <div class="col-10 p-0 card text-center shadow border rounded">
                 <app-header></app-header>
-                <schedule-task-form></schedule-task-form>
                 <app-body></app-body>
             </div>
             <div class="col-1 p-0"></div>
@@ -37,8 +36,7 @@ module.exports = {
             'appHeader'     : '/js/vueApp/appHeader.vue',
             'appBody'       : '/js/vueApp/appBody.vue',
             'dataEngine'    : '/js/vueApp/dataEngine.vue',
-            'spinner'       : '/js/vueApp/spinner.vue',
-            'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
+            'spinner'       : '/js/vueApp/spinner.vue'
         }
     })
 }

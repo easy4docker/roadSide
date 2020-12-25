@@ -2,7 +2,6 @@
     <div class="card m-1">
         <div class="card-body card-list-section pt-0">
             <div class="container-fluid mt-1 text-left">
-                <schedule-task-form></schedule-task-form>===---===
                 <div class="container-fluid m-0">
                     <div class="row">
                         <div class="col-3 p-1">
@@ -18,6 +17,7 @@
                                 Scheduled command
                             </div>
                             <div class="card p-1 text-center alert-warning">
+                                <schedule-task-form></schedule-task-form>
                                 <textarea class="form-control" rows="16" readonly>{{scheduledCommands}}</textarea>
                             </div>
                         </div>
