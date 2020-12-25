@@ -51,11 +51,6 @@ module.exports = {
     },
     mounted () {
         var me = this;
-        setTimeout(
-            function() {
-                me.submit();
-            }, 50
-        );
     },
     methods :{
         submit() {
