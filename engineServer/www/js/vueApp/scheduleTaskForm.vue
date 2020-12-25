@@ -23,11 +23,11 @@ module.exports = {
         }
     },
     mounted () {
+    },
+    methods :{
         addTask() {
             this.module = 'addTask';
         }
-    },
-    methods :{
     },
     components: {
     }
