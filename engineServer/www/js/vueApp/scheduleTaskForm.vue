@@ -1,7 +1,7 @@
 <template>
     <span class="form-group card p-1 alert-warning">
         <span v-if="module!=='addTaskFrom'" >
-            <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Schedule a task</button>
+            Cron Tasks <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Schedule a task</button>
         </span>
         <span v-if="module==='addTaskFrom'">
             <label>Add Your Task:
