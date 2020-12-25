@@ -7,7 +7,8 @@ const port = 80;
 var env = {
     root : __dirname,
     dataFolder : '/var/_localData',
-    appFolder : '/var/_localApp'
+    appFolder : '/var/_localApp',
+    appMainFolder : '/var/_localMainApp'
 }
 var pkg = {
     require : function(fileName, isCache) {
