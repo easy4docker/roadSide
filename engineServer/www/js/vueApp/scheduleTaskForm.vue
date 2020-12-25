@@ -1,5 +1,6 @@
 <template>
-    <span class="form-group card p-1 alert-warning">
+    <!--span class="form-group card p-1 alert-warning"-->
+    <div class="form-control card alert-worning text-center mb-1">
         <span v-if="module!=='addTaskFrom'" >
             Cron Tasks <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Schedule a task</button>
         </span>
@@ -11,7 +12,8 @@
             <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
             placeholder="Input shell command"></textarea>
         </span>
-    </span>
+    </div>    
+    <!--/span-->
 </template>
 <script>
 module.exports = {
