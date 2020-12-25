@@ -38,8 +38,8 @@
                                 <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
-                        <div class="col-4 p-1">
-                            <div class="form-control card text-center">
+                        <div class="col-4 p-1 form-control">
+                            <div class="card text-center">
                                 <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
