@@ -2,13 +2,7 @@
     <div class="card m-1">
         <div class="card-body card-list-section pt-0">
             <div class="container-fluid mt-1 text-left">
-                <div class="form-group">
-                    <label>Add Your Task:
-                        <button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="submit();">Run</button>
-                    </label>
-                    <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
-                    placeholder="Input shell command"></textarea>
-                </div>
+                <scheduleTaskForm></scheduleTaskForm>
                 <div class="container-fluid m-0">
                     <div class="row">
                         <div class="col-3 p-1">
@@ -73,9 +67,11 @@ module.exports = {
             });
         }
     },
-    components: {
-
-    }
+    components:     components: VUEApp.loadComponents({
+        LOAD    : {
+            'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
+        }
+    })
 }
 </script>
  

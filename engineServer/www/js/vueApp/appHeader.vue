@@ -20,6 +20,7 @@
 module.exports = {
     data: function() {
         return {
+            root :  this.$parent.root
         }
     },
     mounted () {
