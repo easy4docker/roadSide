@@ -13,7 +13,10 @@ module.exports = {
     props: ['token'],
     data: function() {
         return {
-            root : this.$parent.root
+            root : this.$parent.root,
+            form : {
+                command : ''
+            }
         }
     },
     mounted () {
