@@ -17,14 +17,22 @@
 
 		this.runPost = ()=> {
 
-			var _tokens = me.getTokens();
-			var token=req.query.token;
+			const 	_tokens = me.getTokens(),
+					token=req.query.token;
+
 			if (!token || !_tokens || !_tokens.list || !_tokens.list[token]) {
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
-				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
-				const tree = dirTree(env.appFolder + '/mainServer');
-				res.send(tree);
+				switch (req.body.cmd) {
+					case 'askLocalScripts':
+						const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
+						const tree = dirTree(env.appFolder + '/mainServer');
+						res.send(tree);
+						break;
+					default:
+						res.send('Missing posted cmd');
+				}
+
 			}
 		}
 
