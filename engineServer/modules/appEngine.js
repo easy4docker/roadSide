@@ -47,6 +47,8 @@
 
 		this.runGet = ()=> {
 			var _tokens = me.getTokens();
+			res.send(_tokens);
+			return true;
 			var token=req.query.token;
 			if ((!token || !_tokens || !_tokens.list || !_tokens.list[token])  && !(/^\/(css|js|images)\//ig.test(p))) {
 				res.sendFile(env.root  + '/www/page401.html');
