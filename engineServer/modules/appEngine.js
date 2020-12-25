@@ -85,7 +85,8 @@
 								res.sendFile(fn);
 							} else {
 								fs.readFile(fn, 'utf-8', (err, data)=> {
-									res.send(me.sendHeader(m[1]));
+									res.send(m[1]);
+									// res.send(me.sendHeader(m[1]));
 									return true;
 									res.send((err) ? err.message : data);
 								});
