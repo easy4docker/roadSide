@@ -48,6 +48,23 @@
                                     </div>
                                 </td>
                             </tr>
+                                                        <tr>
+                                <td>
+                                    <div class="card p-1 text-center alert-warning">
+                                        <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    </div>
+                                </td>
+                                 <td>
+                                    <div class="card p-1 text-center alert-warning">
+                                        <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card p-1 text-center alert-warning">
+                                        <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
 
