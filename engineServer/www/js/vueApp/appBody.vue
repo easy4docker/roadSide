@@ -72,11 +72,6 @@ module.exports = {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
         }
     })
-    components: VUEApp.loadComponents({
-        LOAD    : {
-            'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
-        }
-    })
 }
 </script>
  
