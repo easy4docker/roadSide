@@ -63,7 +63,11 @@ module.exports = {
     },
     mounted () {
         var me = this;
-        this.submit();
+        setTimeout(
+            function() {
+                me.submit();
+            }, 50
+        );
     },
     methods :{
         submit() {
