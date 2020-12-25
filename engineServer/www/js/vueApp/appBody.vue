@@ -2,7 +2,7 @@
     <div class="card m-1">
         <div class="card-body card-list-section pt-0">
             <div class="container-fluid mt-1 text-left">
-                <scheduleTaskForm></scheduleTaskForm>===
+                <schedule-task-form></schedule-task-form>===---===
                 <div class="container-fluid m-0">
                     <div class="row">
                         <div class="col-3 p-1">
@@ -72,14 +72,11 @@ module.exports = {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
         }
     })
-    /*
-    components: {}
-    
     components: VUEApp.loadComponents({
         LOAD    : {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue'
         }
-    })*/
+    })
 }
 </script>
  
