@@ -3,33 +3,35 @@
         <div class="card-body card-list-section pt-0">
             <div class="container-fluid m-0 text-left">
                 <!--div class="container-fluid m-0"-->
-                    <div class="row">
-                        <div class="col-3 p-1">
-                            <div class="form-control card alert-success text-center">
-                                Local Scripts
-                            </div>
-                            <div class="card p-1 text-center alert-success">
-                                <textarea class="form-control" rows="16" readonly>{{localScripts}}</textarea>
-                            </div>
+                <div class="row">
+                    <div class="col-3 p-1">
+                        <div class="form-control card alert-success text-center">
+                            Local Scripts
                         </div>
-                        <div class="col-6 p-1">
-                            <div class="form-control card text-center">
-                                Scheduled command
-                            </div>
-                            <div class="card p-1 text-left">
-                                <schedule-task-form></schedule-task-form>
-                                <textarea class="form-control" rows="16" readonly>{{scheduledCommands}}</textarea>
-                            </div>
-                        </div>
-                        <div class="col-3 p-1">
-                            <div class="form-control card text-center alert-info">
-                                Running Log
-                            </div>
-                            <div class="card p-1 text-center alert-info">
-                                <textarea class="form-control" rows="16" readonly>{{logs}}</textarea>
-                            </div>
+                        <div class="card p-1 text-center alert-success">
+                            <textarea class="form-control" rows="16" readonly>{{localScripts}}</textarea>
                         </div>
                     </div>
+                    <div class="col-6 p-1">
+                        <div class="form-control card text-center">
+                            Scheduled command
+                        </div>
+                        <div class="p-1 text-left">
+                            <schedule-task-form></schedule-task-form>
+                        </div>
+                        <div class="card p-1 text-left">
+                            <textarea class="form-control" rows="16" readonly>{{scheduledCommands}}</textarea>
+                        </div>
+                    </div>
+                    <div class="col-3 p-1">
+                        <div class="form-control card text-center alert-info">
+                            Running Log
+                        </div>
+                        <div class="card p-1 text-center alert-info">
+                            <textarea class="form-control" rows="16" readonly>{{logs}}</textarea>
+                        </div>
+                    </div>
+                </div>
                 <!--/div-->
             </div>
         </div> 
