@@ -1,5 +1,5 @@
 <template>
-    <span class="form-group card p-1">
+    <span class="form-group card p-0">
         <label>Add Your Task:
             <button class="btn btn-fluid btn-success btn-sm m-2" v-on:click="$parent.submit();">Run</button>
         </label>
@@ -7,7 +7,6 @@
         placeholder="Input shell command"></textarea>
     </span>
 </template>
- 
 <script>
 module.exports = {
     props: ['token'],
