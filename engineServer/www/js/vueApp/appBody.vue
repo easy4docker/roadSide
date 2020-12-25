@@ -11,14 +11,20 @@
                 </div>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-4 card p-1 text-center alert-success">
-                            Local Script
+                        <div class="col-4">
+                            <div class="card p-1 text-center alert-success">
+                                Local Script
+                            </div>
                         </div>
-                        <div class="col-4 card p-1 text-center alert-warning">
-                            Scheduled command
+                        <div class="col-4">
+                            <div class="card p-1 text-center alert-warning">
+                                Scheduled command
+                            </div>
                         </div>
-                        <div class="col-4 card p-1 text-center alert-info">
-                           Running Log
+                        <div class="col-4">
+                            <div class="card p-1 text-center alert-info">
+                                Running Log
+                             </div>
                         </div>
                     </div>
                     <div class="row">
