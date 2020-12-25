@@ -25,7 +25,7 @@
 			} else {
 				switch (req.body.cmd) {
 					case 'askBackendStatus':
-						var CloudBackend= pkg.require(__dirname + '/modules/moduleCloudBackend.js');
+						var CloudBackend= pkg.require(env.root + '/modules/moduleCloudBackend.js');
 						var cb  = new CloudBackend(env, pkg, req, res);
 						if (cb[req.body.cmd]) {
 							cb[req.body.cmd](req.body);
