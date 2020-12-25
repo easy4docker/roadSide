@@ -1,5 +1,5 @@
 <template>
-    <span class="form-group card p-1">
+    <span class="form-group card p-1 alert-warning">
         <span v-if="module!=='addTaskFrom'" >
             <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Schedule a task</button>
         </span>
