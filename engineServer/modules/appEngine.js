@@ -22,7 +22,10 @@
 			if (!token || !_tokens || !_tokens.list || !_tokens.list[token]) {
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
-				res.send(req.body);
+				const dirTree = require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
+				const tree = dirTree("/");
+				// res.send(req.body);
+				res.send(tree);
 			}
 		}
 
