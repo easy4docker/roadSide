@@ -1,5 +1,4 @@
 <template>
-    <div class="card m-1"><hr>
         <div class="container-fluid m-0 text-left">
             <div class="row">
                 <div class="col-3 p-1">
@@ -29,7 +28,6 @@
                 </div>
             </div>
         </div> 
-    </div> 
 </template>
  
 <script>
