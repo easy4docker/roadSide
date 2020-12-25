@@ -12,28 +12,24 @@
                 <div class="container-fluid m-0">
                     <table class="table table-bordered">
                         <thead>
-                        <tr>
-                            <th>Firstname</th>
-                            <th>Lastname</th>
-                            <th>Email</th>
-                        </tr>
+                            <tr>
+                                <th>Local Scripts</th>
+                                <th>Scheduled command</th>
+                                <th>Running Log</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>john@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                        </tr>
+                            <tr>
+                                <td>
+                                    <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                </td>
+                                 <td>
+                                    <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                </td>
+                                <td>
+                                    <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
 
