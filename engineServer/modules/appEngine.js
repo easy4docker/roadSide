@@ -24,7 +24,7 @@
 			} else {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 				const tree = dirTree(env.appMainFolder);
-				res.send(env);
+				res.send(tree);
 			}
 		}
 
