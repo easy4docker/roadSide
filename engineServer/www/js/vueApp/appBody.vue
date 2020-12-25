@@ -12,7 +12,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="form-control col-4 card p-1 text-center ">
-                            <label class="alert-success">Local Script</label>
+                            <div class="form-control">
+                                <label class="alert-success">Local Script</label>
+                            </div>
                         </div>
                         <div class="col-4 card p-1 text-center alert-warning">
                             Scheduled command
