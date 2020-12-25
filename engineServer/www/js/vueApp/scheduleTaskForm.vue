@@ -1,6 +1,6 @@
 <template>
     <!--span class="form-group card p-1 alert-warning"-->
-    <div class="form-control card alert-worning text-center mb-1">
+    <div class="form-control alert-worning text-center mb-1">
         <span v-if="module!=='addTaskFrom'" >
             Cron Tasks <button class="btn btn-success btn-sm m-1" v-on:click="switchModule('addTaskFrom');">Schedule a task</button>
         </span>
