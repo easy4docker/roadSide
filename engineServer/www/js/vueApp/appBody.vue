@@ -8,7 +8,20 @@
                     </label>
                     <textarea class="form-control" rows="2" id="query" v-model="form.sql" v-on:keyup.enter="submit" placeholder="Input command"></textarea>
                 </div>
-                <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4 p-0 card text-center shadow border rounded">
+                            <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
+                        </div>
+                        <div class="col-4 p-0 card text-center shadow border rounded">
+                            <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
+                        </div>
+                        <div class="col-4 p-0 card text-center shadow border rounded">
+                            <textarea class="form-control" rows="16" id="queryResult" readonly>{{result}}</textarea>
+                        </div>
+                    </div>
+                        
+                </div>
             </div>
         </div> 
     </div> 
