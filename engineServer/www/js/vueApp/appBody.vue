@@ -38,7 +38,7 @@
                                 <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
-                        <div class="col-4 p-1 form-control">
+                        <div class="col-4 p-1">
                             <div class="card text-center">
                                 <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
