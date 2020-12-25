@@ -9,7 +9,7 @@
                     <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
                     placeholder="Input shell command"></textarea>
                 </div>
-                <div class="container-fluid">
+                <div class="container-fluid m-0">
                     <div class="row">
                         <div class="col-4 p-1">
                             <div class="form-control card alert-success text-center">
@@ -29,18 +29,18 @@
                     </div>
                     <div class="row">
                         <div class="col-4 p-1">
-                            <div class="card text-center alert-warning">
-                                <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
+                            <div class="card p-1 text-center alert-warning">
+                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                         <div class="col-4 p-1">
-                            <div class="card text-center alert-warning">
-                                <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
+                            <div class="card  p-1 text-center alert-warning">
+                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                         <div class="col-4 p-1">
-                            <div class="card text-center alert-info">
-                                <textarea class="form-control m-1" rows="16" readonly>{{result}}</textarea>
+                            <div class="card  p-1  text-center alert-info">
+                                <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
                     </div>
