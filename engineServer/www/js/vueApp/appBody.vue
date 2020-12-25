@@ -14,7 +14,7 @@
                         <div class="col-4 pt-1 pl-0 pr-1 text-center">
                             <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
-                        <div class="col-4 p-1 text-center">
+                        <div class="col-4 p-0 text-center">
                             <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                         </div>
                         <div class="col-4 pt-1 pr-0 text-center">
