@@ -15,7 +15,7 @@
                             <div class="form-control card alert-success text-center">
                                 Local Scripts
                             </div>
-                            <div class="card p-1 text-center alert-seuccess">
+                            <div class="card p-1 text-center alert-success">
                                 <textarea class="form-control" rows="16" readonly>{{result}}</textarea>
                             </div>
                         </div>
