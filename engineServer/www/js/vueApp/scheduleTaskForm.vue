@@ -39,7 +39,6 @@ module.exports = {
             const data = me.form; 
             data.cmd = "saveTask"
             me.root.dataEngine(me).saveTask(data, function(result) {
-                console.log(result);
                 me.$parent.askBackendStatus();
             });
         },
