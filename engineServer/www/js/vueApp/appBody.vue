@@ -5,8 +5,10 @@
                     <div class="form-control card alert-success text-center mb-1">
                         Local Scripts
                     </div>
-                    <div class="card alert-success text-left" v-for="item in localScripts">
-                        {{item.name}}
+                    <div class="card alert-success" >
+                        <div class="text-left" v-for="item in localScripts">
+                            {{item.name}}
+                        </div> 
                     </div>
                     <!--div class="card p-1 text-center alert-success">
                         <textarea class="form-control" rows="16" readonly>{{localScripts}}</textarea>
@@ -14,8 +16,10 @@
                 </div>
                 <div class="col-6 p-1">
                     <schedule-task-form></schedule-task-form>
-                    <div class="card alert-success text-left" v-for="item in scheduledTasks">
-                        {{item.name}}
+                    <div class="card alert-warning" >
+                        <div class="text-left" v-for="item in scheduledTasks">
+                            {{item.name}}
+                        </div> 
                     </div>
                     <!--div class="card p-1 text-left alert-warning">
                         <textarea class="form-control" rows="16" readonly>{{scheduledTasks}}</textarea>
@@ -25,9 +29,7 @@
                     <div class="form-control card text-center  mb-1  alert-success">
                         Running Log
                     </div>
-                    <div class="card alert-success text-left" v-for="item in logs">
-                        {{item.name}}
-                    </div>
+
                     <!--div class="card p-1 text-center alert-success">
                         <textarea class="form-control" rows="16" readonly>{{logs}}</textarea-->
                     </div>
