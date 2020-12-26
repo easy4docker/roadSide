@@ -34,6 +34,10 @@ module.exports = {
         sendQuery(data, callback) {
             var me = this;
             me.ajaxPost(data, callback, true);
+        },
+        saveTask(data, callback) {
+            var me = this;
+            me.ajaxPost(data, callback, true);
         }
     }
 }

@@ -30,6 +30,18 @@ module.exports = {
     methods :{
         switchModule(v) {
             this.module = v;
+        },
+        saveTask () {
+            var me = this;
+            const data = me.form; 
+            data.cmd = "saveTask"
+            me.root.dataEngine(me).saveTask(data, function(result) {
+                console.log(result);
+                /*
+                me.localScripts =  result.localScripts ;
+                me.scheduledTasks =  result.scheduledTasks;
+                me.logs =  result.logs;*/
+            });
         }
     },
     components: {

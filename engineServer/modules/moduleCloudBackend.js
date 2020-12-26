@@ -24,6 +24,10 @@
 			}, 6000);
 			
 		}
+		this.saveTask = (data) => {
+	
+			res.send(data);		
+		}
 	};
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 		module.exports = obj;
