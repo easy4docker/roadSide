@@ -2,7 +2,7 @@
         <div class="container-fluid m-0 text-left">
             <div class="row">
                 <div class="col-3 p-1">
-                    <div class="card list_file_section p-1 alert-secondary" >
+                    <div class="card list_file_section p-1 mb-2 alert-secondary" >
                         <div class="form-control card p-2 text-center alert-dark">
                             Local Scripts
                         </div>
@@ -10,16 +10,6 @@
                             {{item.name}}
                         </div> 
                     </div>
-                </div>
-                <div class="col-6 p-1">
-                    <div class="card main_list_file_section p-1" >
-                        <schedule-task-form></schedule-task-form>
-                        <div class="text-left p-1 pl-2" v-for="item in scheduledTasks">
-                            {{item.name}}
-                        </div> 
-                    </div>
-                </div>
-                <div class="col-3 p-1">
 
                     <div class="card list_file_section p-1 alert-secondary">
                         <div class="form-control card  p-2 text-center alert-dark">
@@ -32,6 +22,19 @@
                     <!--div class="card p-1 text-center alert-success">
                         <textarea class="form-control" rows="16" readonly>{{logs}}</textarea-->
                     </div>
+
+                </div>
+                <div class="col-9 p-1">
+                    <div class="card main_list_file_section p-1" >
+                        <schedule-task-form></schedule-task-form>
+                        <div class="text-left p-1 pl-2" v-for="item in scheduledTasks">
+                            {{item.name}}
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-3 p-1">
+
+
                 </div>
             </div>
         </div> 
@@ -81,6 +84,6 @@ module.exports = {
 </script>
  
 <style>
-.list_file_section { min-height : 30rem}
-.main_list_file_section { min-height : 33rem}
+.list_file_section { height : 20rem}
+.main_list_file_section { min-height : 40rem}
 </style>
