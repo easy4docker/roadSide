@@ -2,7 +2,7 @@
         <div class="container-fluid m-0 text-left">
             <div class="row">
                 <div class="col-3 p-1">
-                    <div class="card list_file_section p-1 mb-2 alert-secondary" >
+                    <div class="card list_file_section p-1 mb-1 alert-secondary" >
                         <div class="form-control card p-2 text-center alert-dark">
                             Local Scripts
                         </div>
@@ -11,7 +11,7 @@
                         </div> 
                     </div>
 
-                    <div class="card list_file_section p-1 alert-secondary">
+                    <div class="card list_file_section p-1 mt-1 alert-secondary">
                         <div class="form-control card  p-2 text-center alert-dark">
                             Logs
                         </div>
