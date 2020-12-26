@@ -44,6 +44,11 @@ module.exports = {
     },
     mounted () {
         var me = this;
+        setTimeout(
+            function() {
+                me.askBackendStatus()
+            }, 50
+        )
     },
     methods :{
         askBackendStatus() {
