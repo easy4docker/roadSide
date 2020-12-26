@@ -67,6 +67,7 @@ module.exports = {
                 me.localScripts =  result.localScripts ;
                 me.scheduledTasks =  result.scheduledTasks;
                 me.logs =  result.logs;
+                me.form.command = '';
             });
         }
     },
