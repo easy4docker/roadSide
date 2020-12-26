@@ -23,20 +23,13 @@
 			if (!token || !_tokens || !_tokens.list || !_tokens.list[token]) {
 				res.sendFile(env.root  + '/www/page401.html');
 			} else {
-				switch (req.body.cmd) {
-					case 'askBackendStatus':
-						var CloudBackend= pkg.require(env.root + '/modules/moduleCloudBackend.js');
-						var cb  = new CloudBackend(env, pkg, req, res);
-						if (cb[req.body.cmd]) {
-							cb[req.body.cmd](req.body);
-						} else {
-							res.send({status: 'error', message: 'Missing function ' + req.body.cmd + '!'});
-						}
-						break;
-					default:
-						res.send({status: 'error', message: 'Missing posted cmd'});
+				var CloudBackend= pkg.require(env.root + '/modules/moduleCloudBackend.js');
+				var cb  = new CloudBackend(env, pkg, req, res);
+				if (cb[req.body.cmd]) {
+					cb[req.body.cmd](req.body);
+				} else {
+					res.send({status: 'error', message: 'Missing function ' + req.body.cmd + '!'});
 				}
-
 			}
 		}
 

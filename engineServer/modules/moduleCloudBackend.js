@@ -25,7 +25,6 @@
 			
 		}
 		this.saveTask = (data) => {
-	
 			res.send(data);		
 		}
 	};
