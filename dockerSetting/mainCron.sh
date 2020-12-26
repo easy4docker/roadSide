@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DATA_DIR="/var/_localAppData/"
+DATA_DIR="/var/_localAppData"
 
 CRON_PATH=$DATA_DIR/_cron
 TMP_PATH=$DATA_DIR/_tmp
@@ -34,7 +34,7 @@ for f in "$CRON_PATH"/*; do
     # cmdd="cp $f /Users/johnxu/_tmp && mv $f $execfn && sh $execfn $DOCKERCMD && rm -fr $execfn && rm -fr $markfile"
     echo "-- Ran $f -- at $(date +"%m/%d/%Y %H:%M:%S")"
     mv -f $f $execfn || true
-    sh $execfn $DOCKERCMD || true >> $LOG_PATH/SH_$(basename $f)
+    sh $execfn >> $LOG_PATH/$execfn
     rm -fr $execfn || true
     rm -fr $markfile || true
     echo "-- done $f -- at $(date +"%m/%d/%Y %H:%M:%S")"
