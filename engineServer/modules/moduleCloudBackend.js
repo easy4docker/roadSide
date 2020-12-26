@@ -14,7 +14,7 @@
 			_f['scheduledTasks'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 				const tree = dirTree(env.dataFolder + '/scheduledTasks');
-				cbk((!tree) ? null : tree.children);
+				cbk((!tree) ? (env.dataFolder + '/scheduledTasks') : tree.children);
 			}
 			_f['logs'] = (cbk) => {
 				cbk(null);
