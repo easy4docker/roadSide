@@ -12,8 +12,8 @@
                     </div>
                 </div>
                 <div class="col-6 p-1">
-                    <schedule-task-form></schedule-task-form>
                     <div class="card main_list_file_section alert-secondary" >
+                        <schedule-task-form></schedule-task-form>
                         <div class="text-left p-1" v-for="item in scheduledTasks">
                             {{item.name}}
                         </div> 
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-3 p-1">
                     <div class="form-control card text-center mb-1">
-                        Running Log
+                       Logs
                     </div>
                     <div class="card list_file_section" >
                         <div class="text-left p-1" v-for="item in logs">
@@ -81,5 +81,5 @@ module.exports = {
  
 <style>
 .list_file_section { min-height : 30rem}
-.main_list_file_section { min-height : 22rem}
+.main_list_file_section { min-height : 38rem}
 </style>
