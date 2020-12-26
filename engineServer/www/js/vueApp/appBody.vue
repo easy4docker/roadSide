@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-6 p-1">
                     <schedule-task-form></schedule-task-form>
-                    <div class="card list_file_section alert-warning" >
+                    <div class="card main_list_file_section alert-secondary" >
                         <div class="text-left p-1" v-for="item in scheduledTasks">
                             {{item.name}}
                         </div> 
@@ -80,4 +80,5 @@ module.exports = {
  
 <style>
 .list_file_section { min-height : 30rem}
+.main_list_file_section { min-height : 22rem}
 </style>
