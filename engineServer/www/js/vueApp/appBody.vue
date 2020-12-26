@@ -46,7 +46,7 @@ module.exports = {
         var me = this;
     },
     methods :{
-        submit() {
+        askBackendStatus() {
             var me = this;
             const data = me.form; 
             data.cmd = "askBackendStatus"

@@ -40,12 +40,10 @@ module.exports = {
             data.cmd = "saveTask"
             me.root.dataEngine(me).saveTask(data, function(result) {
                 console.log(result);
-                /*
-                me.localScripts =  result.localScripts ;
-                me.scheduledTasks =  result.scheduledTasks;
-                me.logs =  result.logs;*/
+                me.$parent.askBackendStatus();
             });
-        }
+        },
+    
     },
     components: {
     }
