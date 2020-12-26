@@ -28,11 +28,11 @@
 		this.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
 			const fn = dirn + '/onetime_' + new Date().getTime() + '.sh';
-			exec('mkdir -fr ' + dirn, {maxBuffer: 1024 * 2048},
+			exec('mkdir -p ' + dirn, {maxBuffer: 1024 * 2048},
                 function(error, stdout, stderr) {
 					fs.writeFile(fn, data.command, (err,data) => {
 						if (err) {
-							res.send(dirn);
+							res.send(err.message);
 						} else {
 							res.send(data);
 						}
