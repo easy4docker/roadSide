@@ -58,7 +58,7 @@ module.exports = {
     methods :{
         askBackendStatus() {
             var me = this;
-            const data = me.form; 
+            const data = {};
             data.cmd = "askBackendStatus"
             me.root.dataEngine(me).sendQuery(data, function(result) {
                 me.localScripts =  result.localScripts ;
