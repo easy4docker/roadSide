@@ -20,7 +20,7 @@
 				cbk(null);
 			}
 			cp.serial(_f, (data) => {
-				res.send({localScripts : cp.data.localScripts, scheduledTasks : cp.scheduledTasks});
+				res.send({localScripts : cp.data.localScripts, scheduledTasks : cp.data.scheduledTasks});
 			}, 6000);
 			
 		}
