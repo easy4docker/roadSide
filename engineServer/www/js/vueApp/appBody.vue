@@ -32,10 +32,6 @@
                         </div> 
                     </div>
                 </div>
-                <div class="col-3 p-1">
-
-
-                </div>
             </div>
         </div> 
 </template>
