@@ -21,6 +21,9 @@
                         Running Log
                     </div>
                     <div class="card p-1 text-center alert-success">
+                        <div class="list-group" v-for="item in logs">
+                            {{item.name}}-
+                        </div>
                         <textarea class="form-control" rows="16" readonly>{{logs}}</textarea>
                     </div>
                 </div>
@@ -36,9 +39,9 @@ module.exports = {
             form     : {
                 command: ''
             },
-            localScripts : {},
-            scheduledTasks :{},
-            logs    : {},
+            localScripts : [],
+            scheduledTasks :[],
+            logs    : [],
             module  : ''
         }
     },
