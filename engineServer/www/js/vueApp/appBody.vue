@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-3 p-1">
                     <div class="card list_file_section alert-secondary" >
-                        <div class="form-control card text-center mb-1 alert-dark">
+                        <div class="form-control card text-center m-1 alert-dark">
                             Local Scripts
                         </div>
                         <div class="text-left p-1 pl-2" v-for="item in localScripts">
@@ -22,7 +22,7 @@
                 <div class="col-3 p-1">
 
                     <div class="card list_file_section  alert-secondary">
-                        <div class="form-control card text-center mb-1 alert-dark">
+                        <div class="form-control card text-center m-1 alert-dark">
                             Logs
                         </div>
                         <div class="text-left p-1 pl-2" v-for="item in logs">

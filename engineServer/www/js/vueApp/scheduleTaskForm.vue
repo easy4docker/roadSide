@@ -1,5 +1,5 @@
 <template>
-    <div class="card p-1 text-left alert-dark mb-1 scheduleFromSection">
+    <div class="card p-1 text-left alert-dark m-1 scheduleFromSection">
         <span v-if="module!=='addTaskFrom'" >
             Cron Tasks <button class="btn btn-success btn-sm m-1 right" v-on:click="switchModule('addTaskFrom');">Schedule a task</button>
         </span>
