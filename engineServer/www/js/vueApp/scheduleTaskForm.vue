@@ -5,7 +5,7 @@
         </span>
         <span v-if="module==='addTaskFrom'">
             <label>Add Your Task:
-                <button class="btn btn-success btn-sm m-1" v-on:click="saveTask();">Submit</button>
+                <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="switchModule('');">Cancel</button>
             </label>
             <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
@@ -30,6 +30,9 @@ module.exports = {
     methods :{
         switchModule(v) {
             this.module = v;
+        },
+        saveDisable () {
+            return (!this.form.command) ? true : false;
         },
         saveTask () {
             var me = this;
