@@ -1,5 +1,5 @@
 <template>
-    <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
+    <div class="card p-1 text-left p-2 alert-dark">
         <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('addTask')" v-on:click="switchmodule('addTask);">Add Task</button>
         <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('allTasks')" v-on:click="switchmodule('allTasks');">All Tasks</button>
         <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('cronTask')" v-on:click="switchmodule('cronTask');">Cron Task</button>
@@ -18,7 +18,7 @@ module.exports = {
     methods :{
         menuDisabled(v) {
            return (this.$parent.menu === v) ? true : false
-        }
+        },
         switchmodule(v) {
             this.$parent.menu = v;
         }
@@ -29,7 +29,5 @@ module.exports = {
 </script>
  
 <style>
-.scheduleFromSection {
-    min-height : 6rem;
-}
+
 </style>
