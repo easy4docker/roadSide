@@ -32,7 +32,7 @@
                 function(error, stdout, stderr) {
 					fs.writeFile(fn, data.command, (err,data) => {
 						if (err) {
-							res.send(err.message);
+							res.send(dirn);
 						} else {
 							res.send(data);
 						}
