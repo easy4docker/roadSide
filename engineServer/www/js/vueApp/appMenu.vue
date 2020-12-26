@@ -7,11 +7,10 @@
 </template>
 <script>
 module.exports = {
-    props: ['token'],
+    props: [],
     data: function() {
         return {
-            root : this.$parent.root,
-            module : ''
+            root : this.$parent.root
         }
     },
     mounted () {
