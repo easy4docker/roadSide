@@ -5,7 +5,7 @@
                     <div class="form-control card alert-success text-center mb-1">
                         Local Scripts
                     </div>
-                    <div class="card list_file_section alert-warning" >
+                    <div class="card list_file_section alert-success" >
                         <div class="text-left p-1" v-for="item in localScripts">
                             {{item.name}}
                         </div> 
@@ -23,7 +23,7 @@
                     <div class="form-control card text-center  mb-1  alert-success">
                         Running Log
                     </div>
-                    <div class="card list_file_section alert-warning" >
+                    <div class="card list_file_section alert-success" >
                         <div class="text-left p-1" v-for="item in logs">
                             {{item.name}}
                         </div> 
