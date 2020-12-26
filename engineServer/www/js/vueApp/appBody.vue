@@ -26,7 +26,7 @@
                 </div>
                 <div class="col-9 p-1">
                     <div class="card main_list_file_section p-1 alert-secondary" >
-                        <app-menu></app-menu>
+                        <app-menu></app-menu>--
                         <schedule-task-form></schedule-task-form>
                         <div class="text-left p-1 pl-2" v-for="item in scheduledTasks">
                             {{item.name}}
