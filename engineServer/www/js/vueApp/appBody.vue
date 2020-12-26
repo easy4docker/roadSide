@@ -81,5 +81,5 @@ module.exports = {
  
 <style>
 .list_file_section { min-height : 30rem}
-.main_list_file_section { min-height : 38rem}
+.main_list_file_section { min-height : 33rem}
 </style>
