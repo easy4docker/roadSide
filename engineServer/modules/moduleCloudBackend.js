@@ -25,7 +25,14 @@
 			
 		}
 		this.saveTask = (data) => {
-			res.send(data);		
+			const fn = env.dataFolder + '/scheduledTasks/' + 'onetime_' + new Date().getTime() + '.sh';
+			fs.writeFile(fn, data.command, (err,data) => {
+				if (err) {
+					res.send(err.message);
+				} else {
+					res.send(data);
+				}
+			});	
 		}
 	};
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
