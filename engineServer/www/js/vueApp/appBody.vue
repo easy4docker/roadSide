@@ -20,11 +20,11 @@
                         </div> 
                     </div>
                     <!--div class="card p-1 text-center alert-success">
-                        <textarea class="form-control" rows="16" readonly>{{logs}}</textarea-->
-                    </div>
+                        <textarea class="form-control" rows="16" readonly>{{logs}}</textarea>
+                    </div-->
 
                 </div>
-                <div class="col-8 p-1">
+                <div class="col-9 p-1">
                     <div class="card main_list_file_section p-1" >
                         <schedule-task-form></schedule-task-form>
                         <div class="text-left p-1 pl-2" v-for="item in scheduledTasks">
