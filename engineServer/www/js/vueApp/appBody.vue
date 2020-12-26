@@ -5,16 +5,16 @@
                     <div class="form-control card alert-success text-center mb-1">
                         Local Scripts
                     </div>
-                    <div class="card alert-warning" >
-                        <div class="text-left list_file_section p-1" v-for="item in localScripts">
+                    <div class="card list_file_section alert-warning" >
+                        <div class="text-left p-1" v-for="item in localScripts">
                             {{item.name}}
                         </div> 
                     </div>
                 </div>
                 <div class="col-6 p-1">
                     <schedule-task-form></schedule-task-form>
-                    <div class="card alert-warning" >
-                        <div class="text-left list_file_section p-1" v-for="item in scheduledTasks">
+                    <div class="card list_file_section alert-warning" >
+                        <div class="text-left p-1" v-for="item in scheduledTasks">
                             {{item.name}}
                         </div> 
                     </div>
@@ -23,8 +23,8 @@
                     <div class="form-control card text-center  mb-1  alert-success">
                         Running Log
                     </div>
-                    <div class="card alert-warning" >
-                        <div class="text-left list_file_section p-1" v-for="item in logs">
+                    <div class="card list_file_section alert-warning" >
+                        <div class="text-left p-1" v-for="item in logs">
                             {{item.name}}
                         </div> 
                     </div>
