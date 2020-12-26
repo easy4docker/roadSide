@@ -1,10 +1,11 @@
 (function () { //
 	var obj =  function (env, pkg, req, res) {
-		let fs = require('fs');
-		let me = this;
+		let fs = require('fs'),
+			exec = require('child_process').exec,
+			CP = new pkg.crowdProcess(),
+			me = this;
 
 		this.askBackendStatus = (data) => {
-			const cp = new pkg.crowdProcess();
 			const _f = {};
 			_f['localScripts'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
@@ -19,19 +20,23 @@
 			_f['logs'] = (cbk) => {
 				cbk(null);
 			}
-			cp.serial(_f, (data) => {
-				res.send({localScripts : cp.data.localScripts, scheduledTasks : cp.data.scheduledTasks});
+			CP.serial(_f, (data) => {
+				res.send({localScripts : CP.data.localScripts, scheduledTasks : CP.data.scheduledTasks});
 			}, 6000);
 			
 		}
 		this.saveTask = (data) => {
-			const fn = env.dataFolder + '/scheduledTasks/' + 'onetime_' + new Date().getTime() + '.sh';
-			fs.writeFile(fn, data.command, (err,data) => {
-				if (err) {
-					res.send(err.message);
-				} else {
-					res.send(data);
-				}
+			const dirn = env.dataFolder + '/scheduledTasks/' + 'onetime_' + new Date().getTime() + '.sh';
+			const fn = dirn + 'onetime_' + new Date().getTime() + '.sh';
+			exec('mkdir -fr ' + dirn, {maxBuffer: 1024 * 2048},
+                function(error, stdout, stderr) {
+					fs.writeFile(fn, data.command, (err,data) => {
+						if (err) {
+							res.send(err.message);
+						} else {
+							res.send(data);
+						}
+            		});
 			});	
 		}
 	};
