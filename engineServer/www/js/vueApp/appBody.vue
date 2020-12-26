@@ -41,9 +41,6 @@ module.exports = {
     data: function() {
         return {
             root     :  this.$parent.root,
-            form     : {
-                command: ''
-            },
             localScripts : [],
             scheduledTasks :[],
             logs    : [],
@@ -67,7 +64,6 @@ module.exports = {
                 me.localScripts =  result.localScripts ;
                 me.scheduledTasks =  result.scheduledTasks;
                 me.logs =  result.logs;
-                me.form.command = '';
             });
         }
     },
