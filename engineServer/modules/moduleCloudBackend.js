@@ -28,19 +28,37 @@
 			
 		}
 		this.saveTask = (data) => {
-			// const dirn = env.dataFolder + '/scheduledTasks';
-			const dirn = env.dataFolder + '/_cron';
+			const dirn = env.dataFolder + '/scheduledTasks';
+			const dirnCron = env.dataFolder + '/_cron';
 			const fn = dirn + '/onetime_' + new Date().getTime() + '.sh';
-			exec('mkdir -p ' + dirn, {maxBuffer: 1024 * 2048},
-                function(error, stdout, stderr) {
-					fs.writeFile(fn, data.command, (err,data) => {
-						if (err) {
-							res.send(err.message);
-						} else {
-							res.send(data);
-						}
-            		});
-			});	
+			const _f = {};
+			_f['createDir'] = (cbk) => {
+				exec('mkdir -p ' + dirn, {maxBuffer: 1024 * 2048},
+					function(error, stdout, stderr) {
+						cbk(true);
+					}
+				)
+			}
+			_f['writeFile'] = (cbk) => {
+				fs.writeFile(fn, data.command, (err,data) => {
+					if (err) {
+						cbk(err.message);
+					} else {
+						cbk(data);
+					}
+				});
+			}
+			_f['copyFile'] = (cbk) => {
+				exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
+					function(error, stdout, stderr) {
+						cbk(true);
+					}
+				)
+			}
+
+			CP.serial(_f, (data) => {
+				res.send(CP.data['writeFile']);
+			}, 6000);
 		}
 	};
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
