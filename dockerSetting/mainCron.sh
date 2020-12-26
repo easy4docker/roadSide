@@ -31,7 +31,6 @@ for f in "$CRON_PATH"/*; do
 
     execfn=$TMP_PATH/SH_$(basename $f)
     echo $execfn > $markfile
-    # cmdd="cp $f /Users/johnxu/_tmp && mv $f $execfn && sh $execfn $DOCKERCMD && rm -fr $execfn && rm -fr $markfile"
     echo "-- Ran $f -- at $(date +"%m/%d/%Y %H:%M:%S")"
     mv -f $f $execfn || true
     sh $execfn >> $LOG_PATH/$(basename $f).log
