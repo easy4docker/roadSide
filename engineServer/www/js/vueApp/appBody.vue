@@ -2,10 +2,10 @@
         <div class="container-fluid m-0 text-left">
             <div class="row">
                 <div class="col-3 p-1">
-                    <div class="form-control card alert-success text-center mb-1">
+                    <div class="form-control card text-center mb-1">
                         Local Scripts
                     </div>
-                    <div class="card list_file_section alert-success" >
+                    <div class="card list_file_section" >
                         <div class="text-left p-1" v-for="item in localScripts">
                             {{item.name}}
                         </div> 
@@ -20,10 +20,10 @@
                     </div>
                 </div>
                 <div class="col-3 p-1">
-                    <div class="form-control card text-center  mb-1  alert-success">
+                    <div class="form-control card text-center mb-1">
                         Running Log
                     </div>
-                    <div class="card list_file_section alert-success" >
+                    <div class="card list_file_section" >
                         <div class="text-left p-1" v-for="item in logs">
                             {{item.name}}
                         </div> 
