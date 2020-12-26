@@ -19,10 +19,10 @@ module.exports = {
     },
     methods :{
         menuDisabled(v) {
-           return (this.$parent.menu === v) ? true : false
+           return (this.$parent.module === v) ? true : false
         },
         switchmodule(v) {
-            this.$parent.menu = v;
+            this.$parent.module = v;
         }
     },
     components: {
