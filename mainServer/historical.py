@@ -25,5 +25,5 @@ def fetchWatchlist(fileName):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     watchList = fetchWatchlist('data/500.csv')
-    toExport = fetchTicker(watchList[0:254])
+    toExport = fetchTicker(watchList[0:25])
     export(toExport)
