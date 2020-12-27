@@ -1,5 +1,6 @@
 #!/bin/bash
 
+APP_DIR="/var/_localApp"
 DATA_DIR="/var/_localAppData"
 
 CRON_PATH=$DATA_DIR/_cron
@@ -33,6 +34,7 @@ for f in "$CRON_PATH"/*; do
     echo $execfn > $markfile
     echo "-- Ran $f -- at $(date +"%m/%d/%Y %H:%M:%S")"
     mv -f $f $execfn || true
+    cd $APP_DIR
     sh $execfn > $LOG_PATH/$(basename $f).log
     rm -fr $execfn || true
     rm -fr $markfile || true
