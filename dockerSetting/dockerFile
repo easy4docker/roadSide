@@ -8,7 +8,7 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
-RUN apt-get install python3-pandas
+RUN apt-get install python3-pandas -y
 
 COPY mainService.sh /var/mainService.sh
 COPY mainCron.sh /var/mainCron.sh
