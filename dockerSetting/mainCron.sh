@@ -33,9 +33,7 @@ for f in "$CRON_PATH"/*; do
     echo $execfn > $markfile
     echo "-- Ran $f -- at $(date +"%m/%d/%Y %H:%M:%S")"
     mv -f $f $execfn || true
-    echo "==>"  >> $LOG_PATH/bbb.log
-    cat $execfn  >> $LOG_PATH/aaa.log
-    sh $execfn >> $LOG_PATH/$(basename $f).log
+    sh $execfn > $LOG_PATH/$(basename $f).log
     rm -fr $execfn || true
     rm -fr $markfile || true
     echo "-- done $f -- at $(date +"%m/%d/%Y %H:%M:%S")"
