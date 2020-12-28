@@ -40,24 +40,22 @@
 			}			
 		}
 		me.askLogContent = (data) => {
-			const fileName = env.dataFolder + '/_log/' + data.fileName;
-			res.send(fileName);
-			/*
+			const fn = env.dataFolder + '/_log/' + data.fileName;
+
 			fs.stat(fn, function(err, stat) {
-						if(err == null) {
-							if (!m || !m[0]) {
-								res.sendFile(fn);
-							} else {
-								fs.readFile(fn, 'utf-8', (err, data)=> {
-									me.sendHeader(m[0].replace(/\./,''));
-									res.send((err) ? err.message : data);
-								});
-							}
-						} else  {
-							res.sendFile(env.root  + '/www/page404.html');
-						}
-					});
-			*/
+				if(err == null) {
+					if (!m || !m[0]) {
+						res.sendFile(fn);
+					} else {
+						fs.readFile(fn, 'utf-8', (err, data)=> {
+							me.sendHeader(m[0].replace(/\./,''));
+							res.send((err) ? err.message : data);
+						});
+					}
+				} else  {
+					res.sendFile(env.root  + '/www/page404.html');
+				}
+			});
 		}
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
