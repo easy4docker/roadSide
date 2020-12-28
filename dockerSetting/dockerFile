@@ -2,12 +2,10 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update
-RUN apt-get install -y cron
-RUN apt-get install -y vim
-RUN apt-get -y install git
-
 RUN apt-get update \
+  && apt-get install -y cron \
+  && apt-get -y install git \
+  && apt-get -y install vim \
   && apt-get install -y python3-pip python3-dev \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
