@@ -4,19 +4,19 @@
             <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
             <button class="btn btn-secondary btn-sm m-1" v-on:click="switchModule('allTasks');">Cancel</button>
         </label>
-        <textarea class="form-control" rows="2" id="query" v-model="form.command" v-on:keyup.enter="submit" 
+        <textarea class="form-control" rows="2" id="query" v-model="$parent.cmd" v-on:keyup.enter="submit" 
         placeholder="Input shell command"></textarea>
     </div>
 </template>
 <script>
 module.exports = {
-    props: ['cmd'],
+    props: [],
     data: function() {
         const me = this;
         return {
             root : this.$parent.root,
             form : {
-                command : me.cmd
+                command : me.$parent.cmd
             }
         }
     },
@@ -28,10 +28,9 @@ module.exports = {
         },
         saveTask () {
             var me = this;
-            const data = me.form; 
-            data.cmd = "saveTask"
+            const data = {cmd : 'saveTask', command : me.$parent.cmd}; 
             me.root.dataEngine(me).saveTask(data, function(result) {
-                me.form.command = '';
+                me.$parent.cmd = '';
                 me.$parent.askBackendStatus();
             });
         },
