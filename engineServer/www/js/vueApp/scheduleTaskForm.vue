@@ -36,6 +36,7 @@ module.exports = {
         },
         switchmodule(v) {
             this.$parent.module = v;
+            this.$forceUpdate();
         }
     },
     components: {
