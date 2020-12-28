@@ -10,12 +10,13 @@
 </template>
 <script>
 module.exports = {
-    props: [],
+    props: ['cmd'],
     data: function() {
+        const me = this;
         return {
             root : this.$parent.root,
             form : {
-                command : ''
+                command : me.cmd
             }
         }
     },
