@@ -7,7 +7,7 @@
                             Local Scripts
                         </div>
                         <div class="text-left p-1 pl-2" v-for="item in localScripts">
-                            <span v-if="isPython(item.name)">{{item.name}}</span>
+                            <a href="JavaScript:void(0)" v-if="isPython(item.name)" :click="passCommand(item.name)">{{item.name}}</a>
                         </div> 
                     </div>
 
@@ -71,6 +71,9 @@ module.exports = {
                 me.scheduledTasks =  result.scheduledTasks;
                 me.logs =  result.logs;
             });
+        },
+        passCommand(v) {
+                alert(v);
         }
     },
     components: VUEApp.loadComponents({
