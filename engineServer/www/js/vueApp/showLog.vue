@@ -1,6 +1,6 @@
 <template>
     <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
-       <textarea class="form-control" rows="16" readonly>{{fileName}}}</textarea>
+       <textarea class="form-control" rows="16" readonly>{{fileName}}</textarea>
     </div>
 </template>
 <script>

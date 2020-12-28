@@ -70,13 +70,11 @@ module.exports = {
         showLog(v) {
             var me = this;
             me.module = 'showLog';
-             me.$refs.showLog.fileName = v;
-             /*
             setTimeout(
                 function() {
                     me.$refs.showLog.fileName = v;
-                }, 1000
-            );*/
+                }, 100
+            );
         },
         isPython(name) {
                 return (/\.py$/.test(name)) ? true : false;
