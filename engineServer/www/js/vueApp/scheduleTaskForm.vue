@@ -37,7 +37,7 @@ module.exports = {
         },
         cancel() {
             this.$parent.cmd = '';
-            this.switchModule('allTasks');
+            this.switchModule('');
         }
     },
     components: {
