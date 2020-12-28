@@ -28,7 +28,8 @@ module.exports = {
             const me = this;
             const data = {cmd : 'askLogContent', fileName : v}; 
             me.root.dataEngine(me).askLogContent(data, function(result) {
-                me.contents = result;
+               // me.contents = result;
+               console.log(data);
                 console.log(result);
             });
         }
