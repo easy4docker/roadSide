@@ -16,6 +16,7 @@ module.exports = {
     },
     watch: {
         fileName: function (v) {
+            const me = this;
             me.askLogContent(v);
         }
     },
@@ -23,7 +24,7 @@ module.exports = {
     },
     methods :{
         askLogContent (v) {
-            var me = this;
+            const me = this;
             const data = {cmd : 'askLogContent', fileName : v}; 
             me.root.dataEngine(me).askLogContent(data, function(result) {
                 console.log(result);
