@@ -24,7 +24,7 @@ module.exports = {
     },
     methods :{
         saveDisable () {
-            return (!this.form.command) ? true : false;
+            return (!$parent.cmd) ? true : false;
         },
         saveTask () {
             var me = this;
