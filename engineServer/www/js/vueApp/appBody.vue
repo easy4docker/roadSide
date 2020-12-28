@@ -59,6 +59,10 @@ module.exports = {
         )
     },
     methods :{
+        triggerFrom(v) {
+            const me = this;
+            me.module = 'addTask';
+        },
         isPython(name) {
                 return (/\.py$/.test(name)) ? true : false;
         },
@@ -73,7 +77,7 @@ module.exports = {
             });
         },
         passCommand(v) {
-                alert(v);
+            me.triggerFrom(v);
         }
     },
     components: VUEApp.loadComponents({
