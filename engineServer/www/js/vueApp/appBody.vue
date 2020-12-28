@@ -7,7 +7,7 @@
                             Local Scripts
                         </div>
                         <div class="text-left p-1 pl-2" v-for="item in localScripts">
-                            <a href="JavaScript:void(0)" v-if="isPython(item.name)" v-bind:click="passCommand(item.name)">{{item.name}}</a>
+                            <a href="JavaScript:void(0)" v-if="isPython(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
                         </div> 
                     </div>
 
