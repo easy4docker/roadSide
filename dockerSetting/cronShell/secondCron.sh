@@ -1,5 +1,4 @@
 stsCron=1
-cron start
 until [ $stsCron = 0 ]
 do 
     if [ $stsCron != 0 ] ; then
