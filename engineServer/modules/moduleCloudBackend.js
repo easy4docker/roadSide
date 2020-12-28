@@ -20,7 +20,7 @@
 			_f['logs'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 				const tree = dirTree(env.dataFolder + '/_log');
-				cbk((!tree) ? (env.dataFolder + '/log') : tree.children);
+				cbk((!tree) ? (env.dataFolder + '/_log') : tree.children);
 			}
 			CP.serial(_f, (data) => {
 				res.send({localScripts : CP.data.localScripts, scheduledTasks : CP.data.scheduledTasks, logs : CP.data.logs});
@@ -40,7 +40,7 @@
 			}			
 		}
 		me.askLogContent = (data) => {
-			const fileName = env.dataFolder + '/log/' + data.fileName;
+			const fileName = env.dataFolder + '/_log/' + data.fileName;
 			res.send(fileName);
 			/*
 			fs.stat(fn, function(err, stat) {

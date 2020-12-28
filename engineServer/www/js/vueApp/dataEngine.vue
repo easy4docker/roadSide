@@ -31,6 +31,24 @@ module.exports = {
                 dataType: 'JSON'
             });
         },
+        ajaxPostText(data, callback, isSpinner) {
+            var me = this;
+            if (isSpinner) me.$parent.triggerSpinner = true;
+            $.ajax({
+                type: 'POST',
+                url:'/api?token=' + me.$parent.token,
+                data: data,
+                success: function(result) {
+                    if (isSpinner) me.$parent.triggerSpinner = false;
+                    callback(result)
+                },
+                error: function (jqXHR, textStatus, errorThrown) { 
+                    if (isSpinner) me.$parent.triggerSpinner = false;
+                    callback('error result');
+                },
+                dataType: 'TEXT'
+            });
+        },
         sendQuery(data, callback) {
             var me = this;
             me.ajaxPost(data, callback, true);
@@ -41,7 +59,7 @@ module.exports = {
         },
         askLogContent(data, callback) {
             var me = this;
-            me.ajaxPost(data, callback, true);
+            me.ajaxPostText(data, callback, true);
         }
     }
 }
