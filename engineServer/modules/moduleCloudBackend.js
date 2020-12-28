@@ -27,8 +27,37 @@
 			}, 6000);
 			
 		}
+		me.sendHeader = (filetype) => {
+			res.header("Access-Control-Allow-Origin", "*");
+			res.header("Access-Control-Allow-Headers", "X-Requested-With");
+			res.header('Access-Control-Allow-Headers', 'Content-Type'); 
+			if (filetype == 'js' || filetype == 'jsx' || filetype == 'vue') {
+				res.setHeader('Content-Type', "text/javascrip");
+			} else if (filetype == 'css') {
+				res.setHeader('Content-Type', "text/css");
+			} else {
+				res.setHeader('Content-Type', "text/plain");
+			}			
+		}
 		me.askLogContent = (data) => {
-			res.send(data);
+			const fileName = env.dataFolder + '/log' + data.fileName;
+			res.sendFile(fileName);
+			/*
+			fs.stat(fn, function(err, stat) {
+						if(err == null) {
+							if (!m || !m[0]) {
+								res.sendFile(fn);
+							} else {
+								fs.readFile(fn, 'utf-8', (err, data)=> {
+									me.sendHeader(m[0].replace(/\./,''));
+									res.send((err) ? err.message : data);
+								});
+							}
+						} else  {
+							res.sendFile(env.root  + '/www/page404.html');
+						}
+					});
+			*/
 		}
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
