@@ -16,9 +16,11 @@
                             Logs
                         </div>
                         <div class="text-left p-1 pl-2" v-for="item in logs">
-                            <a href="JavaScript:void(0)" v-on:click="passCommand(item.name)">{{item.name}}</a>
+                            <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
                         </div> 
                     </div>
+
+
                 </div>
                 <div class="col-9 p-1">
                     <div class="card main_list_file_section p-1 alert-secondary" >
@@ -29,7 +31,10 @@
                         <div v-if="module=='allTasks'" class="text-left p-1 pl-2" v-for="item in scheduledTasks">
                             {{item.name}}
                         </div>
-                        <div>-{{module}}-</div>
+
+                        <div v-if="module=='showLog'"  class="card p-1 text-center alert-success">
+                            <show-log ref="showLog"></show-log>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,6 +67,11 @@ module.exports = {
             me.command = (!v) ? '' : ('phthon3 ' + v);
             me.module = 'addTask'; 
         },
+        showLog(v) {
+            var me = this;
+            me.module = 'showLog';
+            me.$refs.showLog.fileName = v;
+        },
         isPython(name) {
                 return (/\.py$/.test(name)) ? true : false;
         },
@@ -84,7 +94,8 @@ module.exports = {
     components: VUEApp.loadComponents({
         LOAD    : {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue',
-            'appMenu' : '/js/vueApp/appMenu.vue'
+            'appMenu' : '/js/vueApp/appMenu.vue',
+            'showLog' : '/js/vueApp/showLog.vue'
         }
     })
 }
