@@ -28,12 +28,11 @@ module.exports = {
             const data = {cmd : 'saveTask', command : me.$parent.cmd}; 
             me.root.dataEngine(me).saveTask(data, function(result) {
                 me.cancel()
-                me.$parent.askBackendStatus();
+                setTimeout(
+                    function() {
+                        me.$parent.askBackendStatus();
+                    }, 1000);
             });
-        },
-        switchModule(v) {
-            this.$parent.module = v;
-            
         },
         cancel() {
             this.$parent.cmd = '';
