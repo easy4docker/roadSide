@@ -82,7 +82,7 @@ module.exports = {
         },
         passCommand(v) {
             const me = this;
-            me.module = '';
+            me.module = 'allTasks';
             me.triggerFrom(v);
         }
     },
