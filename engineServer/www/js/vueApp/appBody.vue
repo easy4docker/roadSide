@@ -32,7 +32,8 @@
                         </span>
                         <div v-if="module=='allTasks'" class="text-left p-1 pl-2" v-for="item in scheduledTasks">
                             {{item.name}}
-                        </div> 
+                        </div>
+                        <div>-{{module}}-</div>
                     </div>
                 </div>
             </div>
