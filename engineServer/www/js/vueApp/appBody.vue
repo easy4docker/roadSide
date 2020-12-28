@@ -77,6 +77,7 @@ module.exports = {
             });
         },
         passCommand(v) {
+            const me = this;
             me.triggerFrom(v);
         }
     },
