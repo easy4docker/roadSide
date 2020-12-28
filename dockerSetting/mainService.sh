@@ -1,5 +1,4 @@
 stsCron=1
-echo "* * * * * root echo 9999 >> /var/_localAppData/log.txt" >> /etc/crontab
 cron start
 until [ $stsCron = 0 ]
 do 
