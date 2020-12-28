@@ -7,7 +7,7 @@
                             Local Scripts
                         </div>
                         <div class="text-left p-1 pl-2" v-for="item in localScripts">
-                            {{item.name}}
+                            <span v-if="isPython(item.name)">{{item.name}}</span>
                         </div> 
                     </div>
 
@@ -59,6 +59,9 @@ module.exports = {
         )
     },
     methods :{
+        isPython(name) {
+                return (/\.py$/.test(name)) ? true : false;
+        },
         askBackendStatus() {
             var me = this;
             const data = {};
