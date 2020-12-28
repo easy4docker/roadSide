@@ -1,7 +1,7 @@
 <template>
     <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
         Log {{fileName}}: 
-       <textarea class="form-control" rows="28" readonly>{{fileName}}</textarea>
+       <textarea class="form-control" rows="20" readonly>{{fileName}}</textarea>
     </div>
 </template>
 <script>

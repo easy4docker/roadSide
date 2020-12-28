@@ -5,7 +5,7 @@
 			CP = new pkg.crowdProcess(),
 			me = this;
 
-		this.askBackendStatus = (data) => {
+		me.askBackendStatus = (data) => {
 			const _f = {};
 			_f['localScripts'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
@@ -27,7 +27,10 @@
 			}, 6000);
 			
 		}
-		this.saveTask = (data) => {
+		me.askLogContent = (data) => {
+			res.send(data);
+		}
+		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
 			const dirnCron = env.dataFolder + '/_cron';
 			const fn = dirn + '/onetime_' + new Date().getTime() + '.sh';
