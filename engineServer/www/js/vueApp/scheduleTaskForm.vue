@@ -27,13 +27,17 @@ module.exports = {
             var me = this;
             const data = {cmd : 'saveTask', command : me.$parent.cmd}; 
             me.root.dataEngine(me).saveTask(data, function(result) {
-                me.$parent.cmd = '';
+                me.cancel()
                 me.$parent.askBackendStatus();
             });
         },
         switchModule(v) {
             this.$parent.module = v;
             
+        },
+        cancel() {
+            this.$parent.cmd = '';
+            this.switchModule('allTasks');
         }
     },
     components: {
