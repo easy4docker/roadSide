@@ -37,7 +37,7 @@ module.exports = {
         },
         switchModule(v) {
             this.$parent.module = v;
-            this.$forceUpdate();
+            
         }
     },
     components: {

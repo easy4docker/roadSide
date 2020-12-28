@@ -64,6 +64,7 @@ module.exports = {
             const me = this;
             me.cmd = v;
             me.module = 'addTask';
+            me.$forceUpdate();
             
         },
         isPython(name) {
