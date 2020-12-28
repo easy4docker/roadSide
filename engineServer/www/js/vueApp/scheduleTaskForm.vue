@@ -4,7 +4,7 @@
             <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
             <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
         </label>
-        <textarea class="form-control" rows="2" id="query" v-model="$parent.cmd" v-on:keyup.enter="submit" 
+        <textarea class="form-control" rows="2" id="query" v-model="$parent.command" v-on:keyup.enter="submit" 
         placeholder="Input shell command"></textarea>
     </div>
 </template>
@@ -21,11 +21,11 @@ module.exports = {
     },
     methods :{
         saveDisable () {
-            return (!this.$parent.cmd) ? true : false;
+            return (!this.$parent.command) ? true : false;
         },
         saveTask () {
             var me = this;
-            const data = {cmd : 'saveTask', command : me.$parent.cmd}; 
+            const data = {cmd : 'saveTask', command : me.$parent.command}; 
             me.root.dataEngine(me).saveTask(data, function(result) {
                 me.cancel()
                 setTimeout(
@@ -36,8 +36,8 @@ module.exports = {
         },
         cancel() {
             var me = this;
-            me.$parent.cmd = '';
-            me.$parent.module('');
+            me.$parent.command = '';
+            me.$parent.module = '';
         }
     },
     components: {
