@@ -40,8 +40,8 @@
 			}			
 		}
 		me.askLogContent = (data) => {
-			// const fileName = env.dataFolder + '/log/' + data.fileName;
-			res.send(data);
+			const fileName = env.dataFolder + '/log/' + data.fileName;
+			res.send({fileName : fileName });
 			/*
 			fs.stat(fn, function(err, stat) {
 						if(err == null) {
