@@ -82,6 +82,7 @@ module.exports = {
         },
         passCommand(v) {
             const me = this;
+            me.module = '';
             me.triggerFrom(v);
         }
     },
