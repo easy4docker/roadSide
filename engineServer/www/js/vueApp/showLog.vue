@@ -10,7 +10,7 @@ module.exports = {
         const me = this;
         return {
             root : this.$parent.root,
-            fileName = 'v'
+            fileName : 'v'
         }
     },
     mounted () {
