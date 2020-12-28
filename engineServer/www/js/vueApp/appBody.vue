@@ -48,7 +48,7 @@ module.exports = {
             scheduledTasks :[],
             logs    : [],
             module  : '',
-            cmd : 'tt'
+            cmd : ''
         }
     },
     mounted () {
@@ -62,7 +62,7 @@ module.exports = {
     methods :{
         triggerFrom(v) {
             const me = this;
-            me.cmd = 'phthon3 ' + v;
+            me.cmd = (!v) ? '' : ('phthon3 ' + v);
             me.module = 'addTask'; 
         },
         isPython(name) {
@@ -81,12 +81,14 @@ module.exports = {
         passCommand(v) {
             const me = this;
             me.module = 'allTasks';
+            me.triggerFrom(v);
+            /*
             setTimeout(
                 function() {
                     me.triggerFrom(v);
                 }, 100
             );
-            
+            */
         }
     },
     components: VUEApp.loadComponents({
