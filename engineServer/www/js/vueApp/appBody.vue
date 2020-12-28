@@ -28,7 +28,7 @@
                     <div class="card main_list_file_section p-1 alert-secondary" >
                         <app-menu></app-menu>
                         <span v-if="module=='addTask'">
-                            <schedule-task-form cmd="yyy"></schedule-task-form>
+                            <schedule-task-form v.bind:cmd="command"></schedule-task-form>
                         </span>
                         <div v-if="module=='allTasks'" class="text-left p-1 pl-2" v-for="item in scheduledTasks">
                             {{item.name}}
@@ -47,7 +47,8 @@ module.exports = {
             localScripts : [],
             scheduledTasks :[],
             logs    : [],
-            module  : ''
+            module  : '',
+            command : ''
         }
     },
     mounted () {
@@ -62,6 +63,7 @@ module.exports = {
         triggerFrom(v) {
             const me = this;
             me.module = 'addTask';
+            me.command = v;
         },
         isPython(name) {
                 return (/\.py$/.test(name)) ? true : false;
