@@ -1,2 +1,2 @@
 cron start
-sh secondLoop.sh
+# sh secondLoop.sh
