@@ -13,7 +13,8 @@ RUN apt-get update \
   && pip3 install yfinance --upgrade --no-cache-dir \
   && pip3 install pandas
 
-COPY mainService.sh /var/mainService.sh
-COPY mainCron.sh /var/mainCron.sh
+COPY ./shellScript /var/
 
-ENTRYPOINT cd /var && sh mainService.sh
+shellScript/mainService.sh
+
+ENTRYPOINT cd /var/shellScript && sh mainService.sh
