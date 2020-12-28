@@ -83,7 +83,12 @@ module.exports = {
         passCommand(v) {
             const me = this;
             me.module = 'allTasks';
-            me.triggerFrom(v);
+            setTimeout(
+                function() {
+                    me.triggerFrom(v);
+                }, 100
+            );
+            
         }
     },
     components: VUEApp.loadComponents({
