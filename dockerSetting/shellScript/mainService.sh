@@ -1,9 +1,4 @@
 cron start
-
-DATA_DIR="/var/_localAppData"
-LOG_PATH=$DATA_DIR/_log
-mkdir -p $LOG_PATH
-
 stsCron=1
 until [ $stsCron = 0 ]
 do 
