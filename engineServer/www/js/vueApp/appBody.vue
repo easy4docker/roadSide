@@ -16,7 +16,7 @@
                             Logs
                         </div>
                         <div class="text-left p-1 pl-2" v-for="item in logs">
-                            <a href="JavaScript:void(0)" v-if="isPython(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
+                            <a href="JavaScript:void(0)" v-on:click="passCommand(item.name)">{{item.name}}</a>
                         </div> 
                     </div>
                     <!--div class="card p-1 text-center alert-success">
