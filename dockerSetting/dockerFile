@@ -13,8 +13,5 @@ RUN apt-get update \
   && pip3 install yfinance --upgrade --no-cache-dir \
   && pip3 install pandas
 
-COPY ./shellScript /var/
-
-shellScript/mainService.sh
-
+COPY shellScript /var/shellScript
 ENTRYPOINT cd /var/shellScript && sh mainService.sh
