@@ -1,5 +1,6 @@
 <template>
     <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
+        Log {{fileName}}: 
        <textarea class="form-control" rows="28" readonly>{{fileName}}</textarea>
     </div>
 </template>
@@ -15,21 +16,17 @@ module.exports = {
     },
     watch: {
         fileName: function (v) {
-            console.log('changed to -->' + v);
+            me.askLogContent(v);
         }
     },
     mounted () {
     },
     methods :{
-        askLogContent () {
+        askLogContent (v) {
             var me = this;
-            const data = {cmd : 'askLogContent', fileName : me.fileName}; 
+            const data = {cmd : 'askLogContent', fileName : v}; 
             me.root.dataEngine(me).askLogContent(data, function(result) {
-                me.cancel()
-                setTimeout(
-                    function() {
-                        me.$parent.askBackendStatus();
-                    }, 1000);
+                console.log(result);
             });
         }
     },
@@ -39,7 +36,4 @@ module.exports = {
 </script>
  
 <style>
-.scheduleFromSection {
-    min-height : 6rem;
-}
 </style>

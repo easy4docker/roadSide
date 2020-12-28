@@ -38,6 +38,10 @@ module.exports = {
         saveTask(data, callback) {
             var me = this;
             me.ajaxPost(data, callback, true);
+        },
+        askLogContent(data, callback) {
+            var me = this;
+            me.ajaxPost(data, callback, true);
         }
     }
 }
