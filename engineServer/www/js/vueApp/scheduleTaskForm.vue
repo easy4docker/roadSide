@@ -35,8 +35,9 @@ module.exports = {
             });
         },
         cancel() {
-            this.$parent.cmd = '';
-            this.switchModule('');
+            var me = this;
+            me.$parent.cmd = '';
+            me.$parent.module('');
         }
     },
     components: {
