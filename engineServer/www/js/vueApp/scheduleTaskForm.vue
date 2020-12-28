@@ -34,7 +34,7 @@ module.exports = {
                 me.$parent.askBackendStatus();
             });
         },
-        switchmodule(v) {
+        switchModule(v) {
             this.$parent.module = v;
             this.$forceUpdate();
         }
