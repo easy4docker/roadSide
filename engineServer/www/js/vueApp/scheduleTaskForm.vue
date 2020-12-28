@@ -14,17 +14,14 @@ module.exports = {
     data: function() {
         const me = this;
         return {
-            root : this.$parent.root,
-            form : {
-                command : me.$parent.cmd
-            }
+            root : this.$parent.root
         }
     },
     mounted () {
     },
     methods :{
         saveDisable () {
-            return (!$parent.cmd) ? true : false;
+            return (!this.$parent.cmd) ? true : false;
         },
         saveTask () {
             var me = this;
