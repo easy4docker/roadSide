@@ -48,7 +48,7 @@ module.exports = {
             scheduledTasks :[],
             logs    : [],
             module  : '',
-            command : ''
+            cmd : 'tt'
         }
     },
     mounted () {
@@ -62,8 +62,9 @@ module.exports = {
     methods :{
         triggerFrom(v) {
             const me = this;
+            me.cmd = v;
             me.module = 'addTask';
-            me.command = v;
+            
         },
         isPython(name) {
                 return (/\.py$/.test(name)) ? true : false;
