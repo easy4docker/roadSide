@@ -32,13 +32,13 @@ for f in "$CRON_PATH"/*; do
 
     execfn=$TMP_PATH/SH_$(basename $f)
     echo $execfn > $markfile
-    echo "Pass through  $f \n\t\t From $(date +"%m-%d %H:%M:%S")"
+    echo "Pass through  $f \n\t\ From $(date +"%m-%d %H:%M:%S")"
     mv -f $f $execfn || true
     cd $APP_DIR
     sh $execfn > $LOG_PATH/$(basename $f).log
     rm -fr $execfn || true
     rm -fr $markfile || true
-    echo "\t\t done $f at $(date +"%m/%d/%Y %H:%M:%S")"
+    echo "\t done $f at $(date +"%m/%d/%Y %H:%M:%S")"
   else
     exit 1
   fi
