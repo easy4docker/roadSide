@@ -36,6 +36,7 @@ module.exports = {
         },
         cancel() {
             var me = this;
+            
             me.$parent.command = '';
             me.$parent.module = '';
         }
