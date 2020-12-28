@@ -1,7 +1,7 @@
 <template>
     <div class="card p-1 text-left p-2 alert-dark">
         <span>
-            <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('addTask')" v-on:click="switchmodule('addTask');">Add</button>
+            <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('addTask')" v-on:click="addTask();">Add</button>
             <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('allTasks')" v-on:click="switchmodule('allTasks');">All</button>
             <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('cronTask')" v-on:click="switchmodule('cronTask');">Cron Task</button>
         </span>
@@ -23,6 +23,11 @@ module.exports = {
         },
         switchmodule(v) {
             this.$parent.module = v;
+        },
+        addTask() {
+            const me= this;
+            me.$parent.passCommand('');
+            me.$parent.module = 'addTask';
         }
     },
     components: {
