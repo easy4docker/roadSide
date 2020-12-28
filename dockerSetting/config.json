@@ -1,5 +1,5 @@
 {
   "type"        : "backendCloud",
-  "ports"       : [3000],
+  "ports"       : [],
   "cloudPort"   : [80]
 }
