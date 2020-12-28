@@ -62,7 +62,7 @@ module.exports = {
     methods :{
         triggerFrom(v) {
             const me = this;
-            me.cmd = v;
+            me.cmd = 'phthon3 ' + v;
             me.module = 'addTask';
             me.$forceUpdate();
             
