@@ -7,8 +7,8 @@
             </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
             <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule.sync="form.schedule"></comm-cron-schedule>
-            <hr/>form.schedule = $event
-            {{form.schedule}}
+            <hr/>
+            {{form.schedule}} root [command]
             <hr/>
             <div class="p-3 text-right">
                 <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
