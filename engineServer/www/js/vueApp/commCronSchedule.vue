@@ -14,7 +14,7 @@
                     <div class="row text-center">
                         <div v-for="rec in cfg" class="col-sm-2 text-center form-group">
                             <select class="form-control" v-model="MIN">
-                                <option v-bind:value="'*'">{{MON}}<div>
+                                <option v-bind:value="'*'">{{MIN}}<div>
                                 <option v-for="item in rec.list" v-bind:value="item">
                                     {{ idx}}
                                 </option>
@@ -45,7 +45,7 @@ module.exports = {
             ],
             arr : ['*', '*'],
             str : '',
-            MIN : ''
+            MIN : '*'
         }
     },
     mounted () {
