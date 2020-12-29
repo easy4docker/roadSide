@@ -73,9 +73,9 @@ module.exports = {
     mounted () {
     },
     methods :{
-        changeSchedule(v) {
+        changeSchedule() {
             console.log('ssssy');
-            console.log(v);
+            
            // this.$emit('changeSchedule');
             this.$emit('changeSchedule', 'mattmaribojoc')
             
