@@ -30,14 +30,7 @@
                     <div class="col-sm-1">*</div>
                     <div class="col-sm-6"></div>
                 </div>
-            </div> 
-
-            <label class="m-1">Task ? =={{form.type}}=={{getList(10)}}</label>
-
-            <div class="m-1" v-if="form.type==='E'">
-                Trigger By File
-            </div> 
-
+            </div>
             <div class="p-3 text-right">
                 <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
