@@ -43,7 +43,7 @@
                             <schedule-task-form ref="scheduleTaskForm"></schedule-task-form>
                         </span>
                         <div v-if="module=='allTasks'" class="text-left p-1 pl-2" v-for="item in scheduledTasks">
-                            {{item.name}}
+                            <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
                         </div>
 
                         <div v-if="module=='showLog'"  class="card p-1 text-center alert-success">
