@@ -6,18 +6,22 @@
                         <div class="form-control card p-2 text-center alert-dark">
                             Local Scripts
                         </div>
-                        <div class="text-left p-1 pl-2 list_file_section" v-for="item in localScripts">
-                            <a href="JavaScript:void(0)" v-if="isPython(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
-                        </div> 
+                        <div class="text-left p-1 pl-2 list_file_section">
+                            <div class="" v-for="item in localScripts">
+                                <a href="JavaScript:void(0)" v-if="isPython(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card p-1 mt-1 alert-secondary">
                         <div class="form-control card  p-2 text-center alert-dark">
                             Logs
                         </div>
-                        <div class="text-left p-1 pl-2 list_file_section " v-for="item in logs">
-                            <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
-                        </div> 
+                        <div class="text-left p-1 pl-2 list_file_section">
+                            <div class="" v-for="item in logs">
+                                <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                            </div>
+                        </div>
                     </div>
 
 
