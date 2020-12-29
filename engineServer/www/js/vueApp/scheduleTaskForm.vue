@@ -8,7 +8,8 @@
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
             <label>Sechduled ?
             </label>
-            <input type="text" class="form-control" v-model="form.command"  placeholder="Input shell command">
+                <input type="radio" v-model="from.type" value="0">red
+                <input type="radio" v-model="form.type" value="1">blue
         </div>
     </span>
 </template>
