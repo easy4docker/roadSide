@@ -104,16 +104,16 @@
 						});
 				} else {
 					// const cmd = 'echo "' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log" >> /etc/cront ';
-					const cmd = 'echo "_log/cron.log" >> /etc/cront ';
+					const cmd = 'echo "_log/cron.log" >> /etc/cront1 ';
 					exec(cmd, {maxBuffer: 1024 * 2048},
 						function(error, stdout, stderr) {
-							cbk(true);
+							cbk(stdout);
 						});
 				}
 			}
 
 			CP.serial(_f, (data) => {
-				res.send(CP.data['writeFile']);
+				res.send(CP.data['copyFile']);
 			}, 12000);
 		}
 	};
