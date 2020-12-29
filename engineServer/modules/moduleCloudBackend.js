@@ -105,7 +105,7 @@
 				} else {
 					// const cmd = 'echo "' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log" >> /etc/cront ';
 					// const cmd = 'echo "_log/cron.log" >> /etc/cront ';
-					exec('cp ' + fn + ' /etc/', {maxBuffer: 1024 * 2048},
+					exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
 						function(error, stdout, stderr) {
 							cbk(true);
 						});
