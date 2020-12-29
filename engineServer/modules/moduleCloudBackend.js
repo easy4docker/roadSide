@@ -105,10 +105,16 @@
 				} else {
 					// const cmd = 'echo \"' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log\" >> /etc/cront ';
 					const cmd = 'echo 1234 >> /etc/cront ';
-					exec('echo "' + cmd + '" >> ' + dirnCron + '/buildCron.sh', {maxBuffer: 1024 * 2048},
-						function(error, stdout, stderr) {
-							cbk(true);
-						});
+					fs.writeFile(fn, cmd, (err) => {
+						if (err) {
+							cbk(err.message);
+						} else {
+							exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
+								function(error, stdout, stderr) {
+									cbk(true);
+								});
+						}
+					});
 				}
 			}
 
