@@ -1,16 +1,23 @@
 <template>
     <span>
         <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
-            <label class="m-1">Add Your Task 
+            <label class="m-2">Add Your Task 
                 <input class="ml-3" type="radio" v-model="form.type" value=""> Command
-                <input class="ml-3" type="radio" v-model="form.type" value="E"> Event Task
                 <input class="ml-3" type="radio" v-model="form.type" value="C"> Cron Task
             </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
   
-            <div class="m-1" v-if="form.type==='C'">
+            <div class="container-fluid m-1" v-if="form.type==='C'">
+                <div class="row">
+                    <div class="col-sm-1">MIN</div>
+                    <div class="col-sm-1">HOUR</div>
+                    <div class="col-sm-1">DOM</div>
+                    <div class="col-sm-1">MON</div>
+                    <div class="col-sm-1">DOW</div>
+                    <div class="col-sm-1">CMD</div>
+                    <div class="col-sm-6"></div>
+                </div>
                 <label class="m-1">Task ? =={{form.type}}==</label>
-                MIN HOUR DOM MON DOW CMD
             </div> 
 
             <label class="m-1">Task ? =={{form.type}}=={{getList(10)}}</label>
@@ -36,7 +43,7 @@ module.exports = {
             form : {
                 command : '',
                 type : '',
-                schedule : ['','','','','','']
+                schedule : ''
             }
         }
     },
