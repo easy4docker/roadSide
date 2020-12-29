@@ -1,13 +1,15 @@
 <template>
     <span>
         <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
-            <label class="m-1">Add Your Task</label>
+            <label class="m-1">Add Your Task 
+                <input class="ml-3" type="radio" v-model="form.type" value=""> Command
+                <input class="ml-3" type="radio" v-model="form.type" value="E"> Event Task
+                <input class="ml-3" type="radio" v-model="form.type" value="C"> Cron Task
+            </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
             <label class="m-1">Task ? =={{form.type}}==</label>
             <div class="m-1">
-                <input class="ml-3" type="radio" v-model="form.type" value="0"> Command
-                <input class="ml-3" type="radio" v-model="form.type" value="1"> Event Task
-                <input class="ml-3" type="radio" v-model="form.type" value="2"> Cron Task
+
             </div> 
             <div>
                 <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
