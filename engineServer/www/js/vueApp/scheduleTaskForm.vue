@@ -19,6 +19,11 @@ module.exports = {
     },
     mounted () {
     },
+    watch: {
+        this.$parent.command: function (v) {
+            console.log('$$$$$$');
+        }
+    },
     methods :{
         saveDisable () {
             return (!this.$parent.command) ? true : false;
