@@ -29,7 +29,7 @@
 </template>
 <script>
 module.exports = {
-    props: [],
+    props: ['str'],
     data: function() {
         const me = this;
         return {
@@ -41,10 +41,21 @@ module.exports = {
                 {
                     caption : 'Hour',
                     list : me.getList(24)
+                },
+                {
+                    caption : 'Day',
+                    list : me.getList(31)
+                },
+                {
+                    caption : 'Month',
+                    list : me.getList(12)
+                },
+                {
+                    caption : 'Week day',
+                    list : me.getList(7)
                 }
             ],
-            arr : ['5', '*'],
-            str : ''
+            arr : ['5', '*', '*', '*', '*']
         }
     },
     watch :{
