@@ -36,9 +36,7 @@ module.exports = {
             form : {
                 command : '',
                 type : '',
-                schedule : {
-                    
-                }
+                schedule : ['','','','','','']
             }
         }
     },
