@@ -32,7 +32,7 @@ for f in "$CRON_PATH"/*; do
 
     execfn=$TMP_PATH/SH_$(basename $f)
     echo $execfn > $markfile
-    echo "Pass through  $f \n\t\ From $(date +"%m-%d %H:%M:%S")"  >> $LOG_PATH/mainService.sh.log
+    echo "Pass through  $f \n\t From $(date +"%m-%d %H:%M:%S")"  >> $LOG_PATH/mainService.sh.log
     mv -f $f $execfn || true
     cd $APP_DIR
     sh $execfn > $LOG_PATH/$(basename $f).log
