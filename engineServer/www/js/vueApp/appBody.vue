@@ -106,6 +106,6 @@ module.exports = {
 </script>
  
 <style>
-.list_file_section { height : 20rem}
-.main_list_file_section { min-height : 40.2rem}
+.list_file_section { height : 20rem; overflow-y: scroll;}
+.main_list_file_section { min-height : 40.2rem; overflow-y: scroll;}
 </style>
