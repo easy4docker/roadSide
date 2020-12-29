@@ -6,7 +6,10 @@
                 <input class="ml-3" type="radio" v-model="form.type" value="C"> Cron Task
             </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
-            <comm-cron-schedule v-if="form.type === 'C'"></comm-cron-schedule>
+            <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule="form.schedule"></comm-cron-schedule>
+            <hr/>
+            {{schedule}}
+            <hr/>
             <div class="p-3 text-right">
                 <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
@@ -24,7 +27,7 @@ module.exports = {
             form : {
                 command : '',
                 type : '',
-                schedule : ''
+                schedule : '* * * * *'.split(' ')
             }
         }
     },
