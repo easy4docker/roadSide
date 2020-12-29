@@ -68,6 +68,7 @@ module.exports = {
         }
     },
     mounted () {
+        this.$emit('update:schedule', this.arr)
     },
     methods :{
         getList(n) {
