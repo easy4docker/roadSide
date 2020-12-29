@@ -94,7 +94,7 @@ module.exports = {
             const data = {cmd: 'deleteFile', type: type, fileName: fn };
             data.cmd = "deleteFile"
             me.root.dataEngine(me).sendQuery(data, function(result) {
-                // console.log(result);
+                me.module = '';
                 me.askBackendStatus();
             });
         },
