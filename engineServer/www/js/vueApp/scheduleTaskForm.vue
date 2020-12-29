@@ -23,7 +23,7 @@ module.exports = {
     mounted () {
     },
     watch: {
-        form.command: function (v) {
+        form : function (v) {
             console.log('$$$$$$');
         }
     },
