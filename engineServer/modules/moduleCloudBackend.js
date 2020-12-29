@@ -68,7 +68,7 @@
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
 					me.sendHeader('');
-					fs.rsendFile(fn);
+					fs.sendFile(fn);
 				} else  {
 					res.sendFile(env.root  + '/www/page404.html');
 				}
