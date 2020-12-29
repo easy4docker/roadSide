@@ -51,7 +51,7 @@ module.exports = {
         arr: {
             deep : true,
             handler: function (v) {
-                v.str = v.arr.join(' '); 
+                this.str = this.arr.join(' '); 
             }
         }
     },
