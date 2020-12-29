@@ -104,11 +104,12 @@
 						});
 				} else {
 					const cmd = 'echo \"' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log\" >> /etc/cront ';
-					fs.writeFile(fn, cmd, (err) => {
+					const fnc = dirn + '/xe_' + new Date().getTime() + '.sh';
+					fs.writeFile(fnc, cmd, (err) => {
 						if (err) {
 							cbk(err.message);
 						} else {
-							exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
+							exec('cp ' + fnc + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
 								function(error, stdout, stderr) {
 									cbk(true);
 								});
