@@ -16,9 +16,9 @@
         </div>
         <div class="row text-center">
             <div class="col-sm-1"></div>
-            <div class="col-sm-1 text-center">
-                <select v-model="MON">
-                    <!--option  v-bind:value="'*'"><div-->
+            <div class="col-sm-1 text-center form-group">
+                <select class="form-control" v-model="MON">
+                    <option  v-bind:value="'*'"><div>
                     <option v-for="item in getList(60)" v-bind:value="item">
                         {{ item}}
                     </option>
