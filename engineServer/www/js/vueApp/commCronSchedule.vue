@@ -43,6 +43,11 @@ module.exports = {
     data: function() {
         const me = this;
         return {
+            cfg : [
+                {
+                    caption : 'Minutes'
+                }
+            ],
             MON : '*'
         }
     },
