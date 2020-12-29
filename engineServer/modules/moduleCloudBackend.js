@@ -49,10 +49,14 @@
 
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
+					me.sendHeader('');
+					fs.readFile(fn);
+					/*
 					fs.readFile(fn, 'utf-8', (err, data)=> {
 						me.sendHeader('');
 						res.send((err) ? err.message : data);
 					});
+					*/
 				} else  {
 					res.sendFile(env.root  + '/www/page404.html');
 				}
@@ -63,10 +67,8 @@
 
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
-					fs.readFile(fn, 'utf-8', (err, data)=> {
-						me.sendHeader('');
-						res.send((err) ? err.message : data);
-					});
+					me.sendHeader('');
+					fs.readFile(fn);
 				} else  {
 					res.sendFile(env.root  + '/www/page404.html');
 				}
