@@ -2,7 +2,7 @@
     <div class="container-fluid m-1">
         <div class="row">
             <div class="col-sm-3">Cron Schedule</div>
-            <div class="col-sm-6">{{str}}</div>
+            <div class="col-sm-6">{{schedule}}</div>
         </div>
         <div class="row">
             <div class="col-sm-1"></div>
@@ -29,7 +29,7 @@
 </template>
 <script>
 module.exports = {
-    props: ['str'],
+    props: ['schedule'],
     data: function() {
         const me = this;
         return {
@@ -62,7 +62,7 @@ module.exports = {
         arr: {
             deep : true,
             handler: function (v) {
-                this.str = this.arr.join(' '); 
+                this.schedule = this.arr.join(' '); 
             }
         }
     },
