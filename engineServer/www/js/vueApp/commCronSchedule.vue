@@ -1,8 +1,8 @@
 <template>
     <div class="container-fluid m-1">
         <div class="row">
-            <div class="col-sm-3">Cron Schedule</div>
-            <div class="col-sm-6">{{schedule}} root [command]</div>
+            <div class="col-sm-2">Cron Schedule:</div>
+            <div class="col-sm-10">{{schedule.join(' ')}} root [command]</div>
         </div>
         <div class="row">
             <div class="col-sm-1"></div>
