@@ -29,7 +29,7 @@
                             Output Data
                         </div>
                         <div class="text-left p-1 pl-2 list_file_section">
-                            <div v-for="item in output">
+                            <div v-for="item in outputs">
                                 <a href="JavaScript:void(0)" v-on:click="showOutput(item.name)">{{item.name}}</a>
                             </div>
                         </div>
@@ -63,6 +63,7 @@ module.exports = {
             localScripts : [],
             scheduledTasks :[],
             logs    : [],
+            outputs : [],
             module  : '',
             command : ''
         }
@@ -110,6 +111,7 @@ module.exports = {
                 me.localScripts =  result.localScripts ;
                 me.scheduledTasks =  result.scheduledTasks;
                 me.logs =  result.logs;
+                me.outputs =  result.outputs;
             });
         },
         passCommand(v) {
