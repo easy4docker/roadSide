@@ -19,6 +19,9 @@
                         </div>
                         <div class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in logs">
+                                <a href="JavaScript: void(0)" v-on:click="$parent.deleteFile('log', item.name)" class="mr-1">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
                                 <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
                             </div>
                         </div>
