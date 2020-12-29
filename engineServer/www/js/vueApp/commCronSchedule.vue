@@ -23,7 +23,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-2"></div>
+            <div class="col-sm-2">
+             <button @click='changeSchedule()'>Change Username</button
+            </div>
         </div>
     </div>
 </template>
