@@ -13,7 +13,7 @@
                     </div>
                     <div class="row text-center">
                         <div v-for="rec in cfg" class="col-sm-2 text-center form-group">
-                            <select class="form-control" v-model="MON">
+                            <select class="form-control" v-model="MiN">
                                 <option v-bind:value="'*'">{{MON}}<div>
                                 <option v-for="item in rec.list" v-bind:value="item">
                                     {{ idx}}
