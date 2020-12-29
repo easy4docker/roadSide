@@ -9,22 +9,17 @@
             <div class="col-sm-9">
                 <div class="container-fluid m-1">
                     <div class="row text-center">
-                        <div v-for="item in cfg" class="col-sm-2">{{cfg.caption}}</div>
+                        <div v-for="rec in cfg" class="col-sm-2">{{rec.caption}}</div>
                     </div>
                     <div class="row text-center">
-                        <div v-for="item in cfg" class="col-sm-2 text-center form-group">
+                        <div v-for="rec in cfg" class="col-sm-2 text-center form-group">
                             <select class="form-control" v-model="MON">
                                 <option v-bind:value="'*'">{{MON}}<div>
-                                <option v-for="item in v-for="idx in cfg.list"" v-bind:value="item">
+                                <option v-for="item in rec.list" v-bind:value="item">
                                     {{ idx}}
                                 </option>
                             </select>
                         </div>
-                        <div class="col-sm-2 text-center">*</div>
-                        <div class="col-sm-2 text-center">*</div>
-                        <div class="col-sm-2 text-center">*</div>
-                        <div class="col-sm-2 text-center">*</div>
-                        <div class="col-sm-2 text-center">*</div>
                     </div>
                 </div>
             </div>
