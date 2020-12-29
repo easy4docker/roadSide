@@ -1,6 +1,6 @@
 <template>
     <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
-        Log {{fileName}}: 
+       <div class="m-2">Log {{fileName}}: </div>
        <textarea class="form-control" rows="20" readonly>{{contents}}</textarea>
     </div>
 </template>
