@@ -4,7 +4,7 @@
             <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
             <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
         </label>
-        <input type="text" class="form-control" v-model="$parent.command" v-on:keyup.enter="submit" placeholder="Input shell command">
+        <input type="text" class="form-control" v-model="form.command" v-on:keyup.enter="submit" placeholder="Input shell command">
         MIN HOUR DOM MON DOW CMD
     </div>
 </template>
@@ -15,7 +15,9 @@ module.exports = {
         const me = this;
         return {
             root : this.$parent.root,
-            command : '',
+            form : {
+                command : ''
+            }
         }
     },
     mounted () {
