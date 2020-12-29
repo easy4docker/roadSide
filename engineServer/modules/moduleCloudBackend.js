@@ -103,8 +103,7 @@
 							cbk(true);
 						});
 				} else {
-					// const cmd = 'echo \"' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log\" >> /etc/cront ';
-					const cmd = 'echo 1234 >> /etc/cront ';
+					const cmd = 'echo \"' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log\" >> /etc/cront ';
 					fs.writeFile(fn, cmd, (err) => {
 						if (err) {
 							cbk(err.message);
