@@ -38,7 +38,7 @@ module.exports = {
         },
         saveDisable () {
             if (!this.form.type) {
-                return (!this.$parent.command) ? true : false;
+                return (!this.form.command) ? true : false;
             }
             if (this.form.type === 'C') {
                 return (!this.form.command || !this.form.schedule) ? true : false;
@@ -51,7 +51,6 @@ module.exports = {
                 me.cancel()
                 setTimeout(
                     function() {
-
                         me.$parent.askBackendStatus();
                     }, 1000);
             });
