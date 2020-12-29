@@ -25,7 +25,7 @@ module.exports = {
         const me = this;
         return {
             root : this.$parent.root,
-            form : {\
+            form : {
                 command : '',
                 type : '',
                 schedule : {
