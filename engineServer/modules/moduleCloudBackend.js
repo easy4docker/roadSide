@@ -50,13 +50,13 @@
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
 					// me.sendHeader('');
-					fs.sendFile(fn);
-					/*
+					// fs.sendFile(fn);
+					
 					fs.readFile(fn, 'utf-8', (err, data)=> {
 						me.sendHeader('');
 						res.send((err) ? err.message : data);
 					});
-					*/
+					
 				} else  {
 					res.sendFile(env.root  + '/www/page404.html');
 				}
