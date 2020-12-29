@@ -56,7 +56,7 @@ module.exports = {
                     list : me.getList(7)
                 }
             ],
-            arr : this.schedule
+            arr : (!this.schedule) ? ('* * * * *'.split(' ')) : this.schedule
         }
     },
     watch :{

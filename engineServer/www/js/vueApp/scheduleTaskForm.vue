@@ -27,7 +27,7 @@ module.exports = {
             form : {
                 command : '',
                 type : '',
-                schedule : '* * * * *'.split(' ')
+                schedule : null
             }
         }
     },
