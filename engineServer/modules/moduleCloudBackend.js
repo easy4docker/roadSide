@@ -66,7 +66,7 @@
 				)
 			}
 			_f['writeFile'] = (cbk) => {
-				fs.writeFile(fn, data.command, (err,data) => {
+				fs.writeFile(fn, 'cd /var/_localApp && ' + data.command, (err,data) => {
 					if (err) {
 						cbk(err.message);
 					} else {
