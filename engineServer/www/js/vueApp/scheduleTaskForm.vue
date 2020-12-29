@@ -9,7 +9,8 @@
   
             <div class="container-fluid m-1" v-if="form.type==='C'">
                 <div class="row">
-                    <div class="col-sm-6">Cron Schedule</div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-4">Cron Schedule</div>
                     <div class="col-sm-6"></div>
                 </div>
                 <div class="row">
