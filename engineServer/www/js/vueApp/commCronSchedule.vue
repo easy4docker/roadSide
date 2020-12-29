@@ -50,7 +50,7 @@ module.exports = {
             ],
             arr : ['*', '*'],
             str : '',
-            MIN
+            MIN : ''
         }
     },
     mounted () {
