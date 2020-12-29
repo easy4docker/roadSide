@@ -6,7 +6,7 @@
                 <input class="ml-3" type="radio" v-model="form.type" value="C"> Cron Task
             </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
-            <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule="form.schedule"  @changeSchedule="alert(11);"></comm-cron-schedule>
+            <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule="form.schedule"  @changeSchedule="form.schedule='7777';"></comm-cron-schedule>
             <hr/>form.schedule = $event
             {{form.schedule}}
             <hr/>
