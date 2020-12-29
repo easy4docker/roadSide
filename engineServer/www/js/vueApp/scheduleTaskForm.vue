@@ -8,8 +8,9 @@
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
             <label>Sechduled ?
             </label>
-                <input type="radio" v-model="from.type" value="0">red
-                <input type="radio" v-model="form.type" value="1">blue
+                <input type="radio" v-model="form.type" value="0"> command
+                <input type="radio" v-model="form.type" value="1"> event task
+                <input type="radio" v-model="form.type" value="2"> cron job
         </div>
     </span>
 </template>
