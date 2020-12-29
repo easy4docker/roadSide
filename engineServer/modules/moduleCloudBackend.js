@@ -45,7 +45,7 @@
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
 					fs.readFile(fn, 'utf-8', (err, data)=> {
-						me.sendHeader(m[0].replace(/\./,''));
+						me.sendHeader('');
 						res.send((err) ? err.message : data);
 					});
 				} else  {
