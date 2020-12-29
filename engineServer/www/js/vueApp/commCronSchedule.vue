@@ -62,7 +62,7 @@ module.exports = {
         arr: {
             deep : true,
             handler: function (v) {
-                this.$parent.schedule = this.arr; 
+                this.$parent.form.schedule = this.arr; 
                 this.schedule = this.arr; 
             }
         }
