@@ -5,18 +5,15 @@
             <div class="col-sm-6"></div>
         </div>
         <div class="row text-center">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1">MIN</div>
-            <div class="col-sm-1">HOUR</div>
-            <div class="col-sm-1">DOM</div>
-            <div class="col-sm-1">MON</div>
-            <div class="col-sm-1">DOW</div>
-            <div class="col-sm-1">CMD</div>
-            <div class="col-sm-5"></div>
+            <div class="col-sm-2">MIN</div>
+            <div class="col-sm-2">HOUR</div>
+            <div class="col-sm-2">DOM</div>
+            <div class="col-sm-2">MON</div>
+            <div class="col-sm-2">DOW</div>
+            <div class="col-sm-2">CMD</div>
         </div>
         <div class="row text-center">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-1 text-center form-group">
+            <div class="col-sm-2 text-center form-group">
                 <select class="form-control" v-model="MON">
                     <option v-bind:value="'*'">{{MON}}<div>
                     <option v-for="item in getList(60)" v-bind:value="item">
@@ -24,12 +21,11 @@
                     </option>
                 </select>
             </div>
-            <div class="col-sm-1 text-center">*</div>
-            <div class="col-sm-1 text-center">*</div>
-            <div class="col-sm-1 text-center">*</div>
-            <div class="col-sm-1 text-center">*</div>
-            <div class="col-sm-1 text-center">*</div>
-            <div class="col-sm-5 text-center"></div>
+            <div class="col-sm-2 text-center">*</div>
+            <div class="col-sm-2 text-center">*</div>
+            <div class="col-sm-2 text-center">*</div>
+            <div class="col-sm-2 text-center">*</div>
+            <div class="col-sm-2 text-center">*</div>
         </div>
     </div>
 </template>
