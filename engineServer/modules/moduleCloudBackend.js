@@ -32,6 +32,20 @@
 			}, 6000);
 			
 		}
+
+		me.deleteFile = (data) => {
+			switch (CP.data.type) {
+				case 'log':
+					const fn = env.dataFolder + '/_log/' + data.fileName;
+					exec('rm -fr ' + fn, {maxBuffer: 1024 * 2048},
+					function(error, stdout, stderr) {
+						res.send({status : 'success'});
+					});
+				default:
+					res.send({status : 'failure', message : 'Missing or wrong type!'});
+			}
+		}
+
 		me.sendHeader = (filetype) => {
 			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "X-Requested-With");
