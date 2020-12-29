@@ -16,7 +16,7 @@ def fetchTicker(tickers, period="10y"):
     return dataFrame
 
 def export(dataFrame):
-    dataFrame.to_csv(path_or_buf="/var/_localAppData/output/{0}.csv".format(date.today().strftime("%b-%d-%Y")), index=False)
+    dataFrame.to_csv(path_or_buf="/var/_localAppData/_output/{0}.csv".format(date.today().strftime("%b-%d-%Y")), index=False)
 
 def fetchWatchlist(fileName):
     dataFrame = pd.read_csv(fileName)
