@@ -29,8 +29,8 @@
                             Output Data
                         </div>
                         <div class="text-left p-1 pl-2 list_file_section">
-                            <div v-for="item in logs">
-                                <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                            <div v-for="item in output">
+                                <a href="JavaScript:void(0)" v-on:click="showOutput(item.name)">{{item.name}}</a>
                             </div>
                         </div>
                     </div>
@@ -87,6 +87,15 @@ module.exports = {
             setTimeout(
                 function() {
                     me.$refs.showLog.fileName = v;
+                }, 100
+            );
+        },
+        showOutput(v) {
+            var me = this;
+            me.module = 'showOutput';
+            setTimeout(
+                function() {
+                 //   me.$refs.showLog.fileName = v;
                 }, 100
             );
         },
