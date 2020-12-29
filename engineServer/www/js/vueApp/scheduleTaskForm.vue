@@ -1,12 +1,16 @@
 <template>
-    <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
-        <label>Add Your Task:
-            <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
-            <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
-        </label>
-        <input type="text" class="form-control" v-model="form.command" v-on:keyup.enter="submit" placeholder="Input shell command">
-        MIN HOUR DOM MON DOW CMD
-    </div>
+    <span>
+        <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
+            <label>Add Your Task:
+                <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
+                <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
+            </label>
+            <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
+            <label>Sechduled ?
+            </label>
+            <input type="text" class="form-control" v-model="form.command"  placeholder="Input shell command">
+        </div>
+    </span>
 </template>
 <script>
 module.exports = {
@@ -16,7 +20,11 @@ module.exports = {
         return {
             root : this.$parent.root,
             form : {
-                command : ''
+                command : '',
+                type : '',
+                schedule : {
+                    
+                }
             }
         }
     },
@@ -25,10 +33,8 @@ module.exports = {
     watch: {
         form: {
             deep : true,
-            handler: function (v, v2) {
-                console.log('$$$$$$');
-                console.log(v);
-                console.log(v2);
+            handler: function (v) {
+
             }
         }
     },
