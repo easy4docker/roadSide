@@ -6,8 +6,8 @@
                 <input class="ml-3" type="radio" v-model="form.type" value="C"> Cron Task
             </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
-            <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule="form.schedule"  @changeSchedule="form.schedule = $event"></comm-cron-schedule>
-            <hr/>
+            <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule="form.schedule"  @changeSchedule="alert(11);"></comm-cron-schedule>
+            <hr/>form.schedule = $event
             {{form.schedule}}
             <hr/>
             <div class="p-3 text-right">
@@ -42,8 +42,6 @@ module.exports = {
         }
     },
     methods :{
-
-
         getList(n) {
             const a=[];
             for (i=0 ; i < n; i++) a.push(i);
