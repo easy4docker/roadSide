@@ -20,7 +20,7 @@
                         <div class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in logs">
                                 <a href="JavaScript: void(0)" v-on:click="deleteFile('log', item.name)" class="mr-1">
-                                    <i class="fas fa-trash-alt"></i>
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                                 <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
                             </div>
