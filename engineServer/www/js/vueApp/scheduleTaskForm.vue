@@ -4,8 +4,8 @@
             <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
             <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
         </label>
-        <textarea class="form-control" rows="2" id="query" v-model="$parent.command" v-on:keyup.enter="submit" 
-        placeholder="Input shell command"></textarea>
+        <input type="text" class="form-control" v-model="$parent.command" v-on:keyup.enter="submit" placeholder="Input shell command">
+        MIN HOUR DOM MON DOW CMD
     </div>
 </template>
 <script>
