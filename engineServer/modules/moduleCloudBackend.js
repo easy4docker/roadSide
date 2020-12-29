@@ -108,7 +108,7 @@
 
 					let cron_shell = 'echo "CRON RUN ' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n";
 					cron_shell += 'cd /var/_localApp'+ "\n";
-					cron_shell += 'sh ' + fn + ' >> ' + env.dataFolder + '/_log/cron.log'+ "\n";
+					cron_shell += 'sh ' + fn + "| sed 's/^/\t>>\t/' >> " + env.dataFolder + '/_log/cron.log'+ "\n";
 					cron_shell += 'echo "\tDone ' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n";
 
 					const cmd = 'echo "' + data.schedule + ' root (sh ' + 
