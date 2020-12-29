@@ -2,7 +2,7 @@
     <div class="container-fluid m-1">
         <div class="row">
             <div class="col-sm-3">Cron Schedule</div>
-            <div class="col-sm-6">{{schedule}}</div>
+            <div class="col-sm-6">{{schedule}} root [command]</div>
         </div>
         <div class="row">
             <div class="col-sm-1"></div>

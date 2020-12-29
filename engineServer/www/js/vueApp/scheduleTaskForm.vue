@@ -7,9 +7,6 @@
             </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
             <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule.sync="form.schedule"></comm-cron-schedule>
-            <hr/>
-            {{form.schedule}} root [command]
-            <hr/>
             <div class="p-3 text-right">
                 <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
@@ -33,25 +30,19 @@ module.exports = {
     },
     mounted () {
     },
-    watch: {
-        form: {
-            deep : true,
-            handler: function (v) {
-
-            }
-        }
-    },
     methods :{
-        changeSchedule(v) {
-            alert(v);
-        },
         getList(n) {
             const a=[];
             for (i=0 ; i < n; i++) a.push(i);
             return a;
         },
         saveDisable () {
-            return (!this.$parent.command) ? true : false;
+            if (!this.form.type) {
+                return (!this.$parent.command) ? true : false;
+            }
+            if (this.form.type === 'C') {
+                return (!this.form.command || !this.form.schedule) ? true : false;
+            }        
         },
         saveTask () {
             var me = this;
