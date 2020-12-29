@@ -14,13 +14,14 @@ module.exports = {
     data: function() {
         const me = this;
         return {
-            root : this.$parent.root
+            root : this.$parent.root,
+            command : '',
         }
     },
     mounted () {
     },
     watch: {
-        $parent.command: function (v) {
+        command: function (v) {
             console.log('$$$$$$');
         }
     },
