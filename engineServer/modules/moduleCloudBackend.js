@@ -34,7 +34,7 @@
 		}
 
 		me.deleteFile = (data) => {
-			switch (CP.data.type) {
+			switch (data.type) {
 				case 'log':
 					const fn = env.dataFolder + '/_log/' + data.fileName;
 					exec('rm -fr ' + fn, {maxBuffer: 1024 * 2048},
