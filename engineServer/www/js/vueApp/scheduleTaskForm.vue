@@ -6,11 +6,13 @@
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
             </label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
-            <label>Sechduled ?
+            <label>Sechduled ? =={{form.type}}==
             </label>
+            <div>
                 <input type="radio" v-model="form.type" value="0"> command
                 <input type="radio" v-model="form.type" value="1"> event task
                 <input type="radio" v-model="form.type" value="2"> cron job
+            </div>    
         </div>
     </span>
 </template>
