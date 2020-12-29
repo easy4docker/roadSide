@@ -2,7 +2,7 @@
     <div class="container-fluid m-1">
         <div class="row">
             <div class="col-sm-3">Cron Schedule</div>
-            <div class="col-sm-6"></div>
+            <div class="col-sm-6">{{str}}</div>
         </div>
         <div class="row">
             <div class="col-sm-1"></div>
@@ -51,7 +51,7 @@ module.exports = {
         arr: {
             deep : true,
             handler: function (v) {
-                console.log('changed');
+                v.str = v.arr.join(' '); 
             }
         }
     },
