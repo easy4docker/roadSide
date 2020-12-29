@@ -116,7 +116,7 @@
 
 			CP.serial(_f, (data) => {
 				res.send(CP.data['writeFile']);
-			}, 6000);
+			}, 12000);
 		}
 	};
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
