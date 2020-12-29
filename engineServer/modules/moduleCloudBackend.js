@@ -41,6 +41,7 @@
 					function(error, stdout, stderr) {
 						res.send({status : 'success'});
 					});
+					break;
 				default:
 					res.send({status : 'failure', message : 'Missing or wrong type!'});
 			}
