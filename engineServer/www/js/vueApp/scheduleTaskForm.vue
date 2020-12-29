@@ -24,7 +24,8 @@ module.exports = {
     },
     watch: {
         form: {
-            command : function (v) {
+            deep : true,
+            handler: function (v) {
                 console.log('$$$$$$');
             }
         }
