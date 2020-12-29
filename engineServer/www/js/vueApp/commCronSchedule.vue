@@ -56,17 +56,13 @@ module.exports = {
                     list : me.getList(7)
                 }
             ],
-            arr : ['5', '*', '*', '*', '*']
+            arr : this.schedule
         }
     },
     watch :{
         arr: {
             deep : true,
             handler: function (v) {
-                // this.$parent.form.schedule = this.arr; 
-                // this.$emit(this.arr)
-                
-              //  this.schedule = this.arr; 
                 this.$emit('update:schedule', this.arr)
             }
         }
