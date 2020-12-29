@@ -86,7 +86,7 @@ module.exports = {
             me.module = 'addTask'; 
             setTimeout(function() {
                 me.$refs.scheduleTaskForm.form.command = (!v) ? '' : ('python3 ' + v);
-                me.$refs.scheduleTaskForm.form.type = 'C'; 
+                me.$refs.scheduleTaskForm.form.type = (!v) ? '' : 'C'; 
             }, 100);
         },
         showLog(v) {
