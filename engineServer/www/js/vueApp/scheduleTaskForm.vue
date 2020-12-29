@@ -55,9 +55,7 @@ module.exports = {
     methods :{
         getList(n) {
             const a=[];
-            for (i=0 ; i < n; i++) {
-                a.push[i]
-            }
+            for (i=0 ; i < n; i++) a.push(i);
             return a;
         },
         saveDisable () {
