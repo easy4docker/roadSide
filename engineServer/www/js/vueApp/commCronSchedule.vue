@@ -40,7 +40,7 @@ module.exports = {
                 },
                 {
                     caption : 'Hour',
-                    list : me.getList(60)
+                    list : me.getList(12)
                 }
             ],
             arr : ['*', '*'],
