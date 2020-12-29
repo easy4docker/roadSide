@@ -9,6 +9,10 @@
   
             <div class="container-fluid m-1" v-if="form.type==='C'">
                 <div class="row">
+                    <div class="col-sm-6">Cron Schedule</div>
+                    <div class="col-sm-6"></div>
+                </div>
+                <div class="row">
                     <div class="col-sm-1">MIN</div>
                     <div class="col-sm-1">HOUR</div>
                     <div class="col-sm-1">DOM</div>
@@ -17,7 +21,15 @@
                     <div class="col-sm-1">CMD</div>
                     <div class="col-sm-6"></div>
                 </div>
-                <label class="m-1">Task ? =={{form.type}}==</label>
+                <div class="row">
+                    <div class="col-sm-1">*</div>
+                    <div class="col-sm-1">*</div>
+                    <div class="col-sm-1">*</div>
+                    <div class="col-sm-1">*</div>
+                    <div class="col-sm-1">*</div>
+                    <div class="col-sm-1">*</div>
+                    <div class="col-sm-6"></div>
+                </div>
             </div> 
 
             <label class="m-1">Task ? =={{form.type}}=={{getList(10)}}</label>
