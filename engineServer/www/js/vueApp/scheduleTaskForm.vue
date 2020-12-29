@@ -12,7 +12,7 @@
                     <div class="col-sm-6">Cron Schedule</div>
                     <div class="col-sm-6"></div>
                 </div>
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-1">MIN</div>
                     <div class="col-sm-1">HOUR</div>
@@ -22,7 +22,7 @@
                     <div class="col-sm-1">CMD</div>
                     <div class="col-sm-4"></div>
                 </div>
-                <div class="row">
+                <div class="row text-center">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-1 text-center">*</div>
                     <div class="col-sm-1 text-center">*</div>
