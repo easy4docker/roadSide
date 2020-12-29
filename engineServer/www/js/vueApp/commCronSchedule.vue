@@ -48,7 +48,7 @@ module.exports = {
         }
     },
     watch :{
-        arr {
+        arr: {
             deep : true,
             handler: function (v) {
                 console.log('changed');
