@@ -14,8 +14,8 @@
                     <div class="row text-center">
                         <div v-for="(rec, idx) in cfg" class="col-sm-2 text-center form-group">
                             <select class="form-control" v-model="arr[idx]">
-                                <option v-bind:value="'*'">*<div>
-                                <option v-for="item in rec.list" v-bind:value="item">
+                                <option class="center" v-bind:value="'*'">*<div>
+                                <option class="center" v-for="item in rec.list" v-bind:value="item">
                                     {{item}}
                                 </option>
                             </select>
