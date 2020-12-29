@@ -22,6 +22,11 @@
 				const tree = dirTree(env.dataFolder + '/_log');
 				cbk((!tree) ? (env.dataFolder + '/_log') : tree.children);
 			}
+			_f['logs'] = (cbk) => {
+				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
+				const tree = dirTree(env.dataFolder + '/_log');
+				cbk((!tree) ? (env.dataFolder + '/_log') : tree.children);
+			}
 			CP.serial(_f, (data) => {
 				res.send({localScripts : CP.data.localScripts, scheduledTasks : CP.data.scheduledTasks, logs : CP.data.logs});
 			}, 6000);
