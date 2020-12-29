@@ -72,7 +72,7 @@ module.exports = {
     },
     methods :{
         showSchedule() {
-            (!this.arr) ? '' : this.arr.join(' ');
+            (!this.form.arr) ? '' : this.form.arr.join(' ');
         },
         getList(n) {
             const a=[];
