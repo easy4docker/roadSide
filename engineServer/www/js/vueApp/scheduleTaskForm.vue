@@ -13,7 +13,7 @@
                 MIN HOUR DOM MON DOW CMD
             </div> 
 
-            <label class="m-1">Task ? =={{form.type}}=={{getList()}}</label>
+            <label class="m-1">Task ? =={{form.type}}=={{getList(10)}}</label>
 
             <div class="m-1" v-if="form.type==='E'">
                 Trigger By File
@@ -53,8 +53,12 @@ module.exports = {
         }
     },
     methods :{
-        getList () {
-            return for(var i,a=[i=0];i<10;a[i++]=i);
+        getList(n) {
+            const a=[];
+            for (i=0 ; i < n; i++) {
+                a.push[i]
+            }
+            return a;
         },
         saveDisable () {
             return (!this.$parent.command) ? true : false;
