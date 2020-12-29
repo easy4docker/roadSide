@@ -78,7 +78,7 @@
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
 			const dirnCron = env.dataFolder + '/_cron';
-			const fn = dirn + ((data.type === 'C') ? '/cm_' : '/cr_') + new Date().getTime() + '.sh';
+			const fn = dirn + ((data.type === 'C') ? '/xe_' : '/xc_') + new Date().getTime() + '.sh';
 			const _f = {};
 			_f['createDir'] = (cbk) => {
 				exec('mkdir -p ' + dirn, {maxBuffer: 1024 * 2048},
@@ -103,7 +103,7 @@
 							cbk(true);
 						});
 				} else {
-					exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
+					exec('echo "' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log" >> /etc/cronjob ', {maxBuffer: 1024 * 2048},
 						function(error, stdout, stderr) {
 							cbk(true);
 						});
