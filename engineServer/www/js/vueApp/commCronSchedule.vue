@@ -18,7 +18,7 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-1 text-center form-group">
                 <select class="form-control" v-model="MON">
-                    <option  v-bind:value="'*'"><div>
+                    <option v-bind:value="'*'">{MON}<div>
                     <option v-for="item in getList(60)" v-bind:value="item">
                         {{ item}}
                     </option>
