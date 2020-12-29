@@ -23,13 +23,14 @@
                     <div class="col-sm-4"></div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-1">*</div>
-                    <div class="col-sm-1">*</div>
-                    <div class="col-sm-1">*</div>
-                    <div class="col-sm-1">*</div>
-                    <div class="col-sm-1">*</div>
-                    <div class="col-sm-1">*</div>
-                    <div class="col-sm-6"></div>
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-1 center">*</div>
+                    <div class="col-sm-1 center">*</div>
+                    <div class="col-sm-1 center">*</div>
+                    <div class="col-sm-1 center">*</div>
+                    <div class="col-sm-1 center">*</div>
+                    <div class="col-sm-1 center">*</div>
+                    <div class="col-sm-4 center"></div>
                 </div>
             </div>
             <div class="p-3 text-right">
