@@ -78,7 +78,7 @@
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
 			const dirnCron = env.dataFolder + '/_cron';
-			const fn = dirn + '/onetime_' + new Date().getTime() + '.sh';
+			const fn = dirn + ((data.type === 'C') ? '/cm_' : '/cr_') + new Date().getTime() + '.sh';
 			const _f = {};
 			_f['createDir'] = (cbk) => {
 				exec('mkdir -p ' + dirn, {maxBuffer: 1024 * 2048},
@@ -97,11 +97,17 @@
 				});
 			}
 			_f['copyFile'] = (cbk) => {
-				exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
-					function(error, stdout, stderr) {
-						cbk(true);
-					}
-				)
+				if (data.type !== 'C') {
+					exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
+						function(error, stdout, stderr) {
+							cbk(true);
+						});
+				} else {
+					exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
+						function(error, stdout, stderr) {
+							cbk(true);
+						});
+				}
 			}
 
 			CP.serial(_f, (data) => {
