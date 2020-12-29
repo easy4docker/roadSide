@@ -9,19 +9,14 @@
             <div class="col-sm-9">
                 <div class="container-fluid m-1">
                     <div class="row text-center">
-                        <div class="col-sm-2">MIN</div>
-                        <div class="col-sm-2">HOUR</div>
-                        <div class="col-sm-2">DOM</div>
-                        <div class="col-sm-2">MON</div>
-                        <div class="col-sm-2">DOW</div>
-                        <div class="col-sm-2">CMD</div>
+                        <div v-for="item in cfg" class="col-sm-2">{{cfg.caption}}</div>
                     </div>
                     <div class="row text-center">
-                        <div class="col-sm-2 text-center form-group">
+                        <div v-for="item in cfg" class="col-sm-2 text-center form-group">
                             <select class="form-control" v-model="MON">
                                 <option v-bind:value="'*'">{{MON}}<div>
-                                <option v-for="item in getList(60)" v-bind:value="item">
-                                    {{ item}}
+                                <option v-for="item in v-for="idx in cfg.list"" v-bind:value="item">
+                                    {{ idx}}
                                 </option>
                             </select>
                         </div>
@@ -45,10 +40,17 @@ module.exports = {
         return {
             cfg : [
                 {
-                    caption : 'Minutes'
+                    caption : 'Minute',
+                    list : me.getList(60)
+                },
+                {
+                    caption : 'Hour',
+                    list : me.getList(60)
                 }
             ],
-            MON : '*'
+            arr : ['*', '*'],
+            str : '',
+            MIN
         }
     },
     mounted () {
