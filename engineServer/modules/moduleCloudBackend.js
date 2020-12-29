@@ -103,18 +103,25 @@
 							cbk(true);
 						});
 				} else {
-					const cmd = 'echo \"' + data.schedule + ' root (cd /var/_localApp && sh ' + 
-							fn + ') >> ' + env.dataFolder + '/_log/cron.log\" >> /etc/crontab ';
-					const fnc = dirn + '/xe_' + new Date().getTime() + '.sh';
-					fs.writeFile(fnc, cmd, (err) => {
-						if (err) {
-							cbk(err.message);
-						} else {
-							exec('cp ' + fnc + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
-								function(error, stdout, stderr) {
-									cbk(true);
-								});
-						}
+					const fnc = dirnCron + '/xe_' + new Date().getTime() + '.sh';
+					const fnp = dirn + '/xp_' + new Date().getTime() + '.sh';
+
+					let cron_shell = 'echo "CRON RUN ' + fn + ' >> ' + env.dataFolder + '/_log/cron.log' + '\n"';
+					cron_shell += ' cd /var/_localApp';
+					cron_shell += 'sh ' + fn + ' >> ' + env.dataFolder + '/_log/cron.log';
+					cron_shell += 'echo "\tDone ' + fn + ' >> ' + env.dataFolder + '/_log/cron.log' + '\n"';
+
+					const cmd = 'echo "' + data.schedule + ' root (sh ' + 
+						fnp + ')" >> /etc/crontab ';
+
+					fs.writeFile(fnp, cron_shell, (errp) => {
+						fs.writeFile(fnc, cmd, (err) => {
+							if (err) {
+								cbk(err.message);
+							} else {
+								cbk(true);
+							}
+						});
 					});
 				}
 			}
