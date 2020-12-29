@@ -49,8 +49,8 @@
 
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
-					// me.sendHeader('');
-					fs.readFile(fn);
+					me.sendHeader('');
+					fs.sendFile(fn);
 					/*
 					fs.readFile(fn, 'utf-8', (err, data)=> {
 						me.sendHeader('');
@@ -68,7 +68,7 @@
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
 					me.sendHeader('');
-					fs.readFile(fn);
+					fs.rsendFile(fn);
 				} else  {
 					res.sendFile(env.root  + '/www/page404.html');
 				}
