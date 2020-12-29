@@ -44,8 +44,15 @@ module.exports = {
                 }
             ],
             arr : ['5', '*'],
-            str : '',
-            MIN : '*'
+            str : ''
+        }
+    },
+    watch :{
+        arr {
+            deep : true,
+            handler: function (v) {
+                console.log('changed');
+            }
         }
     },
     mounted () {
