@@ -27,7 +27,7 @@ module.exports = {
             deep : true,
             handler: function (v) {
                 console.log('$$$$$$');
-                console.log(v);
+                console.log(v.toJSON());
             }
         }
     },
