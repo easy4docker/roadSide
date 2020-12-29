@@ -103,9 +103,9 @@
 							cbk(true);
 						});
 				} else {
-					// const cmd = 'echo "' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log" >> /etc/cront ';
-					const cmd = 'echo "_log/cron.log" >> ' + env.dataFolder + '/_log/eeee.txt';
-					exec(cmd, {maxBuffer: 1024 * 2048},
+					const cmd = 'echo \"' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log\" >> /etc/cront ';
+					
+					exec('echo "' + cmd + '" >> ' + dirnCron + '/buildCron.sh', {maxBuffer: 1024 * 2048},
 						function(error, stdout, stderr) {
 							cbk(true);
 						});
