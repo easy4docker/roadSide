@@ -2,7 +2,7 @@
     <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
        <div class="m-2">
             Log {{fileName}}: 
-            <a href="JavaSvript: void(0)">Delete File</a>
+            <a href="JavaSvript: void(0)" v-on:click="deleteFile('log', fileName)">Delete File</a>
        </div>
        <textarea class="form-control" rows="20" readonly>{{contents}}</textarea>
     </div>

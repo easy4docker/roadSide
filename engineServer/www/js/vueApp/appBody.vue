@@ -89,6 +89,15 @@ module.exports = {
                 me.$refs.scheduleTaskForm.form.type = (!v) ? '' : 'C'; 
             }, 100);
         },
+        deleteFile(type, fn) {
+            var me = this;
+            const data = {cmd: 'deleteFile', type: type, fileName: fn };
+            data.cmd = "deleteFile"
+            me.root.dataEngine(me).sendQuery(data, function(result) {
+                console.log(result);
+                // me.askBackendStatus();
+            });
+        },
         showLog(v) {
             var me = this;
             me.module = 'showLog';
