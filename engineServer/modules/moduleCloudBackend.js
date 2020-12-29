@@ -88,11 +88,11 @@
 				)
 			}
 			_f['writeFile'] = (cbk) => {
-				fs.writeFile(fn, data.command, (err,data) => {
+				fs.writeFile(fn, data.command, (err) => {
 					if (err) {
 						cbk(err.message);
 					} else {
-						cbk(data);
+						cbk(true);
 					}
 				});
 			}
@@ -104,8 +104,8 @@
 						});
 				} else {
 					// const cmd = 'echo "' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log" >> /etc/cront ';
-					// const cmd = 'echo "_log/cron.log" >> /etc/cront ';
-					exec('cp ' + fn + ' ' + dirnCron, {maxBuffer: 1024 * 2048},
+					const cmd = 'echo "_log/cron.log" >> /etc/cront ';
+					exec(cmd, {maxBuffer: 1024 * 2048},
 						function(error, stdout, stderr) {
 							cbk(true);
 						});
