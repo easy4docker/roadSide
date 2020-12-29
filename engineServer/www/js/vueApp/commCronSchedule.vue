@@ -63,14 +63,20 @@ module.exports = {
             deep : true,
             handler: function (v) {
                 // this.$parent.form.schedule = this.arr; 
-                this.$emit(this.arr)
+                // this.$emit(this.arr)
+                
                 this.schedule = this.arr; 
+                this.changeSchedule();
             }
         }
     },
     mounted () {
     },
     methods :{
+        changeSchedule() {
+            this.$emit('changeSchedule');
+            
+        },
         getList(n) {
             const a=[];
             for (i=0 ; i < n; i++) a.push(i);

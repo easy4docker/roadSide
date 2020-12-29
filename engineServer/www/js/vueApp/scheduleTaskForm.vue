@@ -42,6 +42,8 @@ module.exports = {
         }
     },
     methods :{
+
+
         getList(n) {
             const a=[];
             for (i=0 ; i < n; i++) a.push(i);
@@ -57,6 +59,7 @@ module.exports = {
                 me.cancel()
                 setTimeout(
                     function() {
+
                         me.$parent.askBackendStatus();
                     }, 1000);
             });
