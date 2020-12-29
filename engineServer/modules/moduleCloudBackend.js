@@ -78,6 +78,7 @@
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
 			const dirnCron = env.dataFolder + '/_cron';
+
 			const fn = dirn + ((data.type === 'C') ? '/xc_' : '/xe_') + new Date().getTime() + '.sh';
 			const _f = {};
 			_f['createDir'] = (cbk) => {
@@ -106,10 +107,10 @@
 					const fnc = dirnCron + '/xe_' + new Date().getTime() + '.sh';
 					const fnp = dirn + '/xp_' + new Date().getTime() + '.sh';
 
-					let cron_shell = 'echo "=== CRON RUN ===' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + " ===\n";
+					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + " ===\n";
 					cron_shell += 'cd /var/_localApp'+ "\n";
 					cron_shell += 'sh ' + fn + "| sed 's/^/\t>>\t/' >> " + env.dataFolder + '/_log/cron.log'+ "\n";
-					cron_shell += 'echo "\tDone ' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n\n";
+					cron_shell += 'echo "\tCRON Done $(date +"%m-%d %H:%M:%S") ' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n\n";
 
 					const cmd = 'echo "' + data.schedule + ' root (sh ' + 
 						fnp + ')" >> /etc/crontab ';
