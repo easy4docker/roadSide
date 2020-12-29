@@ -16,7 +16,7 @@
                             <select class="form-control" v-model="MIN">
                                 <option v-bind:value="'*'">{{MIN}}<div>
                                 <option v-for="item in rec.list" v-bind:value="item">
-                                    {{ idx}}
+                                    {{item}}
                                 </option>
                             </select>
                         </div>
