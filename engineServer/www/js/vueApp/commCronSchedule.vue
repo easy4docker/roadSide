@@ -74,8 +74,9 @@ module.exports = {
     },
     methods :{
         changeSchedule() {
-            console.log('ssss');
-            this.$emit('changeSchedule');
+            console.log('ssssy');
+           // this.$emit('changeSchedule');
+            this.$emit('changeUsername', 'mattmaribojoc')
             
         },
         getList(n) {
