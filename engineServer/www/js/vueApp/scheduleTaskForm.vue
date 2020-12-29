@@ -42,6 +42,9 @@ module.exports = {
         }
     },
     methods :{
+        changeSchedule(v) {
+            alert(v);
+        },
         getList(n) {
             const a=[];
             for (i=0 ; i < n; i++) a.push(i);
