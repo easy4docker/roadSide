@@ -49,6 +49,11 @@
                         <div v-if="module=='showLog'"  class="card p-1 text-center alert-success">
                             <show-log ref="showLog"></show-log>
                         </div>
+
+                        <div v-if="module=='showOutput'"  class="card p-1 text-center alert-success">
+                            <show-output ref="showOutput"></show-output>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -96,7 +101,7 @@ module.exports = {
             me.module = 'showOutput';
             setTimeout(
                 function() {
-                 //   me.$refs.showLog.fileName = v;
+                    me.$refs.showOutput.fileName = v;
                 }, 100
             );
         },
@@ -124,7 +129,8 @@ module.exports = {
         LOAD    : {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue',
             'appMenu' : '/js/vueApp/appMenu.vue',
-            'showLog' : '/js/vueApp/showLog.vue'
+            'showLog' : '/js/vueApp/showLog.vue',
+            'showOutput' : '/js/vueApp/showOutput.vue',
         }
     })
 }

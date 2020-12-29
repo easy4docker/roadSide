@@ -58,6 +58,21 @@
 				}
 			});
 		}
+		me.askOutput = (data) => {
+			const fn = env.dataFolder + '/_output/' + data.fileName;
+
+			fs.stat(fn, function(err, stat) {
+				if(err == null) {
+					fs.readFile(fn, 'utf-8', (err, data)=> {
+						me.sendHeader('');
+						res.send((err) ? err.message : data);
+					});
+				} else  {
+					res.sendFile(env.root  + '/www/page404.html');
+				}
+			});
+		}
+
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
 			const dirnCron = env.dataFolder + '/_cron';

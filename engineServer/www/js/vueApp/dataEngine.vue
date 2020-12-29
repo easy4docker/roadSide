@@ -60,6 +60,10 @@ module.exports = {
         askLogContent(data, callback) {
             var me = this;
             me.ajaxPostText(data, callback, true);
+        },
+        askOutput(data, callback) {
+            var me = this;
+            me.ajaxPostText(data, callback, true);
         }
     }
 }
