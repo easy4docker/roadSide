@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid m-1" v-if="form.type==='C'">
+    <div class="container-fluid m-1">
         <div class="row">
             <div class="col-sm-6">Cron Schedule</div>
             <div class="col-sm-6"></div>
@@ -32,23 +32,9 @@ module.exports = {
     data: function() {
         const me = this;
         return {
-            root : this.$parent.root,
-            form : {
-                command : '',
-                type : '',
-                schedule : ''
-            }
         }
     },
     mounted () {
-    },
-    watch: {
-        form: {
-            deep : true,
-            handler: function (v) {
-
-            }
-        }
     },
     methods :{
         getList(n) {
