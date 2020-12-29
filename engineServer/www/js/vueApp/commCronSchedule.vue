@@ -63,6 +63,7 @@ module.exports = {
             deep : true,
             handler: function (v) {
                 this.$parent.schedule = this.arr; 
+                this.schedule = this.arr; 
             }
         }
     },
