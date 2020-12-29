@@ -46,7 +46,8 @@ module.exports = {
         },
         saveTask () {
             var me = this;
-            const data = {cmd : 'saveTask', command : me.$parent.command}; 
+            const data = me.form; 
+            data.cmd = 'saveTask';
             me.root.dataEngine(me).saveTask(data, function(result) {
                 me.cancel()
                 setTimeout(
