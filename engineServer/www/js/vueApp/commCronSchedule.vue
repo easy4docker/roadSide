@@ -74,6 +74,7 @@ module.exports = {
     },
     methods :{
         changeSchedule() {
+            console.log('ssss');
             this.$emit('changeSchedule');
             
         },
