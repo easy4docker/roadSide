@@ -24,7 +24,6 @@
                 </div>
             </div>
             <div class="col-sm-2">
-             <button @click='changeSchedule()'>Change Username</button
             </div>
         </div>
     </div>
@@ -67,21 +66,14 @@ module.exports = {
                 // this.$parent.form.schedule = this.arr; 
                 // this.$emit(this.arr)
                 
-                this.schedule = this.arr; 
-                this.changeSchedule();
+              //  this.schedule = this.arr; 
+                this.$emit('update:schedule', this.arr)
             }
         }
     },
     mounted () {
     },
     methods :{
-        changeSchedule() {
-            console.log('ssssy');
-            
-           // this.$emit('changeSchedule');
-           // this.$emit('changeSchedule', 'mattmaribojoc')
-            this.$emit('update:schedule', this.arr)
-        },
         getList(n) {
             const a=[];
             for (i=0 ; i < n; i++) a.push(i);
