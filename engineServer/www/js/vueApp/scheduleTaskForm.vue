@@ -20,7 +20,7 @@ module.exports = {
     mounted () {
     },
     watch: {
-        this.$parent.command: function (v) {
+        $parent.command: function (v) {
             console.log('$$$$$$');
         }
     },
