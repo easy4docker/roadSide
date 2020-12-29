@@ -2,20 +2,20 @@
         <div class="container-fluid m-0 text-left">
             <div class="row">
                 <div class="col-3 p-1">
-                    <div class="card list_file_section p-1 mb-1 alert-secondary" >
+                    <div class="card p-1 mb-1 alert-secondary" >
                         <div class="form-control card p-2 text-center alert-dark">
                             Local Scripts
                         </div>
-                        <div class="text-left p-1 pl-2" v-for="item in localScripts">
+                        <div class="text-left p-1 pl-2 list_file_section" v-for="item in localScripts">
                             <a href="JavaScript:void(0)" v-if="isPython(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
                         </div> 
                     </div>
 
-                    <div class="card list_file_section p-1 mt-1 alert-secondary">
+                    <div class="card p-1 mt-1 alert-secondary">
                         <div class="form-control card  p-2 text-center alert-dark">
                             Logs
                         </div>
-                        <div class="text-left p-1 pl-2" v-for="item in logs">
+                        <div class="text-left p-1 pl-2 list_file_section " v-for="item in logs">
                             <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
                         </div> 
                     </div>
