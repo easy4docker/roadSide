@@ -64,7 +64,7 @@ module.exports = {
     methods :{
         triggerFrom(v) {
             const me = this;
-            me.command = (!v) ? '' : ('phthon3 ' + v);
+            me.command = (!v) ? '' : ('python3 ' + v);
             me.module = 'addTask'; 
         },
         showLog(v) {
