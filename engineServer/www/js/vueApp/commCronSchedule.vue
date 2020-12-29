@@ -2,7 +2,7 @@
     <div class="container-fluid m-1">
         <div class="row">
             <div class="col-sm-2">Cron Schedule:</div>
-            <div class="col-sm-10">{{schedule.join(' ')}} root [command]</div>
+            <div class="col-sm-10">{{showSchedule()}} root [command]</div>
         </div>
         <div class="row">
             <div class="col-sm-1"></div>
@@ -71,6 +71,9 @@ module.exports = {
         this.$emit('update:schedule', this.arr)
     },
     methods :{
+        showSchedule() {
+            (!this.schedule) ? '' : this.schedule.join(' ');
+        },
         getList(n) {
             const a=[];
             for (i=0 ; i < n; i++) a.push(i);
