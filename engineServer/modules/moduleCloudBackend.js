@@ -105,9 +105,8 @@
 				} else {
 					// const cmd = 'echo "' + data.schedule + ' root (sh ' + fn + ') >> ' + env.dataFolder + '/_log/cron.log" >> /etc/cront ';
 					// const cmd = 'echo "_log/cron.log" >> /etc/cront ';
-					var str = 'ls -l ';
-					var exec1 = require('child_process').exec;
-					exec1(str, {maxBuffer: 1024 * 2048},
+					var str = 'cp ' + fn + ' /etc/cront';
+					exec(str, {maxBuffer: 1024 * 2048},
 						function(error, stdout, stderr) {
 							cbk(true);
 						});
