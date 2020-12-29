@@ -49,7 +49,7 @@
 
 			fs.stat(fn, function(err, stat) {
 				if(err == null) {
-					me.sendHeader('');
+					// me.sendHeader('');
 					fs.readFile(fn);
 					/*
 					fs.readFile(fn, 'utf-8', (err, data)=> {
