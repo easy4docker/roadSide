@@ -83,8 +83,10 @@ module.exports = {
     methods :{
         triggerFrom(v) {
             const me = this;
-            me.$refs.scheduleTaskForm.command = (!v) ? '' : ('python3 ' + v);
             me.module = 'addTask'; 
+            setTimeout(function() {
+                me.$refs.scheduleTaskForm.command = (!v) ? '' : ('python3 ' + v);
+            }, 100);
         },
         showLog(v) {
             var me = this;
