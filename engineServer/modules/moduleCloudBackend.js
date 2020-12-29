@@ -107,9 +107,9 @@
 					const fnp = dirn + '/xp_' + new Date().getTime() + '.sh';
 
 					let cron_shell = 'echo "CRON RUN ' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n";
-					cron_shell += ' cd /var/_localApp'+ "\n";
+					cron_shell += 'cd /var/_localApp'+ "\n";
 					cron_shell += 'sh ' + fn + ' >> ' + env.dataFolder + '/_log/cron.log'+ "\n";
-					cron_shell += 'echo "' + "\t" + 'Done ' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n";
+					cron_shell += 'echo "\tDone ' + fn + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n";
 
 					const cmd = 'echo "' + data.schedule + ' root (sh ' + 
 						fnp + ')" >> /etc/crontab ';
