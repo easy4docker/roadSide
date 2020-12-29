@@ -12,13 +12,18 @@ module.exports = {
         return {
             root : this.$parent.root,
             fileName : '',
-            contents : ''
+            contents : '',
+            refresh  : ''
         }
     },
     watch: {
-        fileName: function (v) {
+        fileName: function () {
             const me = this;
-            me.askLogContent(v);
+            me.askLogContent(fileName);
+        },
+        refresh : function () {
+            const me = this;
+            me.askLogContent(me.fileName);
         }
     },
     mounted () {

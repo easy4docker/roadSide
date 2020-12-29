@@ -95,6 +95,7 @@ module.exports = {
             setTimeout(
                 function() {
                     me.$refs.showLog.fileName = v;
+                    me.$refs.showLog.refresh = new Date().getTime();
                 }, 100
             );
         },
