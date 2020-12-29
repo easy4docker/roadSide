@@ -13,24 +13,24 @@
                     <div class="col-sm-6"></div>
                 </div>
                 <div class="row text-center">
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-1"></div>
                     <div class="col-sm-1">MIN</div>
                     <div class="col-sm-1">HOUR</div>
                     <div class="col-sm-1">DOM</div>
                     <div class="col-sm-1">MON</div>
                     <div class="col-sm-1">DOW</div>
                     <div class="col-sm-1">CMD</div>
-                    <div class="col-sm-4"></div>
+                    <div class="col-sm-5"></div>
                 </div>
                 <div class="row text-center">
-                    <div class="col-sm-2"></div>
+                    <div class="col-sm-1"></div>
                     <div class="col-sm-1 text-center">*</div>
                     <div class="col-sm-1 text-center">*</div>
                     <div class="col-sm-1 text-center">*</div>
                     <div class="col-sm-1 text-center">*</div>
                     <div class="col-sm-1 text-center">*</div>
                     <div class="col-sm-1 text-center">*</div>
-                    <div class="col-sm-4 text-center"></div>
+                    <div class="col-sm-5 text-center"></div>
                 </div>
             </div>
             <div class="p-3 text-right">
