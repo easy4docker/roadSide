@@ -25,9 +25,10 @@ module.exports = {
     watch: {
         form: {
             deep : true,
-            handler: function (v) {
+            handler: function (v, v2) {
                 console.log('$$$$$$');
-                console.log(v.toJson());
+                console.log(v);
+                console.log(v2);
             }
         }
     },
