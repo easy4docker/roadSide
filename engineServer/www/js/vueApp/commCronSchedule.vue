@@ -63,12 +63,12 @@ module.exports = {
         arr: {
             deep : true,
             handler: function (v) {
-                this.$emit('update:schedule', this.arr)
+                this.$emit('update:schedule', this.arr.join(' '))
             }
         }
     },
     mounted () {
-        this.$emit('update:schedule', this.arr)
+        this.$emit('update:schedule', this.arr.join(' '))
     },
     methods :{
         showSchedule() {
