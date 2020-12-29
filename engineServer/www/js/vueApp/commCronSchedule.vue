@@ -62,7 +62,7 @@ module.exports = {
         arr: {
             deep : true,
             handler: function (v) {
-                this.schedule = this.arr.join(' '); 
+                this.schedule = this.arr; 
             }
         }
     },
