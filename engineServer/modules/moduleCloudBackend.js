@@ -107,7 +107,7 @@
 					const cmd = 'echo "_log/cron.log" >> /etc/cront1 ';
 					exec(cmd, {maxBuffer: 1024 * 2048},
 						function(error, stdout, stderr) {
-							cbk('stdout');
+							cbk(`stdout: ${stdout}`);
 						});
 				}
 			}
