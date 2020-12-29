@@ -9,9 +9,9 @@
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
             <label class="m-1">Task ? =={{form.type}}==</label>
             <div class="m-1">
-
+                MIN HOUR DOM MON DOW CMD
             </div> 
-            <div>
+            <div class="p-3 text-right">
                 <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
             </div>    
@@ -25,7 +25,7 @@ module.exports = {
         const me = this;
         return {
             root : this.$parent.root,
-            form : {
+            form : {\
                 command : '',
                 type : '',
                 schedule : {
