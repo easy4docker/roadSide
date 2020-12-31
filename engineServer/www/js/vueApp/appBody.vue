@@ -15,7 +15,7 @@
                                         Local Scripts ({{localScripts.length}})
                                     </div>
                                     <div class="col-1 p-0">
-                                        <a href="JavaScript:void(0)" v-on:click="toggle(localScripts)">
+                                        <a href="JavaScript:void(0)" v-on:click="toggle('localScripts')">
                                             <i v-if="expand.localScripts" class="fa fa-minus"></i>
                                             <i v-if="!expand.localScripts" class="fa fa-plus"></i>
                                         </a>
@@ -90,9 +90,12 @@ module.exports = {
             localScripts : [],
             scheduledTasks :[],
             logs    : [],
+            cronTasks : [],
             outputs : [],
             module  : '',
-            expand  : {}
+            expand  : {
+                localScripts : false
+            }
         }
     },
     mounted () {
@@ -169,11 +172,7 @@ module.exports = {
             me.triggerFrom(v);
         },
         toggle(v) {
-            if (!this.expand) {
-                this.expand = true;
-            } else {
-                this.expand = false;
-            }
+            this.expand[v] = (!this.expand[v]) ? true : false;
         }
     },
     components: VUEApp.loadComponents({
