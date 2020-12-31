@@ -31,10 +31,24 @@
                     </div>
 
                     <div class="card p-1 mt-1 alert-secondary">
+
                         <div class="form-control card  p-2 text-center alert-dark">
-                            Logs ({{logs.length}})
+                            <div class="container-fluid m-0 text-center">
+                                <div class="row">
+                                    <div class="col-11 p-0">
+                                        Logs ({{logs.length}})
+                                    </div>
+                                    <div class="col-1 p-0">
+                                        <a href="JavaScript:void(0)" v-on:click="toggle('logs')">
+                                            <i v-if="expand.logs" class="fa fa-minus"></i>
+                                            <i v-if="!expand.logs" class="fa fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="text-left p-1 pl-2 list_file_section">
+                        <div v-if="expand.logs" class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in logs">
                                 <a href="JavaScript: void(0)" v-on:click="deleteFile('log', item.name)" class="mr-1">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
@@ -94,7 +108,8 @@ module.exports = {
             outputs : [],
             module  : '',
             expand  : {
-                localScripts : false
+                localScripts : false,
+                logs : false
             }
         }
     },
