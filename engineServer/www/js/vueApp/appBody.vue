@@ -10,7 +10,7 @@
                                         Local Scripts
                                     </div>
                                     <div class="col-2 p-0">
-                                        <a href="JavaScript:void(0)" v-on:click="pullScriptCode(item.name)">
+                                        <a href="JavaScript:void(0)" v-on:click="pullCode()">
                                             <i class="fa fa-github"></i>
                                         </a>
                                     </div>
@@ -122,8 +122,8 @@ module.exports = {
                 }, 100
             );
         },
-        pullScript() {
-            alert('pullScript');
+        pullCode() {
+            alert('pullCode');
         },
         showOutput(v) {
             var me = this;
