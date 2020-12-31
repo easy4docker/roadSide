@@ -4,7 +4,18 @@
                 <div class="col-3 p-1">
                     <div class="card p-1 mb-1 alert-secondary" >
                         <div class="form-control card p-2 text-center alert-dark">
-                            Local Scripts
+                            <div class="container-fluid m-0 text-center">
+                                <div class="row">
+                                    <div class="col-10 p-0">
+                                        Local Scripts
+                                    </div>
+                                    <div class="col-2 p-0">
+                                        <a href="JavaScript:void(0)" v-on:click="pullScriptCode(item.name)">
+                                            <i class="fa fa-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in localScripts">
@@ -22,7 +33,7 @@
                                 <a href="JavaScript: void(0)" v-on:click="deleteFile('log', item.name)" class="mr-1">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                                {{item.name}}</a>
                             </div>
                         </div>
                     </div>
@@ -110,6 +121,9 @@ module.exports = {
                     me.$refs.showLog.refresh = new Date().getTime();
                 }, 100
             );
+        },
+        pullScript() {
+            alert('pullScript');
         },
         showOutput(v) {
             var me = this;
