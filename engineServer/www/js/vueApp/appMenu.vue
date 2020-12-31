@@ -3,7 +3,7 @@
         <span>
             <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('addTask')" v-on:click="addTask();">Add</button>
             <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('allTasks')" v-on:click="switchmodule('allTasks');">All Tasks</button>
-            <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('cronTask')" v-on:click="switchmodule('cronTask');">Cron Task</button>
+            <button class="btn btn-success btn-sm m-1" :disabled="menuDisabled('cronTask')" v-on:click="switchmodule('cronTasks');">Cron Task</button>
         </span>
     </div>
 </template>

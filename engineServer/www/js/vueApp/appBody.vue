@@ -59,7 +59,9 @@
                         <div v-if="module=='allTasks'" class="text-left p-1 pl-2" v-for="item in scheduledTasks">
                             <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
                         </div>
-
+                        <div v-if="module=='cronTasks'" class="text-left p-1 pl-2" v-for="item in cronTasks">
+                            <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                        </div>
                         <div v-if="module=='showLog'"  class="card p-1 text-center alert-success">
                             <show-log ref="showLog"></show-log>
                         </div>
@@ -148,6 +150,9 @@ module.exports = {
             me.root.dataEngine(me).sendQuery(data, function(result) {
                 me.localScripts =  result.localScripts ;
                 me.scheduledTasks =  result.scheduledTasks;
+                me.cronTasks =  result.scheduledTasks.filter(function(item) {
+                   return  (/^xp\_/.test(item.name)) ? true : false
+                });
                 me.logs =  result.logs;
                 me.outputs =  result.outputs;
             });
