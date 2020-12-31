@@ -23,6 +23,7 @@ mkdir -p ${SCR_DIR}/data
 mkdir -p ${SCR_DIR}/code
 mkdir -p ${SCR_DIR}/env
 
+${SCR_DIR}/code
 git clone https://github.com/easy4docker/easy_python_cloud.git .
 
 docker container stop backendcloud-local-container
