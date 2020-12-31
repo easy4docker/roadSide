@@ -29,7 +29,7 @@ mkdir -p ${SCR_DIR}/env
 echo "{\"initToken\":\"local\", \"list\":{\"local\":1}}" > ${SCR_DIR}/env/token.json
 
 cd ${SCR_DIR}/code
-git clone https://github.com/easy4docker/easy_python_cloud.git .
+git clone https://github.com/easy4docker/easy_node_cloud.git .
 
 
 docker container stop backendcloud-local-container
