@@ -151,7 +151,7 @@ module.exports = {
             data.cmd = "askBackendStatus"
             me.root.dataEngine(me).sendQuery(data, function(result) {
                 me.localScripts =  result.localScripts.filter(function(item) {
-                   return  (/^\.js$/.test(item.name)) ? true : false
+                   return  (/\.js$/.test(item.name)) ? true : false
                 });
                 me.scheduledTasks =  result.scheduledTasks;
                 me.cronTasks =  result.scheduledTasks.filter(function(item) {
