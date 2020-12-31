@@ -87,9 +87,22 @@
 
                     <div class="card p-1 mt-1 alert-secondary">
                         <div class="form-control card  p-2 text-center alert-dark">
-                            Output Data
+                            <div class="container-fluid m-0 text-center">
+                                <div class="row">
+                                    <div class="col-11 p-0">
+                                        Output Data ({{outputs.length}})
+                                    </div>
+                                    <div class="col-1 p-0">
+                                        <a href="JavaScript:void(0)" v-on:click="toggle('outputs')">
+                                            <i v-if="expand.outputs" class="fa fa-minus"></i>
+                                            <i v-if="!expand.outputs" class="fa fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
-                        <div class="text-left p-1 pl-2 list_file_section">
+                        <div v-if="expand.outputs" class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in outputs">
                                 <a href="JavaScript:void(0)" v-on:click="showOutput(item.name)">{{item.name}}</a>
                             </div>
@@ -127,18 +140,19 @@
 module.exports = {
     data: function() {
         return {
-            root     :  this.$parent.root,
-            localScripts : [],
-            scheduledTasks :[],
-            logs    : [],
-            cronTasks : [],
-            outputs : [],
-            module  : '',
-            expand  : {
-                localScripts : false,
-                logs : false,
-                cronTasks : false
-            }
+            root            :  this.$parent.root,
+            localScripts    : [],
+            scheduledTasks  : [],
+            logs            : [],
+            cronTasks       : [],
+            outputs         : [],
+            module          : '',
+            expand          : {
+                    localScripts    : false,
+                    logs            : false,
+                    cronTasks       : false,
+                    outputs         : false
+                }
         }
     },
     mounted () {
