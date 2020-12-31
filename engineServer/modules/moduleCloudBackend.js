@@ -47,6 +47,13 @@
 			}
 		}
 
+		me.pullGitCode = (data) => {
+			exec('cd ' + env.appFolder + ' && git pull', {maxBuffer: 1024 * 2048},
+			function(error, stdout, stderr) {
+				res.send({status : 'success'});
+			});
+		}
+
 		me.sendHeader = (filetype) => {
 			res.header("Access-Control-Allow-Origin", "*");
 			res.header("Access-Control-Allow-Headers", "X-Requested-With");

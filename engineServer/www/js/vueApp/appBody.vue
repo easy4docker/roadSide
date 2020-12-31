@@ -10,7 +10,7 @@
                                         Local Scripts
                                     </div>
                                     <div class="col-2 p-0">
-                                        <a href="JavaScript:void(0)" v-on:click="pullCode()">
+                                        <a href="JavaScript:void(0)" v-on:click="pullGitCode()">
                                             <i class="fa fa-github"></i>
                                         </a>
                                     </div>
@@ -122,8 +122,13 @@ module.exports = {
                 }, 100
             );
         },
-        pullCode() {
-            alert('pullCode');
+        pullGitCode() {
+            const data = {};
+            data.cmd = "pullGitCode"
+            me.root.dataEngine(me).sendQuery(data, function(result) {
+                console.log('pullGitCode==>');
+                console.log(result);
+            });
         },
         showOutput(v) {
             var me = this;
