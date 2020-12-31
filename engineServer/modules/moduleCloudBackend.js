@@ -28,7 +28,12 @@
 				cbk((!tree) ? (env.dataFolder + '/_output') : tree.children);
 			}
 			CP.serial(_f, (data) => {
-				res.send({localScripts : CP.data.localScripts, scheduledTasks : CP.data.scheduledTasks, logs : CP.data.logs, outputs : CP.data.outputs});
+				res.send({
+					localScripts : CP.data.localScripts, 
+					scheduledTasks : CP.data.scheduledTasks, 
+					logs : CP.data.logs, 
+					outputs : CP.data.outputs
+				});
 			}, 6000);
 			
 		}
