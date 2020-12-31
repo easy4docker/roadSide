@@ -33,7 +33,7 @@
                                 <a href="JavaScript: void(0)" v-on:click="deleteFile('log', item.name)" class="mr-1">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                {{item.name}}</a>
+                                <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
                             </div>
                         </div>
                     </div>
