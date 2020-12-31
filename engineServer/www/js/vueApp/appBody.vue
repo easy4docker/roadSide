@@ -6,12 +6,17 @@
                         <div class="form-control card p-2 text-center alert-dark">
                             <div class="container-fluid m-0 text-center">
                                 <div class="row">
-                                    <div class="col-10 p-0">
-                                        Local Scripts
-                                    </div>
-                                    <div class="col-2 p-0">
+                                    <div class="col-1 p-0">
                                         <a href="JavaScript:void(0)" v-on:click="pullGitCode()">
                                             <i class="fa fa-github"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-10 p-0">
+                                        Local Scripts ({{localScripts.length}})
+                                    </div>
+                                    <div class="col-1 p-0">
+                                        <a href="JavaScript:void(0)" v-on:click="pullGitCode()">
+                                            <i class="fa fa-minus"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -19,14 +24,14 @@
                         </div>
                         <div class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in localScripts">
-                                <a href="JavaScript:void(0)" v-if="isNode(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
+                                <a href="JavaScript:void(0)" v-on:click="passCommand(item.name)">{{item.name}}</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="card p-1 mt-1 alert-secondary">
                         <div class="form-control card  p-2 text-center alert-dark">
-                            Logs
+                            Logs ({{logs.length}})
                         </div>
                         <div class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in logs">
@@ -140,15 +145,14 @@ module.exports = {
                 }, 100
             );
         },
-        isNode(name) {
-                return (/\.js$/.test(name)) ? true : false;
-        },
         askBackendStatus() {
             var me = this;
             const data = {};
             data.cmd = "askBackendStatus"
             me.root.dataEngine(me).sendQuery(data, function(result) {
-                me.localScripts =  result.localScripts ;
+                me.localScripts =  result.localScripts.filter(function(item) {
+                   return  (/^\.js$/.test(item.name)) ? true : false
+                });
                 me.scheduledTasks =  result.scheduledTasks;
                 me.cronTasks =  result.scheduledTasks.filter(function(item) {
                    return  (/^xp\_/.test(item.name)) ? true : false
