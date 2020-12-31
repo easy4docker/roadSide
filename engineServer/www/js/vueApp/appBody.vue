@@ -148,11 +148,11 @@ module.exports = {
             outputs         : [],
             module          : '',
             expand          : {
-                    localScripts    : false,
-                    logs            : false,
-                    cronTasks       : false,
-                    outputs         : false
-                }
+                localScripts    : false,
+                logs            : false,
+                cronTasks       : false,
+                outputs         : false
+            }
         }
     },
     mounted () {
