@@ -15,14 +15,15 @@
                                         Local Scripts ({{localScripts.length}})
                                     </div>
                                     <div class="col-1 p-0">
-                                        <a href="JavaScript:void(0)" v-on:click="pullGitCode()">
-                                            <i class="fa fa-minus"></i>
+                                        <a href="JavaScript:void(0)">
+                                            <i v-if="expand.localScripts" class="fa fa-minus"></i>
+                                            <i v-if="!expand.localScripts" class="fa fa-plus"></i>
                                         </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="text-left p-1 pl-2 list_file_section">
+                        <div v-if="expand.localScripts" class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in localScripts">
                                 <a href="JavaScript:void(0)" v-on:click="passCommand(item.name)">{{item.name}}</a>
                             </div>
@@ -90,7 +91,8 @@ module.exports = {
             scheduledTasks :[],
             logs    : [],
             outputs : [],
-            module  : ''
+            module  : '',
+            expand  : {}
         }
     },
     mounted () {
