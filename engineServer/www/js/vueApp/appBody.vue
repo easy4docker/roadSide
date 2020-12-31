@@ -59,6 +59,33 @@
                     </div>
 
                     <div class="card p-1 mt-1 alert-secondary">
+
+                        <div class="form-control card  p-2 text-center alert-dark">
+                            <div class="container-fluid m-0 text-center">
+                                <div class="row">
+                                    <div class="col-11 p-0">
+                                        Cron Tasks ({{logs.length}})
+                                    </div>
+                                    <div class="col-1 p-0">
+                                        <a href="JavaScript:void(0)" v-on:click="toggle('cronTasks')">
+                                            <i v-if="expand.cronTasks" class="fa fa-minus"></i>
+                                            <i v-if="!expand.cronTasks" class="fa fa-plus"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div v-if="expand.cronTasks" class="text-left p-1 pl-2 list_file_section">
+                            <div v-for="item in cronTasks">
+                                <a href="JavaScript: void(0)" v-on:click="deleteFile('log', item.name)" class="mr-1">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </a>
+                                <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-1 mt-1 alert-secondary">
                         <div class="form-control card  p-2 text-center alert-dark">
                             Output Data
                         </div>
@@ -109,7 +136,8 @@ module.exports = {
             module  : '',
             expand  : {
                 localScripts : false,
-                logs : false
+                logs : false,
+                cronTasks : false
             }
         }
     },
