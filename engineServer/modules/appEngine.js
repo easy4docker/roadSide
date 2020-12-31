@@ -33,14 +33,6 @@
 			}
 		}
 
-		this.getMasterInfo = () => {
-			var _masterInfo = {};
-			try {
-				_masterInfo = pkg.require('/var/_masterInfo.json');
-			} catch (e) {}
-			return _masterInfo;
-		}
-
 		this.getTokens = () => {
 			var tokens = {};
 			try {
@@ -88,38 +80,6 @@
 				}
 			}
 		}
-		this.getDbConfig = () => {
-			var masterInfo = {};
-			try {
-				masterInfo = pkg.require("/var/_masterInfo.json");;
-			} catch(e) {}
-			
-			var cfg = {
-				host: masterInfo.ROOT_HOST,
-				port : masterInfo.MAIN_PORT,
-				user: 'root',
-				password: masterInfo.ROOT_PASSWORD,
-				multipleStatements: true
-			};
-			return cfg;
-		}
-		
-		this.query = (sql_str, callback) => {
-			var masterInfo = {};
-			try {
-				masterInfo = pkg.require("/var/_masterInfo.json");;
-			} catch(e) {}
-            try {
-                var cfg = me.getDbConfig();
-                var connection = pkg.mysql.createConnection(cfg);
-                connection.query(sql_str, function (error, results, fields) {
-                    connection.end();
-                    callback((error) ? error : results);
-                });
-            } catch(e) {
-                callback(__dirname + ':' + e.message);
-            }
-        }
 	};
 	if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 		module.exports = obj;

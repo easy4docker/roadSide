@@ -124,8 +124,7 @@ module.exports = {
         },
         pullGitCode() {
             var me = this;
-            const data = {};
-            data.cmd = "pullGitCode"
+            const data = {cmd : 'pullGitCode'};
             me.root.dataEngine(me).sendQuery(data, function(result) {
                 console.log('pullGitCode==>');
                 console.log(result);
