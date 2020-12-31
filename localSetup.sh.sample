@@ -53,4 +53,4 @@ docker run -d --restart=on-failure -e ROOT_HOST="10.10.10.254" -e MAIN_PORT=""  
 -v "${SCR_DIR}/code":/var/_localApp -v "${SCR_DIR}/data":/var/_localAppData -v "${SCR_DIR}/env":/var/_localAppEnv --network network_easydocker \
 --name backendcloud-local-container_eng  backendcloud-local-image_eng
 
-echo "http://localhost:9080?token=local"
+echo "URL for engine is http://localhost:9080?token=local"
