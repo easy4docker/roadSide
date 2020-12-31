@@ -19,7 +19,7 @@
                         </div>
                         <div class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in localScripts">
-                                <a href="JavaScript:void(0)" v-if="isPython(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
+                                <a href="JavaScript:void(0)" v-if="isNode(item.name)" v-on:click="passCommand(item.name)">{{item.name}}</a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ module.exports = {
             const me = this;
             me.module = 'addTask'; 
             setTimeout(function() {
-                me.$refs.scheduleTaskForm.form.command = (!v) ? '' : ('python3 ' + v);
+                me.$refs.scheduleTaskForm.form.command = (!v) ? '' : ('node ' + v);
                 me.$refs.scheduleTaskForm.form.type = (!v) ? '' : 'C'; 
             }, 100);
         },
@@ -138,8 +138,8 @@ module.exports = {
                 }, 100
             );
         },
-        isPython(name) {
-                return (/\.py$/.test(name)) ? true : false;
+        isNode(name) {
+                return (/\.js$/.test(name)) ? true : false;
         },
         askBackendStatus() {
             var me = this;
