@@ -126,8 +126,7 @@ module.exports = {
             var me = this;
             const data = {cmd : 'pullGitCode'};
             me.root.dataEngine(me).sendQuery(data, function(result) {
-                console.log('pullGitCode==>');
-                console.log(result);
+                me.askBackendStatus();
             });
         },
         showOutput(v) {
