@@ -1,5 +1,7 @@
 # easy_backend_cloud
 
+How to setup local environment:
+
 Step 1: create your local work directory
 
     mkdir workdir
