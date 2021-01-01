@@ -37,7 +37,7 @@ for f in "$CRON_PATH"/*; do
     echo "Pass through  $f \n\t From $(date +"%m-%d %H:%M:%S")"  >> $LOG_PATH/mainService.sh.log
     mv -f $f $execfn || true
     cd $APP_DIR
-    more $execfn | sed 's/^/\t>>\t/' > $LOG_PATH/mainService.sh.log
+    cat $execfn | sed 's/^/\t>>\t/' > $LOG_PATH/mainService.sh.log
     sh $execfn | sed 's/^/\t>>\t/' > $LOG_PATH/mainService.sh.log
     rm -fr $execfn || true
     rm -fr $markfile || true
