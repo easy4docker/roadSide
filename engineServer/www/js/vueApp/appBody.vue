@@ -78,7 +78,7 @@
                         <div v-if="expand.cronTasks" class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in cronTasks">
                                 <a href="JavaScript: void(0)" v-on:click="removeCron(item.name)" class="mr-1">
-                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                    Remove
                                 </a>
                                 <a href="JavaScript:void(0)" v-on:click="showFileContent('cronTask', item.name)">{{item.name}}</a>
                             </div>
@@ -224,9 +224,11 @@ module.exports = {
                    return  (/\.js$/.test(item.name)) ? true : false
                 });
                 me.scheduledTasks =  result.scheduledTasks;
+                me.cronTasks =  result.scheduledTasks;
+                /*
                 me.cronTasks =  result.scheduledTasks.filter(function(item) {
                    return  (/^xp\_/.test(item.name)) ? true : false
-                });
+                });*/
                 me.logs =  result.logs;
                 me.outputs =  result.outputs;
             });
