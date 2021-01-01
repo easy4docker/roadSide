@@ -168,7 +168,7 @@
 					const fnp0 = 'xp_' + new Date().getTime() + '.sh';
 					const fnp = dirn + '/' + fnp0;
 
-					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + '" >> ' + env.dataFolder + '/_log/cron.log' + " ===\n";
+					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n";
 					cron_shell += 'cd /var/_localApp'+ "\n";
 					cron_shell += data.command + " >> " + env.dataFolder + '/_log/cron.log'+ "\n";
 					cron_shell += 'echo "\tCRON Done $(date +"%m-%d %H:%M:%S") '  + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n\n";
