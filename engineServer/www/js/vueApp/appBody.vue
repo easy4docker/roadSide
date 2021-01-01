@@ -77,7 +77,7 @@
                         </div>
                         <div v-if="expand.cronTasks" class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in cronTasks">
-                                <a href="JavaScript: void(0)" v-on:click="deleteCronTask(item.name)" class="mr-1">
+                                <a href="JavaScript: void(0)" v-on:click="removeCron(item.name)" class="mr-1">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
                                 <a href="JavaScript:void(0)" v-on:click="showFileContent('cronTask', item.name)">{{item.name}}</a>
@@ -174,7 +174,6 @@ module.exports = {
         deleteFile(type, fn) {
             var me = this;
             const data = {cmd: 'deleteFile', type: type, fileName: fn };
-            data.cmd = "deleteFile"
             me.root.dataEngine(me).doPost(data, function(result) {
                 me.module = '';
                 me.askBackendStatus();
@@ -191,17 +190,13 @@ module.exports = {
                 }, 100
             );
         },
-        deleteCronTask(v) {
+        removeCron(fn) {
             var me = this;
-            alert('deleteCronTask');
-            return true;
-            me.module = 'showLog';
-            setTimeout(
-                function() {
-                    me.$refs.showLog.fileName = v;
-                    me.$refs.showLog.refresh = new Date().getTime();
-                }, 100
-            );
+            const data = {cmd: 'removeCron', fileName: fn };
+            me.root.dataEngine(me).doPost(data, function(result) {
+                me.module = '';
+                me.askBackendStatus();
+            });
         },
 
         pullGitCode() {

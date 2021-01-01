@@ -37,18 +37,21 @@
 			}, 6000);
 			
 		}
-		me.removeClone = (data) => {
-			switch (data.type) {
-				case 'scheduledTasks':
-					const fn = env.dataFolder + '/scheduledTasks/' + data.fileName;
-					exec('rm -fr ' + fn, {maxBuffer: 1024 * 2048},
-					function(error, stdout, stderr) {
-						res.send({status : 'success'});
-					});
-					break;
-				default:
-					res.send({status : 'failure', message : 'Missing or wrong type!'});
+		me.removeCron = (data) => {
+			const _f = {};
+			_f['deleteFile'] = (cbk) => {
+				const fn = env.dataFolder + '/scheduledTasks/' + data.fileName;
+				exec('rm -fr ' + fn, {maxBuffer: 1024 * 2048},
+				function(error, stdout, stderr) {
+					cbk(true);
+				});
 			}
+			_f['remove_cron'] = (cbk) => {
+				cbk(true);
+			}
+			CP.serial(_f, (data) => {
+				res.send({status : 'success'});
+			}, 6000);
 		}
 		me.deleteFile = (data) => {
 			switch (data.type) {
