@@ -20,6 +20,7 @@ fi
 SCR_DIR=$(cd `dirname $0` && pwd)
 
 rm -fr ${SCR_DIR}/code
+rm -fr ${SCR_DIR}/data
 rm -fr ${SCR_DIR}/env
 
 mkdir -p ${SCR_DIR}/data
@@ -29,7 +30,7 @@ mkdir -p ${SCR_DIR}/env
 echo "{\"initToken\":\"local\", \"list\":{\"local\":1}}" > ${SCR_DIR}/env/token.json
 
 cd ${SCR_DIR}/code
-git clone https://github.com/easy4docker/easy_node_cloud.git .
+git clone https://github.com/easy4docker/easy_python_cloud.git .
 
 
 docker container stop backendcloud-local-container
@@ -53,4 +54,4 @@ docker run -d --restart=on-failure -e ROOT_HOST="10.10.10.254" -e MAIN_PORT=""  
 -v "${SCR_DIR}/code":/var/_localApp -v "${SCR_DIR}/data":/var/_localAppData -v "${SCR_DIR}/env":/var/_localAppEnv --network network_easydocker \
 --name backendcloud-local-container_eng  backendcloud-local-image_eng
 
-echo "URL for engine is http://localhost:9080?token=local"
+echo "http://localhost:9080?token=local"
