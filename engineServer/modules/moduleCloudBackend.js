@@ -37,7 +37,19 @@
 			}, 6000);
 			
 		}
-
+		me.removeClone = (data) => {
+			switch (data.type) {
+				case 'scheduledTasks':
+					const fn = env.dataFolder + '/scheduledTasks/' + data.fileName;
+					exec('rm -fr ' + fn, {maxBuffer: 1024 * 2048},
+					function(error, stdout, stderr) {
+						res.send({status : 'success'});
+					});
+					break;
+				default:
+					res.send({status : 'failure', message : 'Missing or wrong type!'});
+			}
+		}
 		me.deleteFile = (data) => {
 			switch (data.type) {
 				case 'log':
@@ -71,6 +83,20 @@
 				res.setHeader('Content-Type', "text/plain");
 			}			
 		}
+		me.loadFileContent = (data) => {
+			var folderName = (data.fileType == "log") ? '/_log/' : '/scheduledTasks/'; 
+			const fn = env.dataFolder + folderName + data.fileName;
+
+			fs.stat(fn, function(err, stat) {
+				if(err == null) {
+					me.sendHeader('');
+					res.sendFile(fn);
+				} else  {
+					res.sendFile(env.root  + '/www/page404.html');
+				}
+			});
+		}
+
 		me.askLogContent = (data) => {
 			const fn = env.dataFolder + '/_log/' + data.fileName;
 

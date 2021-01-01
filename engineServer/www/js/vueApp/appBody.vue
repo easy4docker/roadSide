@@ -53,7 +53,7 @@
                                 <a href="JavaScript: void(0)" v-on:click="deleteFile('log', item.name)" class="mr-1">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                                <a href="JavaScript:void(0)" v-on:click="showFileContent('log', item.name)">{{item.name}}</a>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                             <div class="container-fluid m-0 text-center">
                                 <div class="row">
                                     <div class="col-11 p-0">
-                                        Cron Tasks ({{logs.length}})
+                                        Cron Tasks ({{cronTasks.length}})
                                     </div>
                                     <div class="col-1 p-0">
                                         <a href="JavaScript:void(0)" v-on:click="toggle('cronTasks')">
@@ -77,10 +77,10 @@
                         </div>
                         <div v-if="expand.cronTasks" class="text-left p-1 pl-2 list_file_section">
                             <div v-for="item in cronTasks">
-                                <a href="JavaScript: void(0)" v-on:click="deleteFile('log', item.name)" class="mr-1">
+                                <a href="JavaScript: void(0)" v-on:click="deleteCronTask(item.name)" class="mr-1">
                                     <i class="fa fa-trash" aria-hidden="true"></i>
                                 </a>
-                                <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                                <a href="JavaScript:void(0)" v-on:click="showFileContent('cronTask', item.name)">{{item.name}}</a>
                             </div>
                         </div>
                     </div>
@@ -121,6 +121,9 @@
                         </div>
                         <div v-if="module=='cronTasks'" class="text-left p-1 pl-2" v-for="item in cronTasks">
                             <a href="JavaScript:void(0)" v-on:click="showLog(item.name)">{{item.name}}</a>
+                        </div>
+                        <div v-if="module=='showFileContent'" class="card p-1 text-center alert-success">
+                            <show-file-content ref="showFileContent"></show-file-content>
                         </div>
                         <div v-if="module=='showLog'"  class="card p-1 text-center alert-success">
                             <show-log ref="showLog"></show-log>
@@ -181,7 +184,18 @@ module.exports = {
                 me.askBackendStatus();
             });
         },
-        showLog(v) {
+        showFileContent(type, fileName) {
+            var me = this;
+            me.module = 'showFileContent';
+            setTimeout(
+                function() {
+                    me.$refs.showFileContent.fileName = fileName;
+                    me.$refs.showFileContent.fileType = type;
+                    me.$refs.showFileContent.refresh = new Date().getTime();
+                }, 100
+            );
+        },
+        deleteCronTask(v) {
             var me = this;
             me.module = 'showLog';
             setTimeout(
@@ -191,6 +205,7 @@ module.exports = {
                 }, 100
             );
         },
+
         pullGitCode() {
             var me = this;
             const data = {cmd : 'pullGitCode'};
@@ -237,6 +252,7 @@ module.exports = {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue',
             'appMenu' : '/js/vueApp/appMenu.vue',
             'showLog' : '/js/vueApp/showLog.vue',
+            'showFileContent' : '/js/vueApp/showFileContent.vue',
             'showOutput' : '/js/vueApp/showOutput.vue'
         }
     })
