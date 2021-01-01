@@ -145,13 +145,6 @@
 					}
 				)
 			}
-			_f['createDirnCron'] = (cbk) => {
-				exec('mkdir -p ' + dirnCron, {maxBuffer: 1024 * 2048},
-					function(error, stdout, stderr) {
-						cbk(true);
-					}
-				)
-			}
 			
 			_f['copyFile'] = (cbk) => {
 				if (data.type !== 'C') {
@@ -166,15 +159,15 @@
 				} else {
 					const fnc = dirnCron + '/xe_' + new Date().getTime() + '.sh';
 					const fnp0 = 'xp_' + new Date().getTime() + '.sh';
-					const fnp = dirn + '/' + fnp0;
+					const fnp = dirn +  '/' + fnp0;
 
-					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n";
+					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + '" >> ' + env.dataFolder + '/_log/cron.log' + " ===\n";
 					cron_shell += 'cd /var/_localApp'+ "\n";
 					cron_shell += data.command + " >> " + env.dataFolder + '/_log/cron.log'+ "\n";
 					cron_shell += 'echo "\tCRON Done $(date +"%m-%d %H:%M:%S") '  + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n\n";
 
-					//let cmd = 'echo "Add cron job ' + fnp0 + '" && ';
-					let cmd = 'echo "' + data.schedule + ' root (sh ' +  fnp + ')" >> /etc/crontab ';
+					let cmd = 'echo "Add cron job ' + fnp0 + '\n" && ';
+					cmd += 'echo "' + data.schedule + ' root (sh ' + fnp + ')" >> /etc/crontab ';
 					 
 					fs.writeFile(fnp, cron_shell, (errp) => {
 						fs.writeFile(fnc, cmd, (err) => {
