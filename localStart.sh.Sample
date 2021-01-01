@@ -20,10 +20,6 @@ fi
 
 SCR_DIR=$(cd `dirname $0` && pwd)
 
-rm -fr ${SCR_DIR}/code
-rm -fr ${SCR_DIR}/env
-rm -fr ${SCR_DIR}/data
-
 mkdir -p ${SCR_DIR}/data
 mkdir -p ${SCR_DIR}/code
 mkdir -p ${SCR_DIR}/env
@@ -31,16 +27,11 @@ mkdir -p ${SCR_DIR}/env
 echo "{\"initToken\":\"local\", \"list\":{\"local\":1}}" > ${SCR_DIR}/env/token.json
 
 cd ${SCR_DIR}/code
-git clone https://github.com/easy4docker/easy_node_cloud.git .
-
 
 docker container stop backendcloud-local-container
 docker container rm backendcloud-local-container
 docker container stop backendcloud-local-container_eng
 docker container rm backendcloud-local-container_eng
-
-docker image rm -f backendcloud-local-image
-docker image rm -f backendcloud-local-image_eng
 
 docker run -d --restart=on-failure -v "${SCR_DIR}/code/mainServer":/var/_localApp -v "${SCR_DIR}/data":/var/_localAppData  \
 --network network_easydocker --name backendcloud-local-container  backendcloud-local-image 
