@@ -6,9 +6,10 @@ DATA_DIR="/var/_localAppData"
 CRON_PATH=$DATA_DIR/_cron
 TMP_PATH=$DATA_DIR/_tmp
 LOG_PATH=$DATA_DIR/_log
-CRON_PATH=${DATA_DIR}/scheduledTasks
+SCHEDULE_PATH=${DATA_DIR}/scheduledTasks
 OUTPUT_PATH=$DATA_DIR/_output
 
+mkdir -p $SCHEDULE_PATH
 mkdir -p $CRON_PATH
 mkdir -p $TMP_PATH
 mkdir -p $LOG_PATH
