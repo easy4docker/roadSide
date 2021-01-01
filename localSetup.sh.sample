@@ -55,4 +55,6 @@ docker run -d --restart=on-failure -e ROOT_HOST="${MAIN_IP}" -e MAIN_PORT=""  -e
 -v "${SCR_DIR}/code":/var/_localApp -v "${SCR_DIR}/data":/var/_localAppData -v "${SCR_DIR}/env":/var/_localAppEnv --network network_easydocker \
 --name backendcloud-local-container_eng  backendcloud-local-image_eng
 
+cp ${SCR_DIR}/code/localStart.sh.Sample ${SCR_DIR}/localStart.sh
+
 echo "URL for engine is http://localhost:${ADMIN_PORT}?token=local"
