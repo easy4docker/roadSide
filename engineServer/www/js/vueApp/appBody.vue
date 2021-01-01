@@ -193,6 +193,8 @@ module.exports = {
         },
         deleteCronTask(v) {
             var me = this;
+            alert('deleteCronTask');
+            return true;
             me.module = 'showLog';
             setTimeout(
                 function() {
@@ -227,9 +229,11 @@ module.exports = {
                    return  (/\.js$/.test(item.name)) ? true : false
                 });
                 me.scheduledTasks =  result.scheduledTasks;
+                me.cronTasks =  result.scheduledTasks;
+                /*
                 me.cronTasks =  result.scheduledTasks.filter(function(item) {
                    return  (/^xp\_/.test(item.name)) ? true : false
-                });
+                });*/
                 me.logs =  result.logs;
                 me.outputs =  result.outputs;
             });
@@ -247,7 +251,6 @@ module.exports = {
         LOAD    : {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue',
             'appMenu' : '/js/vueApp/appMenu.vue',
-            'showLog' : '/js/vueApp/showLog.vue',
             'showFileContent' : '/js/vueApp/showFileContent.vue',
             'showOutput' : '/js/vueApp/showOutput.vue'
         }
