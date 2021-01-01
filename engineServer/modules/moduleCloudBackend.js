@@ -145,6 +145,13 @@
 					}
 				)
 			}
+			_f['createDirnCron'] = (cbk) => {
+				exec('mkdir -p ' + dirnCron, {maxBuffer: 1024 * 2048},
+					function(error, stdout, stderr) {
+						cbk(true);
+					}
+				)
+			}
 			
 			_f['copyFile'] = (cbk) => {
 				if (data.type !== 'C') {
