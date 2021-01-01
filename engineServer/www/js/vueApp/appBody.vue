@@ -179,7 +179,7 @@ module.exports = {
             var me = this;
             const data = {cmd: 'deleteFile', type: type, fileName: fn };
             data.cmd = "deleteFile"
-            me.root.dataEngine(me).sendQuery(data, function(result) {
+            me.root.dataEngine(me).doPost(data, function(result) {
                 me.module = '';
                 me.askBackendStatus();
             });
@@ -209,7 +209,7 @@ module.exports = {
         pullGitCode() {
             var me = this;
             const data = {cmd : 'pullGitCode'};
-            me.root.dataEngine(me).sendQuery(data, function(result) {
+            me.root.dataEngine(me).doPost(data, function(result) {
                 me.askBackendStatus();
             });
         },
@@ -226,7 +226,7 @@ module.exports = {
             var me = this;
             const data = {};
             data.cmd = "askBackendStatus"
-            me.root.dataEngine(me).sendQuery(data, function(result) {
+            me.root.dataEngine(me).doPost(data, function(result) {
                 me.localScripts =  result.localScripts.filter(function(item) {
                    return  (/\.js$/.test(item.name)) ? true : false
                 });

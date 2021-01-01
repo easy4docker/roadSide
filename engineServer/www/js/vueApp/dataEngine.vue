@@ -49,7 +49,7 @@ module.exports = {
                 dataType: 'TEXT'
             });
         },
-        sendQuery(data, callback) {
+        doPost(data, callback) {
             var me = this;
             me.ajaxPost(data, callback, true);
         },
