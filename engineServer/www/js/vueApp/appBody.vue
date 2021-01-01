@@ -125,10 +125,6 @@
                         <div v-if="module=='showFileContent'" class="card p-1 text-center alert-success">
                             <show-file-content ref="showFileContent"></show-file-content>
                         </div>
-                        <div v-if="module=='showLog'"  class="card p-1 text-center alert-success">
-                            <show-log ref="showLog"></show-log>
-                        </div>
-
                         <div v-if="module=='showOutput'"  class="card p-1 text-center alert-success">
                             <show-output ref="showOutput"></show-output>
                         </div>
