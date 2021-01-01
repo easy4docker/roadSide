@@ -163,7 +163,7 @@
 
 					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + '" >> ' + env.dataFolder + '/_log/cron.log' + " ===\n";
 					cron_shell += 'cd /var/_localApp'+ "\n";
-					cron_shell += data.command + "'s/^/\t>>\t/'" + ' >> ' + env.dataFolder + '/_log/cron.log'+ "\n";
+					cron_shell += data.command + " 's/^/\t>>\t/'" + ' >> ' + env.dataFolder + '/_log/cron.log'+ "\n";
 					cron_shell += 'echo "\tCRON Done $(date +"%m-%d %H:%M:%S") '  + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n\n";
 
 					let cmd = 'echo "Add cron job ' + fnp0 + '\n" && ';
