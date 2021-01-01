@@ -173,8 +173,8 @@
 					cron_shell += data.command + " >> " + env.dataFolder + '/_log/cron.log'+ "\n";
 					cron_shell += 'echo "\tCRON Done $(date +"%m-%d %H:%M:%S") '  + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n\n";
 
-					let cmd = 'echo "Add cron job ' + fnp0 + '" && ';
-					cmd += 'echo "' + data.schedule + ' root (sh ' +  fnp + ')" >> /etc/crontab ';
+					//let cmd = 'echo "Add cron job ' + fnp0 + '" && ';
+					let cmd = 'echo "' + data.schedule + ' root (sh ' +  fnp + ')" >> /etc/crontab ';
 					 
 					fs.writeFile(fnp, cron_shell, (errp) => {
 						fs.writeFile(fnc, cmd, (err) => {
