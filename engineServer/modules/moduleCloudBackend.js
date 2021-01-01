@@ -158,17 +158,18 @@
 					});
 				} else {
 					const fnc = dirnCron + '/xe_' + new Date().getTime() + '.sh';
-					const fnp = 'xp_' + new Date().getTime() + '.sh';
+					const fnp0 = 'xp_' + new Date().getTime() + '.sh';
+					const fnp = dirn + '/' + fnp0;
 
-					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + '" >> ' + fnp + '/_log/cron.log' + " ===\n";
+					let cron_shell = 'echo "=== CRON RUN $(date +"%m-%d %H:%M:%S") ===' + '" >> ' + env.dataFolder + '/_log/cron.log' + " ===\n";
 					cron_shell += 'cd /var/_localApp'+ "\n";
-					cron_shell += data.command + "| sed 's/^/\t>>\t/' >> " + env.dataFolder + '/_log/cron.log'+ "\n";
-					cron_shell += 'echo "\tCRON Done $(date +"%m-%d %H:%M:%S") '  + '" >> ' + fnp + '/_log/cron.log' + "\n\n";
+					cron_shell += data.command + " >> " + env.dataFolder + '/_log/cron.log'+ "\n";
+					cron_shell += 'echo "\tCRON Done $(date +"%m-%d %H:%M:%S") '  + '" >> ' + env.dataFolder + '/_log/cron.log' + "\n\n";
 
-					let cmd = 'echo "Add cron job ' + fnp + '\n" && ';
-					cmd += 'echo "' + data.schedule + ' root (sh ' +  dirn + '/' + fnp + ')" >> /etc/crontab ';
+					let cmd = 'echo "Add cron job ' + fnp0 + '" && ';
+					cmd += 'echo "' + data.schedule + ' root (sh ' +  fnp + ')" >> /etc/crontab ';
 					 
-					fs.writeFile(dirn + '/' + fnp, cron_shell, (errp) => {
+					fs.writeFile(fnp, cron_shell, (errp) => {
 						fs.writeFile(fnc, cmd, (err) => {
 							if (err) {
 								cbk(err.message);
