@@ -15,5 +15,5 @@ Step 3:
     sh localSetup.sh
     
 backend code folder is mainServer
-URL for engine is http://localhost:9080?token=local
-    
+
+Admin or Engine URL is http://localhost:9080?token=local
