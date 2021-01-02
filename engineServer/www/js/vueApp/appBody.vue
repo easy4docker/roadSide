@@ -64,7 +64,7 @@
                             <div class="container-fluid m-0 text-center">
                                 <div class="row">
                                     <div class="col-11 p-0">
-                                        Cron Tasks ({{cronTasks.length}})
+                                        Cron Tasks ({{Object.keys(cronTasks).length}})
                                     </div>
                                     <div class="col-1 p-0">
                                         <a href="JavaScript:void(0)" v-on:click="toggle('cronTasks')">
@@ -76,8 +76,8 @@
                             </div>
                         </div>
                         <div v-if="expand.cronTasks" class="text-left p-1 pl-2 list_file_section">
-                            <div v-for="item in cronTasks">
-                                <a href="JavaScript: void(0)" v-on:click="removeCron(item.name)" class="mr-1">
+                            <div v-for="(item, key) in cronTasks">
+                                <a href="JavaScript: void(0)" v-on:click="removeCron(key)" class="mr-1">
                                     Remove
                                 </a>
                                 <a href="JavaScript:void(0)" v-on:click="showFileContent('cronTask', item.name)">{{item.name}}</a>
