@@ -15,7 +15,8 @@
 			_f['scheduledTasks'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
 				const tree = dirTree(env.dataFolder + '/scheduledTasks');
-				cbk((!tree) ? (env.dataFolder + '/scheduledTasks') : tree.children);
+				cbk(me.getCronSetting());
+				// cbk((!tree) ? (env.dataFolder + '/scheduledTasks') : tree.children);
 			}
 			_f['logs'] = (cbk) => {
 				const dirTree = pkg.require(env.root + '/vendor/directory-tree/node_modules/directory-tree');
@@ -139,7 +140,7 @@
 		me.getCronSetting = () => {
 			let cronSetting = {}, cronSettingFn = env.dataFolder + '/cronSetting.json';
 			try {
-				cronSetting = env.require(cronSettingFn);
+				cronSetting = pkg.require(cronSettingFn);
 			} catch (e) {}
 			return cronSetting;
 		}
