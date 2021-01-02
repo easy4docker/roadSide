@@ -141,11 +141,11 @@
 		}
 		me.saveCronSetting = (fn, data, callback) => {
 			let cronSettingFn = env.dataFolder + '/cronSetting.json';
-			var cronSetting = me.getCronSetting();
+			let cronSetting = me.getCronSetting();
 			cronSetting[fn] = data;
-			fs.writeFile(cronSettingFn, JSON.stringify(cronSetting), (errc) => {
+			fs.writeFile(cronSettingFn, JSON.stringify(cronSetting), (err) => {
 				callback();
-			})
+			});
 		}
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
@@ -182,18 +182,13 @@
 
 					let cmd = 'echo "Add cron job ' + fnp0 + '\n" && ';
 					cmd += 'echo "' + data.schedule + ' root (sh ' + fnp + ')" >> /etc/crontab ';
-					 
-					let cronSetting = {}, cronSettingFn = env.dataFolder + '/cronSetting.json';
-					try {
-						cronSetting = env.require(cronSettingFn);
-					} catch (e) {}
 					
 					const cronSetting = {
 						name 	: data.name,
 						command : data.command,
 						schedule : data.schedule
 					};
-					me.saveCronSetting(fnp0, cronSetting, ()=> {
+					me.saveCronSetting(fnp0, cronSetting, (d)=> {
 						fs.writeFile(fnp, cron_shell, (errp) => {
 							fs.writeFile(fnc, cmd, (err) => {
 								if (err) {
