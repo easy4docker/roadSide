@@ -169,9 +169,9 @@
 					let cmd = 'echo "Add cron job ' + fnp0 + '\n" && ';
 					cmd += 'echo "' + data.schedule + ' root (sh ' + fnp + ')" >> /etc/crontab ';
 					 
-					let cronSetting = {};
+					let cronSetting = {}, cronSettingFn = env.dataFolder + '/cronSetting.json';
 					try {
-						cronSetting = env.require(env.dataFolder + '/cronSetting.json');
+						cronSetting = env.require(cronSettingFn);
 					} catch (e) {}
 					
 					cronSetting[fnp0] = {
@@ -179,7 +179,7 @@
 						command : data.command,
 						schedule : data.schedule
 					};
-					fs.writeFile(fnp, JSON.stringify(cronSetting), (errc) => {
+					fs.writeFile(cronSettingFn, JSON.stringify(cronSetting), (errc) => {
 						fs.writeFile(fnp, cron_shell, (errp) => {
 							fs.writeFile(fnc, cmd, (err) => {
 								if (err) {
