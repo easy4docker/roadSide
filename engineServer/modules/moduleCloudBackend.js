@@ -132,7 +132,21 @@
 				}
 			});
 		}
-
+		me.getCronSetting = () => {
+			let cronSetting = {}, cronSettingFn = env.dataFolder + '/cronSetting.json';
+			try {
+				cronSetting = env.require(cronSettingFn);
+			} catch (e) {}
+			return cronSetting;
+		}
+		me.saveCronSetting = (fn, data, callback) => {
+			let cronSettingFn = env.dataFolder + '/cronSetting.json';
+			var cronSetting = me.getCronSetting();
+			cronSetting[fn] = data;
+			fs.writeFile(cronSettingFn, JSON.stringify(cronSetting), (errc) => {
+				callback();
+			})
+		}
 		me.saveTask = (data) => {
 			const dirn = env.dataFolder + '/scheduledTasks';
 			const dirnCron = env.dataFolder + '/_cron';
@@ -174,12 +188,12 @@
 						cronSetting = env.require(cronSettingFn);
 					} catch (e) {}
 					
-					cronSetting[fnp0] = {
+					const cronSetting = {
 						name 	: data.name,
 						command : data.command,
 						schedule : data.schedule
 					};
-					fs.writeFile(cronSettingFn, JSON.stringify(cronSetting), (errc) => {
+					me.saveCronSetting(fnp0, cronSetting, ()=> {
 						fs.writeFile(fnp, cron_shell, (errp) => {
 							fs.writeFile(fnc, cmd, (err) => {
 								if (err) {
@@ -189,7 +203,7 @@
 								}
 							});
 						});
-					})
+					});
 				}
 			}
 			CP.serial(_f, (data) => {
