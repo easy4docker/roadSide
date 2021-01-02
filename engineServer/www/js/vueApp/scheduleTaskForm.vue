@@ -49,7 +49,7 @@ module.exports = {
                 return (!this.form.command) ? true : false;
             }
             if (this.form.type === 'C') {
-                return (!this.form.command || !this.form.schedule) ? true : false;
+                return (!this.form.command || !this.form.schedule || !this.form.name) ? true : false;
             }        
         },
         saveTask () {
