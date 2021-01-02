@@ -1,12 +1,19 @@
 <template>
     <span>
-        <div class="card p-1 text-left p-2 scheduleFromSection alert-dark">
+        <div class="card p-1 text-left cheduleFromSection alert-dark">
             <label class="m-2">Add Your Task 
                 <input class="ml-3" type="radio" v-model="form.type" value=""> Command
                 <input class="ml-3" type="radio" v-model="form.type" value="C"> Cron Task
             </label>
+
+            <label class="mt-2 p-1 mb-0">Task Name:</label>
+            <input type="text" class="form-control" v-model="form.name" placeholder="Input cron name">
+
+            <label class="mt-2 p-1 mb-0">Task Command:</label>
             <input type="text" class="form-control" v-model="form.command" placeholder="Input shell command">
+
             <comm-cron-schedule v-if="form.type === 'C'" v-bind:schedule.sync="form.schedule"></comm-cron-schedule>
+
             <div class="p-3 text-right">
                 <button class="btn btn-success btn-sm m-1" :disabled="saveDisable()" v-on:click="saveTask();">Submit</button>
                 <button class="btn btn-secondary btn-sm m-1" v-on:click="cancel();">Cancel</button>
@@ -22,6 +29,7 @@ module.exports = {
         return {
             root : this.$parent.root,
             form : {
+                name : '',
                 command : '',
                 type : '',
                 schedule : null
