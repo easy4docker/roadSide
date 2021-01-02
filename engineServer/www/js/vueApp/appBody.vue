@@ -80,7 +80,9 @@
                                 <a href="JavaScript: void(0)" v-on:click="removeCron(key)" class="mr-1">
                                     Remove
                                 </a>
-                                <a href="JavaScript:void(0)" v-on:click="showFileContent('cronTask', item.name)">{{item.name}}</a>
+                                <a href="JavaScript:void(0)" v-on:click="showFileContent('cronTask', item.name)">
+                                    {{item.name}}, {{item.schedule}}
+                                </a>
                             </div>
                         </div>
                     </div>
