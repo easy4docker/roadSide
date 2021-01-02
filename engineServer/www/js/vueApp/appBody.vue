@@ -227,10 +227,6 @@ module.exports = {
                 });
                 me.scheduledTasks =  result.scheduledTasks;
                 me.cronTasks =  result.scheduledTasks;
-                /*
-                me.cronTasks =  result.scheduledTasks.filter(function(item) {
-                   return  (/^xp\_/.test(item.name)) ? true : false
-                });*/
                 me.logs =  result.logs;
                 me.outputs =  result.outputs;
             });
