@@ -56,7 +56,7 @@ module.exports = {
                     list : me.getList(7)
                 }
             ],
-            arr : (!this.schedule) ? ('* * * * *'.split(' ')) : this.schedule
+            arr : (!this.schedule) ? ('* * * * *'.split(' ')) : this.schedule.split(' ')
         }
     },
     watch :{
@@ -64,6 +64,7 @@ module.exports = {
             deep : true,
             handler: function (v) {
                 this.$emit('update:schedule', this.arr.join(' '))
+                console.log('--changed---');
             }
         }
     },
