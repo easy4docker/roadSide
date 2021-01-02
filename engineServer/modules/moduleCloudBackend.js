@@ -56,7 +56,11 @@
 					cbk(true);
 				});
 			}
-
+			_f['removeConfig'] = (cbk) => {
+				me.removeCronSetting(data.fileName, (errp) => {
+					cbk(true);
+				});
+			}
 			CP.serial(_f, (data) => {
 				res.send({status : 'success', cmp : CP.data.removeCron});
 			}, 6000);
@@ -143,6 +147,14 @@
 			let cronSettingFn = env.dataFolder + '/cronSetting.json';
 			let cronSetting = me.getCronSetting();
 			cronSetting[fn] = data;
+			fs.writeFile(cronSettingFn, JSON.stringify(cronSetting), (err) => {
+				callback();
+			});
+		}
+		me.removeCronSetting = (fn, callback) => {
+			let cronSettingFn = env.dataFolder + '/cronSetting.json';
+			let cronSetting = me.getCronSetting();
+			delete cronSetting[fn];
 			fs.writeFile(cronSettingFn, JSON.stringify(cronSetting), (err) => {
 				callback();
 			});
