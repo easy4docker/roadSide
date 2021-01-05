@@ -137,7 +137,7 @@
 
                 </div>
                 <div class="col-9 p-1">
-                    <div class="card main_list_file_section p-1 alert-secondary" >
+                    <div v-if="!appDoc" class="card main_list_file_section p-1 alert-secondary" >
                         <app-menu></app-menu>
                         <span v-if="module=='addTask'">
                             <schedule-task-form ref="scheduleTaskForm"></schedule-task-form>
@@ -154,8 +154,8 @@
                         <div v-if="module=='showOutput'"  class="card p-1 text-center alert-success">
                             <show-output ref="showOutput"></show-output>
                         </div>
-
                     </div>
+                    <app-doc-frame v-if="appDoc" v-bind:appdoc="appDoc"></app-doc-frame>
                 </div>
             </div>
         </div> 
