@@ -278,7 +278,8 @@ module.exports = {
             'scheduleTaskForm' : '/js/vueApp/scheduleTaskForm.vue',
             'appMenu' : '/js/vueApp/appMenu.vue',
             'showFileContent' : '/js/vueApp/showFileContent.vue',
-            'showOutput' : '/js/vueApp/showOutput.vue'
+            'showOutput' : '/js/vueApp/showOutput.vue',
+            'appDocFrame' : '/js/vueApp/appDocs/appDocFrame.vue'
         }
     })
 }
