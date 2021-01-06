@@ -6,9 +6,6 @@
 
 		this.route = (rest) => {
 			let p = req.params[0];
-
-				res.send(env);
-			return true;
 			if (rest === 'get') {
 				me.runGet();
 			} else {
