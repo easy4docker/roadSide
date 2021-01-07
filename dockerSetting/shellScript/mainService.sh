@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cron start
 stsCron=1
 until [ $stsCron = 0 ]

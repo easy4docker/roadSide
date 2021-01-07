@@ -9,4 +9,4 @@ docker container rm <%=@siteContainer %>
 docker image rm -f <%=@siteImage %>
 
 docker build -f <%=@dockerFile %> -t <%=@siteImage %> .
-docker run -d --restart=on-failure -v "<%=@dockerCodePath%>/mainServer":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData  --network network_easydocker --name <%=@siteContainer %>  <%=@siteImage %> 
+docker run -d --restart=on-failure -v "<%=@dockerCodePath%>/mainServer":/var/_localApp -v "<%=@dockerDataPath%>":/var/_localAppData --name <%=@siteContainer %>  <%=@siteImage %> 
