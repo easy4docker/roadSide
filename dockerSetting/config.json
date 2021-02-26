@@ -1,3 +1,4 @@
 {
-  "type"        : "ondemand"
+  "type"        : "ondemand",
+  "minLife"     : 3600
 }
