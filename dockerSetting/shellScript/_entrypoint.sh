@@ -5,7 +5,7 @@ echo $hostIP >> /var/_shareFolder/hostIP.txt
 node test.js >> /var/_shareFolder/easy_ondemand.txt
 # upload all file within /var/_shareFolder
 if [ $hostIP = "localhost" ]; then
-  goalHost=$hostIP
+  goalHost=${mainIP}:10000
 else
   goalHost=${hostIP}:10000
 fi
