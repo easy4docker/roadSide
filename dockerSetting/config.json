@@ -1,4 +1,4 @@
 {
-  "type"        : "ondemand",
+  "type"        : "roadside",
   "minLife"     : 300000
 }
