@@ -1,7 +1,6 @@
 #!/bin/bash
 cd /var/_localApp
 echo $mainIP >> /var/_shareFolder/mainIP.txt
-echo $hostIP >> /var/_shareFolder/hostIP.txt
 echo $onDemandCallbackHost >> /var/_shareFolder/onDemandCallbackHost.txt
 
 node test.js >> /var/_shareFolder/easy_ondemand.txt
